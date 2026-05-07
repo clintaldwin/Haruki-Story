@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table of Contents — The Invisible Student</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/animations.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <style>
+    body { background: var(--night); }
+
+    .toc-header {
+      padding: 9rem 2rem 5rem;
+      text-align: center;
+      background: var(--night);
+      border-bottom: 1px solid rgba(201,168,76,.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .toc-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(201,168,76,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .toc-header__eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .45;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: fadeUp .7s ease both;
+    }
+
+    .toc-header__title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--paper);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      animation: fadeUp .7s .15s ease both;
+    }
+
+    .toc-header__sub {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(244,240,230,.35);
+      animation: fadeUp .7s .3s ease both;
+      margin-bottom: 2rem;
+    }
+
+    /* Progress overview */
+    .progress-overview {
+      display: inline-flex;
+      gap: 2rem;
+      align-items: center;
+      padding: 1rem 2rem;
+      border: 1px solid rgba(201,168,76,.1);
+      background: var(--night2);
+      animation: fadeUp .7s .45s ease both;
+    }
+
+    .prog-item {
+      text-align: center;
+    }
+
+    .prog-num {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+
+    .prog-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .2em;
+      color: rgba(244,240,230,.3);
+      text-transform: uppercase;
+    }
+
+    .prog-divider {
+      width: 1px;
+      height: 30px;
+      background: rgba(201,168,76,.15);
+    }
+
+    /* Timeline strip */
+    .timeline-section {
+      padding: 3rem 2rem 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold-dim) transparent;
+    }
+
+    .timeline-point {
+      flex-shrink: 0;
+      text-align: center;
+      position: relative;
+      padding: 0 1.5rem;
+    }
+
+    .timeline-point::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(201,168,76,.1);
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+
+    .timeline-point:last-child::after { display: none; }
+
+    .timeline-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 auto .4rem;
+      border: 1px solid var(--gold-dim);
+      background: var(--night);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-year {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .15em;
+      color: var(--gold);
+      opacity: .45;
+      display: block;
+      margin-bottom: .2rem;
+    }
+
+    .timeline-label {
+      font-family: var(--mono);
+      font-size: 7.5px;
+      letter-spacing: .05em;
+      color: rgba(244,240,230,.25);
+      display: block;
+      white-space: nowrap;
+    }
+
+    /* TOC main */
+    .toc-main {
+      padding: 4rem 2rem 8rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .vol-section {
+      margin-bottom: 5rem;
+    }
+
+    .vol-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(201,168,76,.1);
+    }
+
+    .vol-num-big {
+      font-family: var(--display);
+      font-size: 4rem;
+      color: rgba(201,168,76,.08);
+      line-height: 1;
+      font-style: italic;
+      flex-shrink: 0;
+    }
+
+    .vol-header-title {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--paper);
+      display: block;
+      margin-bottom: .3rem;
+    }
+
+    .vol-header-meta {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .2em;
+      color: rgba(244,240,230,.3);
+    }
+
+    /* Chapter row */
+    .ch-list {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .ch-row {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(255,255,255,.04);
+      background: var(--night2);
+      text-decoration: none;
+      color: var(--paper);
+      transition: border-color .25s, background .25s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ch-row:hover {
+      border-color: rgba(201,168,76,.2);
+      background: var(--night3);
+      transform: translateX(4px);
+      color: var(--paper);
+    }
+
+    .ch-row.read {
+      border-color: rgba(201,168,76,.08);
+    }
+
+    .ch-row::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .ch-row:hover::before { opacity: 1; }
+    .ch-row.read::before { opacity: .3; background: var(--green); }
+
+    .ch-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--gold);
+      opacity: .4;
+      letter-spacing: .1em;
+      text-align: right;
+    }
+
+    .ch-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--paper);
+      display: block;
+      margin-bottom: .2rem;
+      transition: color .2s;
+    }
+
+    .ch-row:hover .ch-title { color: var(--gold2); }
+
+    .ch-tags {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin-top: .3rem;
+    }
+
+    .ch-tag {
+      font-family: var(--mono);
+      font-size: 7px;
+      letter-spacing: .12em;
+      color: rgba(244,240,230,.25);
+      background: rgba(255,255,255,.03);
+      padding: 2px 7px;
+      border: 1px solid rgba(255,255,255,.05);
+    }
+
+    .ch-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .ch-read-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,.2);
+      margin: 0 auto .4rem;
+      transition: background .3s;
+    }
+
+    .ch-row.read .ch-read-dot {
+      background: var(--gold);
+      border-color: var(--gold);
+      box-shadow: 0 0 6px rgba(201,168,76,.4);
+    }
+
+    .ch-time {
+      font-family: var(--mono);
+      font-size: 7px;
+      letter-spacing: .1em;
+      color: rgba(244,240,230,.2);
+      white-space: nowrap;
+    }
+
+    /* Vol2 accent */
+    .vol-section.v2 .ch-num { color: var(--cyan); }
+    .vol-section.v2 .ch-row::before { background: var(--cyan); }
+
+    /* Reset progress button */
+    .toc-footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(201,168,76,.06);
+    }
+
+    .reset-btn {
+      background: none;
+      border: 1px solid rgba(244,240,230,.08);
+      color: rgba(244,240,230,.25);
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .2em;
+      padding: 6px 14px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: color .2s, border-color .2s;
+    }
+
+    .reset-btn:hover {
+      color: rgba(244,240,230,.6);
+      border-color: rgba(244,240,230,.2);
+    }
+
+    @media (max-width: 600px) {
+      .ch-row { grid-template-columns: 30px 1fr; }
+      .ch-right { display: none; }
+      .progress-overview { gap: 1rem; padding: .8rem 1.2rem; }
+      .vol-num-big { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="toc.html" class="active">Contents</a></li>
+      <li><a href="vol1/ch1.html">Vol. I</a></li>
+      <li><a href="vol2/ch1.html">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="index.html">Cover</a>
+    <a href="toc.html">Contents</a>
+    <a href="vol1/ch1.html">Volume I</a>
+    <a href="vol2/ch1.html">Volume II</a>
+  </div>
+
+  <!-- Header -->
+  <header class="toc-header">
+    <span class="toc-header__eyebrow">Table of Contents</span>
+    <h1 class="toc-header__title">The Invisible Student<br><em style="color:var(--gold);font-size:.65em;letter-spacing:.05em">A Complete Novel</em></h1>
+    <p class="toc-header__sub">Haruki Aizawa · Ages 16 to 34 · Two Volumes · Twenty Chapters</p>
+    <div class="progress-overview" id="progress-overview">
+      <div class="prog-item">
+        <span class="prog-num" id="prog-read">0</span>
+        <span class="prog-label">Chapters Read</span>
+      </div>
+      <div class="prog-divider"></div>
+      <div class="prog-item">
+        <span class="prog-num">20</span>
+        <span class="prog-label">Total</span>
+      </div>
+      <div class="prog-divider"></div>
+      <div class="prog-item">
+        <span class="prog-num" id="prog-pct">0%</span>
+        <span class="prog-label">Complete</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Timeline -->
+  <div class="timeline-section">
+    <div class="timeline">
+      <div class="timeline-point">
+        <div class="timeline-dot" style="background:var(--gold);border-color:var(--gold)"></div>
+        <span class="timeline-year">2024</span>
+        <span class="timeline-label">Age 16</span>
+        <span class="timeline-label">Vol. I begins</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2025</span>
+        <span class="timeline-label">Age 17</span>
+        <span class="timeline-label">Talent Show</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2026</span>
+        <span class="timeline-label">Age 18</span>
+        <span class="timeline-label">Graduation · Vol. II</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2026–30</span>
+        <span class="timeline-label">BS IT</span>
+        <span class="timeline-label">TESDA</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2030–34</span>
+        <span class="timeline-label">Saudi Arabia</span>
+        <span class="timeline-label">Capital phase</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2034</span>
+        <span class="timeline-label">Return · Reunion</span>
+        <span class="timeline-label">Yuna RN</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2035</span>
+        <span class="timeline-label">The Proposal</span>
+        <span class="timeline-label">Age 29</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2036</span>
+        <span class="timeline-label">Marriage</span>
+        <span class="timeline-label">Antipolo garden</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot"></div>
+        <span class="timeline-year">2038</span>
+        <span class="timeline-label">Hana born</span>
+        <span class="timeline-label">Parents retire</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot" style="border-color:var(--gold)"></div>
+        <span class="timeline-year">2040s+</span>
+        <span class="timeline-label">Sovereign Legacy</span>
+        <span class="timeline-label">Piano remains</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC Content -->
+  <main class="toc-main">
+
+    <!-- VOLUME I -->
+    <section class="vol-section" id="vol1">
+      <div class="vol-header">
+        <div class="vol-num-big">I</div>
+        <div class="vol-header-info">
+          <span class="vol-badge v1">Volume One</span><br><br>
+          <span class="vol-header-title">The Invisible Student</span>
+          <span class="vol-header-meta">Ages 16–18 · High School · 10 Chapters</span>
+        </div>
+      </div>
+
+      <div class="ch-list">
+        <a class="ch-row" href="vol1/ch1.html" data-ch="v1c1">
+          <span class="ch-num">01</span>
+          <div class="ch-info">
+            <span class="ch-title">The Invisible Student</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Introduction</span>
+              <span class="ch-tag">Church</span>
+              <span class="ch-tag">Piano</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~18 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch2.html" data-ch="v1c2">
+          <span class="ch-num">02</span>
+          <div class="ch-info">
+            <span class="ch-title">The Decision to Change</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Discipline</span>
+              <span class="ch-tag">Proverbs</span>
+              <span class="ch-tag">Yuna first appears</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~15 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch3.html" data-ch="v1c3">
+          <span class="ch-num">03</span>
+          <div class="ch-info">
+            <span class="ch-title">Academic Rise</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Plot Twist: Marco</span>
+              <span class="ch-tag">Recognition</span>
+              <span class="ch-tag">Ministry reveal</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~14 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch4.html" data-ch="v1c4">
+          <span class="ch-num">04</span>
+          <div class="ch-info">
+            <span class="ch-title">The Multi-Talented Mind</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Chess</span>
+              <span class="ch-tag">Rubik's Cube</span>
+              <span class="ch-tag">Pastor Reyes</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~16 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch5.html" data-ch="v1c5">
+          <span class="ch-num">05</span>
+          <div class="ch-info">
+            <span class="ch-title">Social Shift</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Plot Twist: Yuna at church</span>
+              <span class="ch-tag">Recognition</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~14 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch6.html" data-ch="v1c6">
+          <span class="ch-num">06</span>
+          <div class="ch-info">
+            <span class="ch-title">The Girl</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Yuna's story</span>
+              <span class="ch-tag">Library</span>
+              <span class="ch-tag">Faith</span>
+              <span class="ch-tag">Romance</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~20 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch7.html" data-ch="v1c7">
+          <span class="ch-num">07</span>
+          <div class="ch-info">
+            <span class="ch-title">The Talent Show ✦</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Turning point</span>
+              <span class="ch-tag">Performance</span>
+              <span class="ch-tag">Plot Twist: Pastor in audience</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~22 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch8.html" data-ch="v1c8">
+          <span class="ch-num">08</span>
+          <div class="ch-info">
+            <span class="ch-title">After the Performance</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Mother</span>
+              <span class="ch-tag">Groundedness</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~13 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch9.html" data-ch="v1c9">
+          <span class="ch-num">09</span>
+          <div class="ch-info">
+            <span class="ch-title">Connection Deepens</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Yuna sings</span>
+              <span class="ch-tag">Plot Twist: Mother disapproves</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~18 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol1/ch10.html" data-ch="v1c10">
+          <span class="ch-num">10</span>
+          <div class="ch-info">
+            <span class="ch-title">Graduation Performance ✦</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Confession</span>
+              <span class="ch-tag">Vol. I ending</span>
+              <span class="ch-tag">Courtyard</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~20 min</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- VOLUME II -->
+    <section class="vol-section v2" id="vol2">
+      <div class="vol-header">
+        <div class="vol-num-big" style="color:rgba(74,184,200,.07)">II</div>
+        <div class="vol-header-info">
+          <span class="vol-badge v2">Volume Two</span><br><br>
+          <span class="vol-header-title">After the Curtain</span>
+          <span class="vol-header-meta">Ages 18–34+ · University through Legacy · 10 Chapters</span>
+        </div>
+      </div>
+
+      <div class="ch-list">
+        <a class="ch-row" href="vol2/ch1.html" data-ch="v2c1">
+          <span class="ch-num" style="color:var(--cyan)">01</span>
+          <div class="ch-info">
+            <span class="ch-title">The Rewiring</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Phase 2</span>
+              <span class="ch-tag">Blueprint</span>
+              <span class="ch-tag">5 AM</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~16 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch2.html" data-ch="v2c2">
+          <span class="ch-num" style="color:var(--cyan)">02</span>
+          <div class="ch-info">
+            <span class="ch-title">The Dual-Track Education</span>
+            <div class="ch-tags">
+              <span class="ch-tag">BS IT</span>
+              <span class="ch-tag">Long-distance</span>
+              <span class="ch-tag">Faith test</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~18 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch3.html" data-ch="v2c3">
+          <span class="ch-num" style="color:var(--cyan)">03</span>
+          <div class="ch-info">
+            <span class="ch-title">The TESDA Grind</span>
+            <div class="ch-tags">
+              <span class="ch-tag">5 certifications</span>
+              <span class="ch-tag">Skills</span>
+              <span class="ch-tag">Yuna visits</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~17 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch4.html" data-ch="v2c4">
+          <span class="ch-num" style="color:var(--cyan)">04</span>
+          <div class="ch-info">
+            <span class="ch-title">Saudi Arabia — Capital Extraction</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Riyadh</span>
+              <span class="ch-tag">4 years</span>
+              <span class="ch-tag">Pastor's letter</span>
+              <span class="ch-tag">Savings</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~24 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch5.html" data-ch="v2c5">
+          <span class="ch-num" style="color:var(--cyan)">05</span>
+          <div class="ch-info">
+            <span class="ch-title">The Reunion &amp; Yuna RN</span>
+            <div class="ch-tags">
+              <span class="ch-tag">NAIA return</span>
+              <span class="ch-tag">Yuna's mother</span>
+              <span class="ch-tag">Reconciliation</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~19 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch6.html" data-ch="v2c6">
+          <span class="ch-num" style="color:var(--cyan)">06</span>
+          <div class="ch-info">
+            <span class="ch-title">The Proposal ✦</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Rose petals</span>
+              <span class="ch-tag">Scrubs</span>
+              <span class="ch-tag">6:48 AM</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~15 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch7.html" data-ch="v2c7">
+          <span class="ch-num" style="color:var(--cyan)">07</span>
+          <div class="ch-info">
+            <span class="ch-title">Marriage &amp; The New Life</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Antipolo garden</span>
+              <span class="ch-tag">41 people</span>
+              <span class="ch-tag">Pastor Reyes officiates</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~20 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch8.html" data-ch="v2c8">
+          <span class="ch-num" style="color:var(--cyan)">08</span>
+          <div class="ch-info">
+            <span class="ch-title">The First Child</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Hana</span>
+              <span class="ch-tag">Parents retire</span>
+              <span class="ch-tag">Lullaby</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~18 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch9.html" data-ch="v2c9">
+          <span class="ch-num" style="color:var(--cyan)">09</span>
+          <div class="ch-info">
+            <span class="ch-title">The Sovereign Legacy</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Real estate</span>
+              <span class="ch-tag">Restaurant</span>
+              <span class="ch-tag">Farm</span>
+              <span class="ch-tag">Teaching</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~25 min</span>
+          </div>
+        </a>
+
+        <a class="ch-row" href="vol2/ch10.html" data-ch="v2c10">
+          <span class="ch-num" style="color:var(--cyan)">10</span>
+          <div class="ch-info">
+            <span class="ch-title">Epilogue — The Piano Remains ✦</span>
+            <div class="ch-tags">
+              <span class="ch-tag">Final chapter</span>
+              <span class="ch-tag">Hana's question</span>
+              <span class="ch-tag">The through-line</span>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-read-dot"></div>
+            <span class="ch-time">~14 min</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div class="toc-footer">
+    <button class="reset-btn" id="reset-btn">Reset Reading Progress</button>
+  </div>
+
+  <button class="back-top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Reading progress from localStorage
+    function loadProgress() {
+      try {
+        const read = JSON.parse(localStorage.getItem('haruki_read') || '{}');
+        let count = 0;
+        document.querySelectorAll('.ch-row').forEach(row => {
+          const key = row.dataset.ch;
+          if (read[key]) {
+            row.classList.add('read');
+            count++;
+          }
+        });
+        document.getElementById('prog-read').textContent = count;
+        document.getElementById('prog-pct').textContent = Math.round(count/20*100) + '%';
+      } catch(e) {}
+    }
+
+    loadProgress();
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      if (confirm('Reset all reading progress?')) {
+        localStorage.removeItem('haruki_read');
+        document.querySelectorAll('.ch-row').forEach(r => r.classList.remove('read'));
+        document.getElementById('prog-read').textContent = '0';
+        document.getElementById('prog-pct').textContent = '0%';
+      }
+    });
+  </script>
+</body>
+</html>

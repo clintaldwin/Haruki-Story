@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch. 8: After the Performance — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+</head>
+<body class="reading-mode" data-chapter="v1c8">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="ch1.html" class="active">Vol. I</a></li>
+      <li><a href="../vol2/ch1.html">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="ch1.html">Volume I</a><a href="../vol2/ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume I</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Invisible Student</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — The Decision to Change</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — Academic Rise</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — The Multi-Talented Mind</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Social Shift</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Girl</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — The Talent Show</a></li>
+        <li><a class="sidebar-toc__link active" href="ch8.html">Ch. 8 — After the Performance</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Connection Deepens</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — Graduation Performance</a></li>
+        <span class="sidebar-toc__vol">Volume II</span>
+        <li><a class="sidebar-toc__link" href="../vol2/ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch5.html">Ch. 5 — Reunion</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch10.html">Ch. 10 — The Piano Remains</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="dust"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <radialGradient id="kitchenWarm" cx="40%" cy="60%" r="70%">
+                <stop offset="0%" stop-color="rgba(200,112,64,.18)"/>
+                <stop offset="60%" stop-color="rgba(201,168,76,.06)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </radialGradient>
+              <linearGradient id="bg8" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0d0b18"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg8)"/>
+
+            <!-- Kitchen / dining room setting -->
+            <!-- Wall -->
+            <rect x="0" y="0" width="1200" height="380" fill="rgba(14,12,26,.8)" data-anim-order="0"/>
+            <!-- Window -->
+            <rect x="850" y="60" width="200" height="180" rx="3" fill="rgba(20,18,35,.7)"
+                  stroke="rgba(200,112,64,.15)" stroke-width="2" data-anim-order="1"/>
+            <line x1="950" y1="60" x2="950" y2="240" stroke="rgba(200,112,64,.1)" stroke-width="1"/>
+            <line x1="850" y1="150" x2="1050" y2="150" stroke="rgba(200,112,64,.1)" stroke-width="1"/>
+            <!-- Night visible through window -->
+            <rect x="855" y="65" width="90" height="170" rx="2" fill="rgba(9,8,14,.6)" data-anim-order="1"/>
+            <rect x="955" y="65" width="90" height="170" rx="2" fill="rgba(9,8,14,.6)" data-anim-order="1"/>
+            <!-- City lights through window -->
+            <circle cx="880" cy="120" r="1.5" fill="rgba(201,168,76,.4)"
+                    style="animation:starTwinkle 3s ease-in-out infinite"/>
+            <circle cx="910" cy="90" r="1" fill="rgba(244,240,230,.3)"
+                    style="animation:starTwinkle 2.5s .5s ease-in-out infinite"/>
+            <circle cx="975" cy="130" r="1.2" fill="rgba(201,168,76,.35)"
+                    style="animation:starTwinkle 3.5s 1s ease-in-out infinite"/>
+            <circle cx="1010" cy="100" r="1" fill="rgba(244,240,230,.25)"
+                    style="animation:starTwinkle 2.8s .8s ease-in-out infinite"/>
+
+            <!-- Warm kitchen light glow -->
+            <ellipse cx="400" cy="350" rx="400" ry="200" fill="url(#kitchenWarm)"
+                     style="animation:breathe 4s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Dining table -->
+            <rect x="150" y="390" width="700" height="20" rx="4" fill="rgba(30,25,45,.9)" data-anim-order="2"/>
+            <rect x="150" y="408" width="700" height="140" rx="0" fill="rgba(22,18,38,.7)" data-anim-order="2"/>
+            <!-- Table legs -->
+            <rect x="165" y="548" width="18" height="52" fill="rgba(22,18,38,.9)"/>
+            <rect x="817" y="548" width="18" height="52" fill="rgba(22,18,38,.9)"/>
+
+            <!-- Rice bowls on table -->
+            <g data-anim-order="3">
+              <ellipse cx="300" cy="392" rx="30" ry="10" fill="rgba(244,240,230,.12)"/>
+              <ellipse cx="300" cy="389" rx="25" ry="8" fill="rgba(244,240,230,.08)"/>
+              <ellipse cx="500" cy="392" rx="30" ry="10" fill="rgba(244,240,230,.12)"/>
+              <ellipse cx="500" cy="389" rx="25" ry="8" fill="rgba(244,240,230,.08)"/>
+              <!-- Chopsticks -->
+              <line x1="270" y1="385" x2="290" y2="408" stroke="rgba(200,112,64,.3)" stroke-width="1.5"/>
+              <line x1="278" y1="382" x2="298" y2="405" stroke="rgba(200,112,64,.3)" stroke-width="1.5"/>
+            </g>
+
+            <!-- Mother figure (seated, facing slightly away) -->
+            <ellipse cx="480" cy="374" rx="20" ry="22" fill="rgba(35,28,52,.9)" data-anim-order="3"/>
+            <ellipse cx="480" cy="361" rx="20" ry="12" fill="rgba(15,12,24,1)" data-anim-order="3"/>
+            <rect x="460" y="396" width="40" height="55" rx="5" fill="rgba(35,28,52,.85)" data-anim-order="3"/>
+            <!-- Mother's hand near rice bowl — quietly emotional posture -->
+            <ellipse cx="500" cy="395" rx="14" ry="7" fill="rgba(35,28,52,.7)" data-anim-order="4"/>
+
+            <!-- Tear drop suggestion — a small shimmer near her eye -->
+            <circle cx="468" cy="370" r="2"
+                    fill="rgba(201,168,76,.3)" filter="url(#g8)" data-anim-order="5"
+                    style="animation:breathe 3s ease-in-out infinite"/>
+
+            <!-- Haruki figure (seated across) -->
+            <ellipse cx="300" cy="374" rx="20" ry="22" fill="rgba(30,26,48,.95)" data-anim-order="3"/>
+            <ellipse cx="300" cy="361" rx="20" ry="12" fill="rgba(12,10,20,1)" data-anim-order="3"/>
+            <rect x="280" y="396" width="40" height="55" rx="5" fill="rgba(30,26,48,.9)" data-anim-order="3"/>
+
+            <!-- Father silhouette (side, TV visible in bg) -->
+            <ellipse cx="950" cy="290" rx="22" ry="25" fill="rgba(25,22,40,.8)" data-anim-order="2"/>
+            <ellipse cx="950" cy="276" rx="22" ry="13" fill="rgba(12,10,22,.9)" data-anim-order="2"/>
+            <!-- TV glow -->
+            <rect x="1050" y="200" width="120" height="80" rx="3" fill="rgba(74,184,200,.06)"
+                  style="animation:breathe 2s ease-in-out infinite" data-anim-order="2"/>
+
+            <!-- Warm lamp light source -->
+            <ellipse cx="150" cy="280" rx="60" ry="80" fill="rgba(200,112,64,.1)"
+                     style="animation:breathe 3s ease-in-out infinite" data-anim-order="1"/>
+          </svg>
+          <!-- glow filter for teardrop -->
+          <svg width="0" height="0" style="position:absolute">
+            <defs><filter id="g8"><feGaussianBlur stdDeviation="3"/></filter></defs>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v1">Volume I</span></span>
+          <span class="chapter-number">Chapter Eight</span>
+          <h1 class="chapter-title">After the Performance</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 17 · The Days After</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">THE DAY AFTER</span>
+
+          <p>
+            He goes to school. Mrs. Andres calls roll. She says <em>Aizawa, Haruki</em> with the same voice she uses for every name, but she pauses afterward — not long, not dramatically — and says, without making it into a ceremony: <span class="tg">"Maganda kahapon."</span> Beautiful yesterday. Then she moves on to the next name.
+          </p>
+
+          <p>
+            That is all. It is enough.
+          </p>
+
+          <p>
+            The class treats him differently and also the same. This is the only way to describe it accurately. The difference is not a sudden elevation — no one begins addressing him as a celebrity or treating the talent show as a dividing line between a before and after. But there is a texture to the attention he receives that is new. People make eye contact more readily. Conversations initiate from directions they didn't used to initiate from. It is the difference between a room that tolerates a piece of furniture and a room that has reorganized around it.
+          </p>
+
+          <p>
+            He does not change in response to this. This is the point.
+          </p>
+
+          <div class="thought">
+            My confidence was not built on recognition. It was built on discipline and faith. Those do not require an audience to sustain them and do not depend on one to continue. Recognition is just the world catching up to something that was already there.
+          </div>
+
+          <p>
+            Marco, who is constitutionally incapable of underreacting to things he finds excellent, greets him that morning with a sustained and wordless clap on the back that communicates approximately twelve sentences of enthusiasm. Haruki accepts this in the spirit in which it is offered.
+          </p>
+
+          <p>
+            Dana says: <span class="tg">"Haruki, hindi ko alam na ganyan ka kagaling."</span> <em>Haruki, I didn't know you were that good.</em>
+          </p>
+
+          <p>
+            He considers this. He says, without heat, without irony: <span class="tg">"Matagal na."</span> <em>I've been that good for a long time.</em>
+          </p>
+
+          <p>
+            She blinks. Then laughs, because she hears in it not arrogance but the simple statement of a fact, and because she realizes, in the laugh, that he is right.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THAT EVENING · THE KITCHEN TABLE</span>
+
+          <p>
+            He comes home. His mother is cooking. His father is in the living room with the news. The normal quiet of their home, which he has moved through for seventeen years with such familiarity that it usually functions as pure background.
+          </p>
+
+          <p>
+            He sits at the kitchen table. His mother serves rice. She serves ulam. She sits across from him in the way she sits every evening, and they eat in the way they eat every evening, and the normal quiet is present.
+          </p>
+
+          <p>
+            Then his mother says, without looking up from her rice:
+          </p>
+
+          <p>
+            <span class="tg">"Narinig ko na nagpiano ka sa school. Sinabi ng iyong teacher sa amin."</span>
+          </p>
+
+          <p>
+            <em>I heard that you played piano at school. Your teacher told us.</em>
+          </p>
+
+          <p>
+            He looks up. Her face is turned slightly away, toward her bowl. In the warm kitchen light — the lamp in the corner that his mother turns on every evening at exactly six-thirty — he can see that she is crying quietly. Not dramatically. Into her rice, in the specific way of a mother who has been watching something for a very long time and has been given, finally, a moment to let it show.
+          </p>
+
+          <p>
+            He understands this without having to be told.
+          </p>
+
+          <p>
+            Parents always watch. That is the thing about parents: they are the audience that never leaves. They watch you when you are at Seat 38 and the world doesn't register you. They watch you choose disciplines no one asked you to choose. They watch you ride two jeepneys to a church and come home in the dark with music still on your face. They file it all away in the way parents file things — not analytically, not strategically, but with the accumulating weight of love that has nowhere else to put itself.
+          </p>
+
+          <p>
+            His mother has been watching. She is watching now.
+          </p>
+
+          <p>
+            He does not say anything immediately. He holds the space the way he has learned to hold space — fully, without rushing it.
+          </p>
+
+          <p>
+            Then: <span class="tg">"Inay."</span>
+          </p>
+
+          <p>
+            She makes a small sound. Still not looking up.
+          </p>
+
+          <p>
+            <span class="tg">"Ito pa lang simula."</span>
+          </p>
+
+          <p>
+            <em>This is only the beginning.</em>
+          </p>
+
+          <p>
+            She nods once, still into her rice. He can see her shoulders settle — not with relief, exactly, but with the particular relaxation of a person who has been carrying a hope carefully for a long time and has just been told they can set it down because it is going to carry itself.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE WEEK AFTER</span>
+
+          <p>
+            He returns to the same rhythms. 5:40 AM. Piano. Notes. School. Church on Wednesday. Sunday service. The library on Thursdays.
+          </p>
+
+          <p>
+            He does not add new pressures, does not set new goals in response to the attention. The attention is not the architecture of his life. The architecture was already built. He lives inside it the same way he lived inside it before the talent show — with discipline, with faith, with the quiet certainty of someone who has decided, once, on the right foundation and does not need to decide again.
+          </p>
+
+          <p>
+            Yuna is at the library on Thursday. She is there when he arrives, as usual. She does not say anything about the performance. She corrects his misidentified formula in chapter four of the shared textbook. He corrects her citation order on page seventy-two.
+          </p>
+
+          <p>
+            They read in the same silence for forty minutes.
+          </p>
+
+          <p>
+            Some things do not require acknowledgment. Some things are simply understood, and then returned to, and allowed to be what they already are.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            That night, he plays piano at 10 PM when his parents are asleep. Not for church, not for practice in the technical sense. He plays because the week has been full and the instrument is the place where fullness can be set down without losing it.
+          </p>
+
+          <p>
+            He plays the arrangement from the talent show. He plays it softly — volume for the walls, not for an audience — and he plays it the way it was always intended: not as a performance, but as a statement to no one in particular, or to the one person in particular who was listening with her hands folded in her lap and said nothing and came back to the library on Thursday and sat at the table the way she always sits at the table.
+          </p>
+
+          <p>
+            He finishes. He closes the piano lid. He goes to bed.
+          </p>
+
+          <p>
+            The city outside is dark and orange-lit and going about its business. He is seventeen and grounded and building something that does not require the world's attention to be real. He knows this the way he knows the retention intervals of spaced repetition and the chord structure of a doxology and the particular quality of afternoon light at Seat 38.
+          </p>
+
+          <p>
+            He falls asleep.
+          </p>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch7.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The Talent Show</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch9.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">Connection Deepens</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>

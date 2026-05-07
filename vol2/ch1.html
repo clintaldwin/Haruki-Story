@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 1: The Rewiring — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+</head>
+<body class="reading-mode" data-chapter="v2c1">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link active" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion & Yuna RN</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — The Piano Remains</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+        <li><a class="sidebar-toc__link" href="../vol1/ch10.html">Ch. 10 — Graduation</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="code"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <linearGradient id="bg_v2c1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#08091a"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <radialGradient id="deskGlow" cx="50%" cy="60%" r="50%">
+                <stop offset="0%" stop-color="rgba(74,184,200,.1)"/>
+                <stop offset="100%" stop-color="rgba(74,184,200,0)"/>
+              </radialGradient>
+              <filter id="gv2c1"><feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg_v2c1)"/>
+
+            <!-- Dark room background -->
+            <rect x="0" y="0" width="1200" height="600" fill="rgba(8,9,26,.3)"/>
+
+            <!-- Window — 5 AM, dark outside with first hint of blue -->
+            <rect x="900" y="80" width="200" height="250" rx="3"
+                  fill="rgba(20,30,60,.4)" stroke="rgba(74,184,200,.1)" stroke-width="1.5" data-anim-order="0"/>
+            <line x1="1000" y1="80" x2="1000" y2="330" stroke="rgba(74,184,200,.06)" stroke-width="1"/>
+            <line x1="900" y1="205" x2="1100" y2="205" stroke="rgba(74,184,200,.06)" stroke-width="1"/>
+            <!-- Pre-dawn blue gradient in window -->
+            <rect x="905" y="85" width="90" height="240" rx="2" fill="rgba(30,50,100,.15)"
+                  style="animation:breathe 6s ease-in-out infinite"/>
+            <!-- One star visible through window -->
+            <circle cx="950" cy="130" r="1.2" fill="rgba(244,240,230,.5)"
+                    style="animation:starTwinkle 3s ease-in-out infinite"/>
+
+            <!-- Pull-up bar (ceiling mount) -->
+            <rect x="350" y="100" width="300" height="8" rx="4" fill="rgba(30,28,50,.9)" data-anim-order="1"/>
+            <rect x="420" y="108" width="12" height="25" rx="3" fill="rgba(22,20,38,.9)" data-anim-order="1"/>
+            <rect x="510" y="108" width="12" height="25" rx="3" fill="rgba(22,20,38,.9)" data-anim-order="1"/>
+            <!-- Haruki doing pull-ups (arms up) -->
+            <ellipse cx="500" cy="158" rx="22" ry="24" fill="rgba(28,24,44,.95)" data-anim-order="2"/>
+            <ellipse cx="500" cy="145" rx="22" ry="13" fill="rgba(10,8,20,1)" data-anim-order="2"/>
+            <!-- Arms extended upward -->
+            <rect x="464" y="120" width="12" height="50" rx="6" fill="rgba(28,24,44,.85)" data-anim-order="2"/>
+            <rect x="524" y="120" width="12" height="50" rx="6" fill="rgba(28,24,44,.85)" data-anim-order="2"/>
+            <!-- Body -->
+            <rect x="478" y="182" width="44" height="80" rx="6" fill="rgba(28,24,44,.9)" data-anim-order="2"/>
+
+            <!-- Desk area -->
+            <rect x="100" y="380" width="600" height="18" rx="3" fill="rgba(30,25,48,.9)" data-anim-order="3"/>
+
+            <!-- Laptop -->
+            <rect x="120" y="340" width="180" height="120" rx="4" fill="rgba(18,16,30,.95)" data-anim-order="3"
+                  style="animation:glowPulse 3s ease-in-out infinite"/>
+            <rect x="125" y="345" width="170" height="95" rx="2" fill="rgba(8,20,40,.9)" data-anim-order="4"/>
+            <!-- Screen glow — code on screen -->
+            <rect x="125" y="345" width="170" height="95" rx="2" fill="rgba(74,184,200,.06)"
+                  style="animation:breathe 3s ease-in-out infinite" data-anim-order="4"/>
+            <!-- Code lines on screen -->
+            <g fill="rgba(74,184,200,.5)" data-anim-order="5">
+              <rect x="132" y="353" width="60" height="3" rx="1"/>
+              <rect x="132" y="360" width="90" height="3" rx="1"/>
+              <rect x="140" y="367" width="70" height="3" rx="1"/>
+              <rect x="140" y="374" width="50" height="3" rx="1"/>
+              <rect x="132" y="381" width="80" height="3" rx="1"/>
+              <rect x="140" y="388" width="65" height="3" rx="1"/>
+              <rect x="132" y="395" width="45" height="3" rx="1"/>
+              <rect x="140" y="402" width="75" height="3" rx="1"/>
+              <!-- Cursor blink -->
+              <rect x="192" y="402" width="6" height="9" rx="1"
+                    style="animation:breathe 1s ease-in-out infinite"/>
+            </g>
+
+            <!-- Guitar leaning on wall -->
+            <g data-anim-order="3">
+              <ellipse cx="680" cy="450" rx="35" ry="40" fill="rgba(25,20,38,.9)"/>
+              <ellipse cx="680" cy="370" rx="20" ry="25" fill="rgba(25,20,38,.9)"/>
+              <rect x="675" y="370" width="10" height="90" fill="rgba(22,18,36,.9)"/>
+              <!-- Guitar strings -->
+              <g stroke="rgba(201,168,76,.15)" stroke-width=".5">
+                <line x1="672" y1="395" x2="672" y2="455"/>
+                <line x1="676" y1="393" x2="676" y2="458"/>
+                <line x1="680" y1="392" x2="680" y2="459"/>
+                <line x1="684" y1="393" x2="684" y2="458"/>
+                <line x1="688" y1="395" x2="688" y2="455"/>
+              </g>
+            </g>
+
+            <!-- Open journal -->
+            <g data-anim-order="4">
+              <rect x="360" y="355" width="130" height="95" rx="3" fill="rgba(244,240,230,.08)"/>
+              <rect x="490" y="355" width="130" height="95" rx="3" fill="rgba(244,240,230,.05)"/>
+              <!-- Journal lines -->
+              <g stroke="rgba(201,168,76,.08)" stroke-width=".5">
+                <line x1="368" y1="368" x2="482" y2="368"/>
+                <line x1="368" y1="376" x2="482" y2="376"/>
+                <line x1="368" y1="384" x2="482" y2="384"/>
+                <line x1="368" y1="392" x2="482" y2="392"/>
+                <line x1="368" y1="400" x2="482" y2="400"/>
+              </g>
+              <!-- "Day 1" text suggestion -->
+              <rect x="368" y="362" width="25" height="4" rx="1" fill="rgba(201,168,76,.3)"/>
+            </g>
+
+            <!-- Clock on wall: 5:00 -->
+            <circle cx="800" cy="180" r="40" fill="rgba(18,16,30,.9)"
+                    stroke="rgba(201,168,76,.12)" stroke-width="1" data-anim-order="1"/>
+            <text x="800" y="188" text-anchor="middle" font-family="monospace" font-size="16"
+                  fill="rgba(201,168,76,.45)" data-anim-order="2">5:00</text>
+            <text x="800" y="204" text-anchor="middle" font-family="monospace" font-size="8"
+                  fill="rgba(201,168,76,.25)" letter-spacing="2" data-anim-order="2">AM</text>
+
+            <!-- Desk ambient glow -->
+            <ellipse cx="350" cy="420" rx="280" ry="70" fill="url(#deskGlow)"
+                     style="animation:breathe 4s ease-in-out infinite" data-anim-order="4"/>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II</span></span>
+          <span class="chapter-number">Chapter One — Phase 2</span>
+          <h1 class="chapter-title">The Rewiring</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 18 · April–May 2026</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">APRIL 2026 · TWO WEEKS AFTER GRADUATION</span>
+
+          <p>
+            The diploma is two weeks old. It sits in its folder on his desk, next to his notebook, next to his Bible, next to the still-open Python textbook he has been reading with the same color-coded attention he once brought to Mrs. Andres's classroom. The diploma represents an ending. The Python textbook represents the understanding that endings are just badly named beginnings.
+          </p>
+
+          <p>
+            He is eighteen. The next chapter has no map yet — only a compass. He has learned to prefer this.
+          </p>
+
+          <div class="scripture">
+            "The plans of the diligent lead to profit as surely as haste leads to poverty."
+            <cite>Proverbs 21:5</cite>
+          </div>
+
+          <p>
+            He has read this verse hundreds of times now. It has not diminished. Some things become more themselves the more you return to them.
+          </p>
+
+          <p>
+            He opens a new notebook — the Phase 2 notebook, the one he bought on the way home from graduation because the old one was full and the plan required a new vessel — and he writes the architecture of the next stage. Not a wish list. An engineering document.
+          </p>
+
+          <div class="blueprint">
+            PHASE 2 BLUEPRINT — April 2026
+
+            5:00 AM — Wake. No negotiation.
+
+            5:05 — Calisthenics + Boxing: The body is infrastructure.
+            Train it like it matters because it does.
+
+            6:30 — Software block: Python basics, then automation.
+            Understand the tools before you become one.
+
+            8:00 — Financial literacy: Market logic, crypto foundations.
+            Money is not the goal. Understanding it is the condition.
+
+            SOUL BLOCK (non-negotiable, daily):
+            Piano / Guitar / Writing
+            These are not rewards. These are maintenance.
+
+            GOAL: Dopamine shift — from scrolling to building.
+            Every minute spent consuming is a minute not building.
+
+            ENEMY: Laziness. Not failure — laziness.
+            Failure means you tried. Laziness means you didn't start.
+          </div>
+
+          <div class="skills-grid">
+            <span class="skill-tag cyan">Python</span>
+            <span class="skill-tag orange">Calisthenics</span>
+            <span class="skill-tag cyan">Automation</span>
+            <span class="skill-tag gold">Financial Literacy</span>
+            <span class="skill-tag purple">Piano · Guitar</span>
+            <span class="skill-tag gold">Writing</span>
+          </div>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            The first 5 AM is hard. Not dramatically hard — he does not collapse dramatically or make the alarm into a villain. It is simply the ordinary difficulty of choosing the morning before the morning chooses you. He gets up. He does the calisthenics. His form is imperfect. He records this in the notebook and adjusts.
+          </p>
+
+          <p>
+            By the second week, the body is beginning to accept the new terms of its schedule. By the third week, it is anticipating them. The mind follows the body with a delay, which is always how it works: the body learns first, then the conviction catches up.
+          </p>
+
+          <p>
+            He opens the Python course at 6:30 AM. The syntax is unfamiliar in the way that all new languages are unfamiliar — not impenetrable, but requiring the specific patience of someone who understands that the first twenty hours of learning anything feel like fighting the medium rather than using it. He has learned instruments. He knows this territory.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE PARALLEL · YUNA'S NURSING SCHOOL</span>
+
+          <p>
+            Yuna begins nursing school in the same month. Different city — the program she chose is the best available, which requires her to leave, which she does with the same directness she brings to everything. She tells him three weeks before she goes. She does not frame it as a question or a crisis.
+          </p>
+
+          <p>
+            <span class="tg">"Manila."</span>
+          </p>
+
+          <p>
+            He is quiet. <span class="tg">"Kailan?"</span> <em>When?</em>
+          </p>
+
+          <p>
+            <span class="tg">"Dalawang linggo."</span> <em>Two weeks.</em>
+          </p>
+
+          <p>
+            He nods. They are sitting in the church courtyard after Sunday service, the same courtyard where everything changed on graduation night, though neither of them explicitly names this. Some places hold memory in their walls. You don't need to point at it.
+          </p>
+
+          <p>
+            <span class="tg">"I'll be here,"</span> he says. Then: <span class="tg">"And I'll be somewhere better than here by the time you finish."</span>
+          </p>
+
+          <p>
+            She looks at him. <span class="tg">"Alam ko,"</span> she says. <em>I know.</em>
+          </p>
+
+          <p>
+            It is that simple. They have built something durable enough that distance is a condition, not a threat. Two people in the middle of the most demanding periods of their young lives simultaneously — both becoming, both building, both aware that what they are doing separately will make what they do together more real.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE LAST SUNDAY BEFORE · CHURCH</span>
+
+          <p>
+            He plays at church for the last Sunday before his new routine fully absorbs his mornings. It is a normal service. The congregation is the same. Lola Perla is in the third row. The cross above the altar catches the light the way it always catches the light.
+          </p>
+
+          <p>
+            After service, Pastor Reyes finds him at the piano — the same finding, the same doorway, the same way the pastor has of appearing when something is changing.
+          </p>
+
+          <p>
+            <span class="tg">"Narinig ko ang plano mo,"</span> the pastor says. <em>I heard your plan.</em>
+          </p>
+
+          <p>
+            Haruki looks up. <span class="tg">"Sa sino?"</span> <em>From whom?</em>
+          </p>
+
+          <p>
+            <span class="tg">"Sa'yo. Sa paraan na tinutugtog mo ngayon — may pupuntahan na."</span>
+          </p>
+
+          <p>
+            <em>From you. In the way you play now — there is somewhere it's going.</em>
+          </p>
+
+          <p>
+            Then the pastor says the thing Haruki will carry into every 5 AM for the next several years:
+          </p>
+
+          <p>
+            <span class="tg">"Huwag mong kalimutan ang piano, kahit gaano ka ka-busy. Hindi 'yan para sa church lang. 'Yan ang iyong wika."</span>
+          </p>
+
+          <p>
+            <em>Don't forget the piano, no matter how busy you get. That's not just for church. That's your language.</em>
+          </p>
+
+          <div class="thought">
+            My language. Not my hobby. Not my talent. My language — the one I speak when the other languages run out, the one I have been speaking since I was fourteen and no one was watching. The one Yuna heard before school did. The one that will still be here when Saudi Arabia is done and the savings are what they need to be and the plan has executed every phase. The piano is not the reward at the end. It is the thing I am while everything else happens.
+          </div>
+
+          <p>
+            He goes home. He opens the Phase 2 notebook. He adds one line at the bottom of the Soul Block section, underlined:
+          </p>
+
+          <p>
+            <em>The piano is not a reward. It is the language. Speak it every day.</em>
+          </p>
+
+          <p>
+            He closes the notebook. 9:30 PM. Tomorrow: 5 AM.
+          </p>
+
+          <p>
+            He goes to sleep.
+          </p>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="../vol1/ch10.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Vol. I Finale</span>
+          <span class="chapter-nav__title">Graduation Performance</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch2.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">The Dual-Track Education</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>

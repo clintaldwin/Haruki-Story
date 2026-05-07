@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 2: The Dual-Track Education — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+</head>
+<body class="reading-mode" data-chapter="v2c2">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link active" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion & Yuna RN</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — The Piano Remains</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+        <li><a class="sidebar-toc__link" href="../vol1/ch10.html">Ch. 10 — Graduation</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="code"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <linearGradient id="bg_v2c2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#090a1c"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <radialGradient id="projGlow" cx="30%" cy="30%" r="50%">
+                <stop offset="0%" stop-color="rgba(74,184,200,.15)"/>
+                <stop offset="100%" stop-color="rgba(74,184,200,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg_v2c2)"/>
+
+            <!-- Lecture hall -->
+            <!-- Tiered seating suggestion -->
+            <g fill="rgba(18,16,32,.85)" data-anim-order="0">
+              <rect x="0" y="200" width="1200" height="30" rx="0"/>
+              <rect x="0" y="260" width="1200" height="30" rx="0"/>
+              <rect x="0" y="320" width="1200" height="30" rx="0"/>
+              <rect x="0" y="380" width="1200" height="30" rx="0"/>
+              <rect x="0" y="440" width="1200" height="30" rx="0"/>
+            </g>
+
+            <!-- Projected screen -->
+            <rect x="250" y="40" width="700" height="150" rx="4" fill="rgba(8,20,40,.9)"
+                  style="animation:breathe 4s ease-in-out infinite" data-anim-order="1"/>
+            <!-- Screen glow -->
+            <rect x="250" y="40" width="700" height="150" rx="4" fill="url(#projGlow)" data-anim-order="1"/>
+            <!-- Code on screen -->
+            <g fill="rgba(74,184,200,.6)" font-family="monospace" font-size="14" data-anim-order="3">
+              <text x="270" y="72">def optimize_schedule(tasks, energy_curve):</text>
+              <text x="290" y="94" fill="rgba(74,184,200,.4)">    for task in tasks:</text>
+              <text x="310" y="116" fill="rgba(74,184,200,.35)">        if task.priority == "HIGH":</text>
+              <text x="330" y="138" fill="rgba(201,168,76,.5)">            execute(task)</text>
+              <text x="270" y="160" fill="rgba(74,184,200,.3)">    return results</text>
+            </g>
+
+            <!-- Professor silhouette -->
+            <ellipse cx="600" cy="178" rx="22" ry="25" fill="rgba(30,26,50,.9)" data-anim-order="2"/>
+            <ellipse cx="600" cy="164" rx="22" ry="13" fill="rgba(15,12,26,1)" data-anim-order="2"/>
+            <rect x="578" y="203" width="44" height="60" rx="5" fill="rgba(30,26,50,.85)" data-anim-order="2"/>
+
+            <!-- Student silhouettes in rows -->
+            <g fill="rgba(25,22,42,.75)" data-anim-order="2">
+              <ellipse cx="100" cy="188" rx="12" ry="14"/>
+              <ellipse cx="140" cy="188" rx="11" ry="13"/>
+              <ellipse cx="180" cy="188" rx="12" ry="14"/>
+              <ellipse cx="220" cy="188" rx="13" ry="15"/>
+              <ellipse cx="900" cy="188" rx="12" ry="14"/>
+              <ellipse cx="940" cy="188" rx="11" ry="13"/>
+              <ellipse cx="980" cy="188" rx="12" ry="14"/>
+              <ellipse cx="1020" cy="188" rx="13" ry="15"/>
+              <ellipse cx="1060" cy="188" rx="12" ry="14"/>
+              <ellipse cx="100" cy="248" rx="12" ry="14"/>
+              <ellipse cx="150" cy="248" rx="13" ry="15"/>
+              <ellipse cx="200" cy="248" rx="11" ry="13"/>
+              <ellipse cx="900" cy="248" rx="13" ry="15"/>
+              <ellipse cx="950" cy="248" rx="12" ry="14"/>
+              <ellipse cx="1000" cy="248" rx="11" ry="13"/>
+              <ellipse cx="1050" cy="248" rx="12" ry="14"/>
+            </g>
+
+            <!-- Haruki — FRONT ROW, lit by screen glow -->
+            <ellipse cx="600" cy="248" rx="21" ry="23"
+                     fill="rgba(30,26,48,.95)" data-anim-order="4"/>
+            <ellipse cx="600" cy="235" rx="21" ry="13" fill="rgba(12,10,22,1)" data-anim-order="4"/>
+            <rect x="579" y="271" width="42" height="50" rx="5" fill="rgba(30,26,48,.9)" data-anim-order="4"/>
+            <!-- Screen glow on Haruki's face -->
+            <ellipse cx="600" cy="245" rx="40" ry="25"
+                     fill="rgba(74,184,200,.08)" style="animation:breathe 3s ease-in-out infinite" data-anim-order="5"/>
+
+            <!-- Notebook open on desk -->
+            <rect x="565" y="295" width="90" height="60" rx="2" fill="rgba(244,240,230,.06)" data-anim-order="5"/>
+            <!-- Color-coded notes -->
+            <g data-anim-order="6">
+              <rect x="572" y="302" width="35" height="3" rx="1" fill="rgba(74,184,200,.4)"/>
+              <rect x="572" y="308" width="55" height="3" rx="1" fill="rgba(74,184,200,.3)"/>
+              <rect x="572" y="314" width="45" height="3" rx="1" fill="rgba(201,168,76,.35)"/>
+              <rect x="572" y="320" width="60" height="3" rx="1" fill="rgba(184,104,120,.3)"/>
+              <rect x="572" y="326" width="40" height="3" rx="1" fill="rgba(74,184,200,.3)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II</span></span>
+          <span class="chapter-number">Chapter Two — Phase 3</span>
+          <h1 class="chapter-title">The Dual-Track Education</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 18–22 · BS IT · 2026–2030</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">2026 · UNIVERSITY ENROLLMENT</span>
+
+          <p>
+            He chooses BS Information Technology with the same deliberateness he has brought to every decision since the Tuesday night in Proverbs. Not because everyone is doing it. Not because it is safe. Because he has thought about the landscape of the next decade and arrived at a conclusion he is willing to stake several years of his life on.
+          </p>
+
+          <div class="blueprint">
+            THE REASONING
+
+            AI will displace 35% of entry-level jobs within a decade.
+            Common response: fear, avoidance, denial.
+            Correct response: become the person who builds and directs these systems.
+
+            IT is not the escape from the technological shift.
+            IT is the command post.
+
+            "Hindi ako mag-IT para takasan ang AI.
+             Mag-IT ako para pangunahan siya."
+            — I'm not taking IT to run from AI. I'm taking IT to lead it.
+          </div>
+
+          <div class="skills-grid">
+            <span class="skill-tag cyan">Programming</span>
+            <span class="skill-tag cyan">Systems Architecture</span>
+            <span class="skill-tag cyan">Networks</span>
+            <span class="skill-tag cyan">Databases</span>
+            <span class="skill-tag gold">Financial Literacy</span>
+            <span class="skill-tag orange">Side Hustles</span>
+          </div>
+
+          <p>
+            He sits in the front row. This is new — he was a back-row person for the first year of high school, and the shift to the front is not about visibility but about information. He has learned that proximity to the source matters. He takes notes in the same color-coded system that has been running since Proverbs 21:5.
+          </p>
+
+          <p>
+            The professors are, for the most part, competent and occasionally excellent. He treats them the way he treated Mrs. Andres — as sources of information to be fully extracted, not as authorities to be pleased. He is polite. He asks specific questions. He does the work.
+          </p>
+
+          <p>
+            His side hustle begins in the second semester: part-time merchandiser on weekends, and small freelance Python scripts for local small businesses that need automation and don't know it yet. He charges modestly. He overdelivers. Three of his first five clients refer him to someone else.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE LONG-DISTANCE ARCHITECTURE</span>
+
+          <p>
+            Yuna is in Manila. He is two hours away by bus. This is a fact, not a complaint.
+          </p>
+
+          <p>
+            They call every night. Sometimes for two minutes — she has just come off a twelve-hour clinical shift and her voice has the particular flatness of someone who has been fully present for other people all day and has nothing left for performance, which means what she gives him is real. Sometimes for two hours, when neither can sleep and the city is quiet and they talk about everything and nothing in the specific freedom of two people who have stopped being careful around each other.
+          </p>
+
+          <p>
+            The distance is real. It is present every morning when he wakes and the first instinct is to tell her something and then remembers the geography. But it does not break them because they are both in the middle of becoming, and they can feel it in each other's voices — a steadiness that is not performed confidence but actual substance being built, day by day, at 5 AM and in twelve-hour clinical shifts and in front-row lecture halls.
+          </p>
+
+          <div class="thought">
+            She sounds different on the phone than she did at school. Not different from herself — more herself. The nursing is working on her the way the piano has always worked on me: not adding something foreign but revealing what was already there. She is becoming the thing she decided to become. I can hear it. It is the best sound in the world.
+          </div>
+
+          <div class="br">· · ·</div>
+
+          <div class="twist">
+            <strong>Plot Twist #8 — The Faith Test</strong>
+          </div>
+
+          <p>
+            Second year of college. Evolutionary psychology lecture. The professor — brilliant, specific, accustomed to being the most interesting mind in the room — makes a comment that is not quite a dismissal of religious belief but contains one inside a parenthesis. The class absorbs it with the passive acceptance of students who have not yet been asked to disagree with a professor on a matter of substance.
+          </p>
+
+          <p>
+            A student named Baguio, who knows Haruki's reputation as the top of their program, turns to him: <span class="tg">"Haruki, ikaw yung matalino dito — talagang naniniwala ka pa rin sa Diyos?"</span>
+          </p>
+
+          <p>
+            <em>Haruki, you're the smart one here — do you actually still believe in God?</em>
+          </p>
+
+          <p>
+            The class waits. This is the kind of moment that a room anticipates — the kind where the answer will define something.
+          </p>
+
+          <p>
+            Haruki puts down his pen. He looks at Baguio with the complete calm of someone who has held this faith since he was fourteen, who played for God in an empty church when no one was watching, who has never separated his intelligence from his belief because he has never found a reason to.
+          </p>
+
+          <p>
+            <span class="tg">"Yes. And the existence of intelligence — mine, yours, the professor's — is actually one of the reasons I do."</span>
+          </p>
+
+          <p>
+            The room goes quiet. Not hostile. Not converted. Just — surprised. The specific surprise of a room that expected a defensive retreat and received instead a completely settled advance.
+          </p>
+
+          <p>
+            The professor, from the front of the room — who has been listening — says: <span class="tg">"That's a conversation worth having after class."</span>
+          </p>
+
+          <p>
+            They have it. The professor is not converted. Haruki does not expect him to be. But he earns the professor's quiet respect — not for the content of his belief, but for the quality of his certainty. A person who knows what they think and can hold it in the open, without anxiety or aggression, is a person worth having a conversation with.
+          </p>
+
+          <div class="thought">
+            Faith is not my private corner. It is my backbone. It goes with me into every room I enter, not because I carry it as a shield but because it is structural — it is load-bearing. Remove it and the shape of my life changes. This is not a problem to solve. It is simply the truth of how I am built.
+          </div>
+
+          <p>
+            He calls Yuna that night and tells her. She listens. Then: <span class="tg">"Siyempre ganyan ang sagot mo."</span> <em>Of course that was your answer.</em> It is the highest compliment she knows how to give: the recognition that he is exactly who she thought he was.
+          </p>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch1.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The Rewiring</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch3.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">The TESDA Grind</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>

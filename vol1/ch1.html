@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch. 1: The Invisible Student — The Invisible Student Novel</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+</head>
+<body class="reading-mode" data-chapter="v1c1">
+
+  <div class="reading-bar" id="reading-bar"></div>
+
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html" class="active">Vol. I</a></li>
+      <li><a href="../vol2/ch1.html">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a>
+    <a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a>
+    <a href="../vol2/ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+
+    <!-- Sidebar TOC -->
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume I</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link active" href="ch1.html">Ch. 1 — The Invisible Student</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — The Decision to Change</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — Academic Rise</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — The Multi-Talented Mind</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Social Shift</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Girl</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — The Talent Show</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — After the Performance</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Connection Deepens</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — Graduation Performance</a></li>
+        <span class="sidebar-toc__vol">Volume II</span>
+        <li><a class="sidebar-toc__link" href="../vol2/ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch5.html">Ch. 5 — Reunion</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch10.html">Ch. 10 — The Piano Remains</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+
+      <!-- Chapter Header with Illustration -->
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <!-- SVG Illustration: Classroom, Seat 38, afternoon light -->
+          <div id="chapter-particles" data-type="dust"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <linearGradient id="classroomBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#12101e"/>
+                <stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <linearGradient id="windowLight" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="rgba(201,168,76,.25)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </linearGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Background -->
+            <rect width="1200" height="600" fill="url(#classroomBg)"/>
+
+            <!-- Classroom wall / blackboard area -->
+            <rect x="0" y="0" width="1200" height="50" fill="rgba(18,16,30,.8)" data-anim-order="0"/>
+            <rect x="50" y="60" width="600" height="180" rx="2" fill="rgba(30,28,46,.9)" data-anim-order="1"/>
+            <!-- Board lines -->
+            <line x1="70" y1="90" x2="620" y2="90" stroke="rgba(201,168,76,.06)" stroke-width="1"/>
+            <line x1="70" y1="120" x2="620" y2="120" stroke="rgba(201,168,76,.06)" stroke-width="1"/>
+            <line x1="70" y1="150" x2="520" y2="150" stroke="rgba(201,168,76,.06)" stroke-width="1"/>
+
+            <!-- Window (right side) — light source -->
+            <rect x="900" y="50" width="220" height="350" rx="3" fill="rgba(201,168,76,.08)" data-anim-order="0"
+                  style="animation:breathe 4s ease-in-out infinite"/>
+            <!-- Window frame -->
+            <rect x="900" y="50" width="220" height="350" rx="3" fill="none" stroke="rgba(201,168,76,.15)" stroke-width="2"/>
+            <line x1="1010" y1="50" x2="1010" y2="400" stroke="rgba(201,168,76,.1)" stroke-width="1"/>
+            <line x1="900" y1="200" x2="1120" y2="200" stroke="rgba(201,168,76,.1)" stroke-width="1"/>
+
+            <!-- Window light shaft falling across room -->
+            <polygon points="900,50 1120,50 1120,600 700,600" fill="url(#windowLight)"
+                     style="animation:lightShaft 3.5s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Desks (rows) — other students -->
+            <g fill="rgba(30,28,46,.7)" data-anim-order="2">
+              <!-- Row 1 -->
+              <rect x="80" y="280" width="100" height="60" rx="2"/>
+              <rect x="200" y="280" width="100" height="60" rx="2"/>
+              <rect x="320" y="280" width="100" height="60" rx="2"/>
+              <rect x="440" y="280" width="100" height="60" rx="2"/>
+              <rect x="560" y="280" width="100" height="60" rx="2"/>
+              <!-- Row 2 -->
+              <rect x="80" y="360" width="100" height="60" rx="2"/>
+              <rect x="200" y="360" width="100" height="60" rx="2"/>
+              <rect x="320" y="360" width="100" height="60" rx="2"/>
+              <rect x="440" y="360" width="100" height="60" rx="2"/>
+              <rect x="560" y="360" width="100" height="60" rx="2"/>
+              <!-- Row 3 -->
+              <rect x="80" y="440" width="100" height="60" rx="2"/>
+              <rect x="200" y="440" width="100" height="60" rx="2"/>
+              <rect x="320" y="440" width="100" height="60" rx="2"/>
+              <rect x="440" y="440" width="100" height="60" rx="2"/>
+            </g>
+
+            <!-- Student silhouettes (vague, indistinct) -->
+            <g fill="rgba(46,40,64,.6)" data-anim-order="3">
+              <ellipse cx="130" cy="265" rx="15" ry="18"/>
+              <ellipse cx="250" cy="265" rx="15" ry="18"/>
+              <ellipse cx="370" cy="265" rx="14" ry="17"/>
+              <ellipse cx="490" cy="265" rx="16" ry="18"/>
+              <ellipse cx="610" cy="265" rx="15" ry="18"/>
+              <ellipse cx="130" cy="345" rx="15" ry="18"/>
+              <ellipse cx="250" cy="345" rx="16" ry="18"/>
+              <ellipse cx="370" cy="345" rx="14" ry="17"/>
+            </g>
+
+            <!-- SEAT 38 — Haruki's desk (corner, window, golden rim) -->
+            <rect x="750" y="460" width="120" height="70" rx="3"
+                  fill="rgba(30,28,46,.9)"
+                  stroke="rgba(201,168,76,.5)"
+                  stroke-width="1.5"
+                  filter="url(#softGlow)"
+                  data-anim-order="5"
+                  style="animation:glowPulse 3s ease-in-out infinite"/>
+
+            <!-- Seat 38 label -->
+            <text x="810" y="490" text-anchor="middle" font-family="monospace" font-size="9"
+                  fill="rgba(201,168,76,.4)" letter-spacing="2" data-anim-order="6">SEAT 38</text>
+
+            <!-- Haruki at his desk (more defined than other students) -->
+            <!-- Body -->
+            <rect x="785" y="420" width="50" height="45" rx="6" fill="rgba(46,40,64,.9)" data-anim-order="5"/>
+            <!-- Head -->
+            <ellipse cx="810" cy="410" rx="18" ry="20" fill="rgba(46,40,64,.95)" data-anim-order="5"/>
+            <!-- Hair — dark, distinctive -->
+            <ellipse cx="810" cy="397" rx="18" ry="11" fill="rgba(20,18,28,1)" data-anim-order="5"/>
+
+            <!-- Window light landing on Haruki -->
+            <ellipse cx="810" cy="435" rx="60" ry="30" fill="rgba(201,168,76,.08)"
+                     style="animation:breathe 4s ease-in-out infinite" data-anim-order="6"/>
+
+            <!-- Notebook on his desk -->
+            <rect x="760" y="467" width="55" height="38" rx="2" fill="rgba(244,240,230,.12)" data-anim-order="6"/>
+            <rect x="815" y="467" width="40" height="38" rx="2" fill="rgba(244,240,230,.08)" data-anim-order="6"/>
+
+            <!-- Dust motes in window light -->
+            <circle cx="850" cy="200" r="1.5" fill="rgba(201,168,76,.5)"
+                    style="animation:floatUp 4s ease-in infinite"/>
+            <circle cx="920" cy="280" r="1" fill="rgba(244,240,230,.4)"
+                    style="animation:floatUp 5.5s 1.2s ease-in infinite"/>
+            <circle cx="870" cy="330" r="1.2" fill="rgba(201,168,76,.4)"
+                    style="animation:floatUp 3.8s .6s ease-in infinite"/>
+            <circle cx="990" cy="180" r=".8" fill="rgba(244,240,230,.35)"
+                    style="animation:floatUp 4.5s 2s ease-in infinite"/>
+            <circle cx="940" cy="380" r="1" fill="rgba(201,168,76,.3)"
+                    style="animation:floatUp 6s 1.8s ease-in infinite"/>
+            <circle cx="1060" cy="250" r="1.3" fill="rgba(201,168,76,.45)"
+                    style="animation:floatUp 4.2s .3s ease-in infinite"/>
+
+            <!-- Afternoon light gradient on floor -->
+            <rect x="700" y="500" width="500" height="100" fill="rgba(201,168,76,.04)"
+                  style="animation:breathe 5s ease-in-out infinite"/>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v1">Volume I</span></span>
+          <span class="chapter-number">Chapter One</span>
+          <h1 class="chapter-title">The Invisible Student</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 16 · Classroom 2-C</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Prose -->
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">AFTERNOON · CLASSROOM 2-C · SEAT 38</span>
+
+          <p>
+            His name is called on the attendance sheet every morning — <em>Aizawa, Haruki</em> — and every morning, Mrs. Andres's eyes move past him before her voice finishes saying it. Not from cruelty. From something quieter and harder to argue with: the simple fact that the room does not register him. He is present in the way a piece of furniture is present. Catalogued, accounted for, and then passed over.
+          </p>
+
+          <p>
+            Seat 38. Last row. Corner by the window. It is the desk that catches the afternoon light at an angle that makes it difficult to read, which is perhaps why no one wanted it. Haruki has sat here since second year began and has come to understand the particular quality of light that falls across his notebook at 3:15 PM — golden, slightly amber, warm in the way that things become warm only by accident.
+          </p>
+
+          <p>
+            He has learned to read in it.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            The class is reviewing for the quarterly exam. Somewhere in the front of the room, Yumi is passing notes to Dana. Berto and Marcus are competing to see who can sketch the most elaborate soccer formation on the margins of their reviewer. The teacher writes a formula on the board and three hands go up with the answer, the same three hands that always go up, and the room settles into its comfortable rhythms, and Haruki watches all of it from Seat 38 the way one watches a river from a bridge — not uninvolved, exactly, but not in it.
+          </p>
+
+          <p>
+            He is not suffering. This is important to understand. He is not the kind of invisible that hurts. He is simply — unregistered. The class has formed its social geography around him the way a city forms around an empty lot: not with hostility, but with pragmatic indifference. The lot exists. People just don't go there.
+          </p>
+
+          <div class="thought">
+            There are two frequencies that I exist on. At school — static. The signal is there but the receiver isn't tuned to it. I've decided this doesn't mean the signal is broken.
+          </div>
+
+          <p>
+            This distinction matters to him. He has thought about it carefully, the way he thinks about most things — slowly, from multiple angles, at a desk with afternoon light falling at seventeen degrees off horizontal.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            After school, the groups form at the gate. Dana and Yumi are going to the mall. The basketball boys are going to the court behind the church near Barangay 7. Marco's group is loud and multicolored, pulling people into its orbit like a jovial small star. Haruki watches them from a distance that is not physical — his feet carry him past the gate in the opposite direction — and waits for the jeepney.
+          </p>
+
+          <p>
+            He takes two. The first goes east along the main road. The second bends north, up the hill past the wet market and the row of sari-sari stores and the pharmacy where his mother's prescriptions are filled. It lets him off at the corner with the yellow gate. He pushes it open. He goes inside.
+          </p>
+
+          <p>
+            The church is not large. It holds perhaps two hundred people on a crowded Sunday, perhaps a hundred and forty on an ordinary one. On a Wednesday afternoon, when Haruki arrives, there are eleven people in the pews for the prayer meeting and three more in the back preparing the sound system. The sanctuary smells of old varnish and incense and the particular stillness of a space that expects to be filled by something invisible.
+          </p>
+
+          <div class="twist">
+            He crosses the sanctuary and sits at the upright piano — and here, something shifts. His posture changes. His hands, which at school have a quality of careful neutrality, move to the keys with the certainty of something long practiced. He plays a chord. Adjusts the bench. Plays three more chords, testing the room's acoustics, which he has known for two years but checks again every time because the weather changes them slightly.
+          </div>
+
+          <p>
+            <span class="tg">"Haruki!"</span> Ate Mila, the worship team leader, calls from across the sanctuary. <span class="tg">"Eto na si bunso natin."</span> Our youngest one is here. She means it as warmth, and it is received as warmth, because at this church, Haruki has a name that people use with the particular emphasis that means they know what it belongs to.
+          </p>
+
+          <p>
+            He leads the worship set tonight. He chose the songs himself — three praise songs, a softer doxology to close, the arrangement he wrote for the third song running through his head since Tuesday morning. Pastor Reyes trusts him with this completely. He has never questioned Haruki's choices, never second-guessed the keys or the tempos. <span class="tg">"Ikaw ang musiko,"</span> he said once. <em>You are the musician.</em> This confidence is not something Haruki takes lightly.
+          </p>
+
+          <p>
+            He handles the music ministry scheduling. He mentors the younger musicians in the choir — fourteen-year-old Jonjon who is learning chords and needs someone to show him that the gap between knowing a chord and feeling it is crossed through ten thousand repetitions. He plays for Sunday services, for Wednesday prayer meetings, for special events, for the occasional wedding. His hands know this piano the way a carpenter knows a specific plane, its particular resistance, its quirks.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            The prayer meeting begins. Fifteen people, as it turns out — four more arrived while he was warming up. He plays the first song softly, not yet fully open, letting the room settle into itself. By the second song, he has found the frequency, and his playing opens slightly, not louder but wider, the way a window opens to let in something more than air.
+          </p>
+
+          <p>
+            Midway through the third song, he becomes aware of someone watching him. This is not unusual — people watch musicians play. But this watch has a particular quality of attention, and he glances up during a bridge where his right hand knows what to do without him directing it.
+          </p>
+
+          <p>
+            Lola Perla. She is eighty-one years old and has been attending this church since before Haruki's father was born. She is looking at him from the third pew, her face composed in the particular way of very old people who have learned that the most important things arrive quietly and should be received quietly.
+          </p>
+
+          <p>
+            She nods at him.
+          </p>
+
+          <p>
+            Slowly. Once. Weighted.
+          </p>
+
+          <p>
+            He plays the rest of the song. He plays the doxology. He closes the lid of the piano when it's done and sits for a moment in the silence of the room after music has ended, which is a different silence than the silence before music begins. He thinks about Lola Perla's nod. It is not a compliment, exactly. It is — recognition. The specific and serious recognition of one person who does what they do with their whole self by another person who has watched many people do things and knows the difference.
+          </p>
+
+          <div class="thought">
+            That nod will carry me through the next week of school. I don't know why I know this, but I do. Some kinds of being seen weigh enough to hold you up across the places where no one is looking.
+          </div>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He takes the jeepney home. It is dark now, the city's particular darkness that is also orange-lit and humid and full of the smell of street food from the vendors at the main intersection. He buys a stick of fishball because he is sixteen and hungry and fishball exists, and eats it while he walks the last three minutes home.
+          </p>
+
+          <p>
+            His mother is cooking. His father is watching news on the living room television. They exchange the normal quiet of a family that knows each other well enough not to narrate everything.
+          </p>
+
+          <p>
+            He goes to his room. Opens his notebook. The same notebook he carries to school, which teachers' eyes slide past on their way to the more interesting notebooks of the visible students. He writes the date at the top of a blank page, and then, because it is in his head from the prayer meeting, he writes the arrangement notes for a new version of the doxology — the one he's been hearing in a minor key, which might be unusual but might also be exactly right.
+          </p>
+
+          <p>
+            He will try it on Wednesday.
+          </p>
+
+          <p>
+            He exists in two frequencies. At school, static. At church, signal. He has decided the school frequency is not broken. It is simply — not on yet.
+          </p>
+
+          <p>
+            The light in his room at 9 PM is yellow and familiar. His textbooks are open, his homework is half-finished. Outside, he can hear Ate Cecille next door having a conversation on her phone. The fishball was good.
+          </p>
+
+          <p>
+            Tomorrow is Thursday. Mrs. Andres will call roll. Her eyes will move past him. He will be present in the way furniture is present. The afternoon light will fall at seventeen degrees off horizontal across Seat 38.
+          </p>
+
+          <p>
+            He will read in it.
+          </p>
+
+        </div><!-- .prose -->
+      </div><!-- .prose-wrap -->
+
+      <!-- Chapter Navigation -->
+      <nav class="chapter-nav">
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch2.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">The Decision to Change</span>
+        </a>
+      </nav>
+
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>

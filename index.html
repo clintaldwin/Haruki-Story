@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Invisible Student — A Novel</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/animations.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <style>
+    /* ── Cover-specific styles ── */
+    body { overflow-x: hidden; }
+
+    .cover {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Particle canvas */
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Background layers */
+    .cover__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .cover__bg-city {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+    }
+
+    .cover__bg-stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+    }
+
+    /* Cover illustration */
+    .cover__illustration {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(600px, 90vw);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Vignette */
+    .cover__vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(9,8,14,.7) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cover__gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, var(--night) 0%, transparent 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Cover content */
+    .cover__content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .cover__eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      animation: fadeUp .8s .3s ease both;
+      margin-bottom: 1.5rem;
+    }
+
+    .cover__title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--paper);
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 40px rgba(0,0,0,.6);
+    }
+
+    .cover__title .line1 {
+      display: block;
+      opacity: 0;
+      animation: titleWord .9s .5s ease both;
+    }
+    .cover__title .line2 {
+      display: block;
+      opacity: 0;
+      animation: titleWord .9s .7s ease both;
+      color: var(--gold);
+    }
+    .cover__title .line3 {
+      display: block;
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      color: rgba(244,240,230,.5);
+      font-style: normal;
+      font-weight: 300;
+      letter-spacing: .08em;
+      opacity: 0;
+      animation: fadeUp .7s 1s ease both;
+      margin-top: .8rem;
+    }
+
+    .cover__subtitle {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(244,240,230,.45);
+      opacity: 0;
+      animation: fadeUp .7s 1.2s ease both;
+      margin-bottom: 3rem;
+      letter-spacing: .03em;
+    }
+
+    .cover__actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .7s 1.5s ease both;
+    }
+
+    .cover__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      opacity: 0;
+      animation: fadeUp .7s 2s ease both;
+    }
+
+    .cover__scroll span {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .3em;
+      color: rgba(201,168,76,.4);
+    }
+
+    .cover__scroll-dot {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    /* ── About / Preview section ── */
+    .about-section {
+      padding: 8rem 2rem;
+      background: var(--night);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .about-title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-style: italic;
+      color: var(--paper);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .about-title em { color: var(--gold); font-style: normal; }
+
+    .about-body {
+      font-family: var(--body);
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(244,240,230,.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat {
+      padding: 1.2rem;
+      border: 1px solid rgba(201,168,76,.1);
+      background: var(--night2);
+    }
+
+    .stat__num {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      margin-bottom: .3rem;
+    }
+
+    .stat__label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(244,240,230,.35);
+    }
+
+    /* ── Volume cards ── */
+    .volumes-section {
+      padding: 0 2rem 8rem;
+      background: var(--night);
+    }
+
+    .volumes-label {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .4em;
+      color: var(--gold);
+      opacity: .4;
+      margin-bottom: 3rem;
+    }
+
+    .volumes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .vol-card {
+      border: 1px solid rgba(201,168,76,.12);
+      background: var(--night2);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s;
+      text-decoration: none;
+      display: block;
+      color: var(--paper);
+    }
+
+    .vol-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      color: var(--paper);
+    }
+
+    .vol-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .vol-card:hover::before { opacity: 1; }
+
+    .vol-card__num {
+      font-family: var(--display);
+      font-size: 5rem;
+      color: rgba(201,168,76,.06);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+      pointer-events: none;
+      font-style: italic;
+    }
+
+    .vol-card__badge { margin-bottom: 1.5rem; }
+
+    .vol-card__title {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-style: italic;
+      margin-bottom: .8rem;
+      color: var(--paper);
+    }
+
+    .vol-card__tagline {
+      font-family: var(--serif);
+      font-size: .95rem;
+      font-style: italic;
+      color: rgba(244,240,230,.4);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .vol-card__meta {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .2em;
+      color: rgba(244,240,230,.25);
+    }
+
+    .vol-card__chapters {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+
+    .vol-card__ch {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .05em;
+      color: rgba(244,240,230,.3);
+      padding: 3px 0;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: color .2s;
+    }
+
+    .vol-card:hover .vol-card__ch { color: rgba(244,240,230,.5); }
+
+    /* ── Characters teaser ── */
+    .characters-section {
+      padding: 8rem 2rem;
+      background: var(--night2);
+    }
+
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 2.5rem auto 0;
+    }
+
+    .char-card {
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,.06);
+      text-align: center;
+      background: var(--night);
+      transition: border-color .3s;
+    }
+
+    .char-card:hover { border-color: rgba(201,168,76,.25); }
+
+    .char-card__icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border: 1px solid rgba(201,168,76,.15);
+    }
+
+    .char-card__name {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--paper);
+      margin-bottom: .3rem;
+    }
+
+    .char-card__role {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .15em;
+      color: var(--gold);
+      opacity: .5;
+      margin-bottom: .8rem;
+    }
+
+    .char-card__desc {
+      font-size: .8rem;
+      color: rgba(244,240,230,.4);
+      line-height: 1.6;
+    }
+
+    /* Divider */
+    .gold-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .3;
+      margin: 2rem auto;
+    }
+
+    /* Quote */
+    .cover-quote {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+      background: var(--night);
+    }
+
+    .cover-quote__text {
+      font-family: var(--display);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-style: italic;
+      color: var(--paper);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .cover-quote__text em { color: var(--gold); font-style: normal; }
+
+    .cover-quote__attr {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .25em;
+      color: rgba(244,240,230,.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .volumes-grid { grid-template-columns: 1fr; }
+      .characters-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .characters-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <nav class="site-nav" id="site-nav">
+    <a href="index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="toc.html">Contents</a></li>
+      <li><a href="vol1/ch1.html">Begin Vol. I</a></li>
+      <li><a href="vol2/ch1.html">Begin Vol. II</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav">
+    <a href="toc.html">Table of Contents</a>
+    <a href="vol1/ch1.html">Volume I</a>
+    <a href="vol2/ch1.html">Volume II</a>
+    <a href="index.html">Cover</a>
+  </div>
+
+  <!-- ══════════════════════════
+       COVER
+  ══════════════════════════ -->
+  <section class="cover">
+    <!-- Particle canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Background SVG layers -->
+    <div class="cover__bg">
+      <!-- Stars -->
+      <svg class="cover__bg-stars" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Stars scattered across sky -->
+        <rect width="1200" height="500" fill="none"/>
+        <!-- Star clusters -->
+        <g fill="white">
+          <circle cx="80" cy="40" r=".8" style="animation:starTwinkle 3.1s .2s ease-in-out infinite"/>
+          <circle cx="150" cy="80" r="1.2" style="animation:starTwinkle 2.7s .8s ease-in-out infinite"/>
+          <circle cx="280" cy="30" r=".6" style="animation:starTwinkle 3.5s .4s ease-in-out infinite"/>
+          <circle cx="400" cy="60" r="1" style="animation:starTwinkle 2.9s 1.1s ease-in-out infinite"/>
+          <circle cx="520" cy="20" r=".7" style="animation:starTwinkle 3.3s .6s ease-in-out infinite"/>
+          <circle cx="660" cy="70" r=".9" style="animation:starTwinkle 2.5s .3s ease-in-out infinite"/>
+          <circle cx="780" cy="35" r="1.1" style="animation:starTwinkle 3.7s .9s ease-in-out infinite"/>
+          <circle cx="900" cy="55" r=".8" style="animation:starTwinkle 2.8s 1.4s ease-in-out infinite"/>
+          <circle cx="1020" cy="25" r=".6" style="animation:starTwinkle 3.2s .5s ease-in-out infinite"/>
+          <circle cx="1130" cy="65" r="1" style="animation:starTwinkle 3s .7s ease-in-out infinite"/>
+          <circle cx="200" cy="120" r=".8" style="animation:starTwinkle 3.4s 1.2s ease-in-out infinite"/>
+          <circle cx="350" cy="140" r=".5" style="animation:starTwinkle 2.6s .1s ease-in-out infinite"/>
+          <circle cx="500" cy="100" r="1.2" style="animation:starTwinkle 3.8s .85s ease-in-out infinite"/>
+          <circle cx="700" cy="130" r=".7" style="animation:starTwinkle 2.4s 1.6s ease-in-out infinite"/>
+          <circle cx="850" cy="110" r=".9" style="animation:starTwinkle 3.1s .45s ease-in-out infinite"/>
+          <circle cx="1050" cy="95" r=".6" style="animation:starTwinkle 2.9s 1.3s ease-in-out infinite"/>
+          <circle cx="1170" cy="140" r="1" style="animation:starTwinkle 3.6s .2s ease-in-out infinite"/>
+        </g>
+        <!-- Gold accent stars -->
+        <g fill="#c9a84c">
+          <circle cx="320" cy="85" r=".9" style="animation:starTwinkle 4s .6s ease-in-out infinite;opacity:.6"/>
+          <circle cx="710" cy="50" r="1.1" style="animation:starTwinkle 3.5s 1.1s ease-in-out infinite;opacity:.5"/>
+          <circle cx="960" cy="80" r=".8" style="animation:starTwinkle 4.2s .3s ease-in-out infinite;opacity:.7"/>
+        </g>
+        <!-- Moon glow -->
+        <ellipse cx="980" cy="100" rx="55" ry="55" fill="rgba(201,168,76,.04)"/>
+        <ellipse cx="980" cy="100" rx="35" ry="35" fill="rgba(201,168,76,.06)"/>
+        <circle cx="980" cy="100" r="20" fill="rgba(201,168,76,.12)" style="animation:breathe 4s ease-in-out infinite"/>
+        <circle cx="980" cy="100" r="14" fill="rgba(244,240,230,.15)" style="animation:breathe 4s .5s ease-in-out infinite"/>
+      </svg>
+
+      <!-- City silhouette -->
+      <svg class="cover__bg-city" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" data-parallax="0.15">
+        <defs>
+          <linearGradient id="cityGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1e1c2e" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#09080e" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <!-- City buildings -->
+        <g fill="url(#cityGrad)">
+          <rect x="0" y="180" width="80" height="120"/>
+          <rect x="85" y="140" width="50" height="160"/>
+          <rect x="140" y="160" width="70" height="140"/>
+          <rect x="215" y="100" width="45" height="200"/>
+          <rect x="265" y="150" width="60" height="150"/>
+          <rect x="330" y="120" width="55" height="180"/>
+          <rect x="390" y="170" width="80" height="130"/>
+          <rect x="475" y="90" width="50" height="210"/>
+          <rect x="530" y="130" width="65" height="170"/>
+          <rect x="600" y="160" width="90" height="140"/>
+          <rect x="695" y="110" width="55" height="190"/>
+          <rect x="755" y="140" width="70" height="160"/>
+          <rect x="830" y="80" width="45" height="220"/>
+          <rect x="880" y="150" width="85" height="150"/>
+          <rect x="970" y="120" width="60" height="180"/>
+          <rect x="1035" y="165" width="75" height="135"/>
+          <rect x="1115" y="100" width="85" height="200"/>
+        </g>
+        <!-- Tiny building lights -->
+        <g style="animation:cityBlink 5s ease-in-out infinite">
+          <rect x="95" y="155" width="4" height="3" fill="rgba(201,168,76,.5)"/>
+          <rect x="225" y="115" width="3" height="3" fill="rgba(201,168,76,.4)"/>
+          <rect x="487" y="105" width="4" height="3" fill="rgba(244,240,230,.3)"/>
+          <rect x="707" y="125" width="3" height="3" fill="rgba(201,168,76,.5)"/>
+          <rect x="842" y="95" width="4" height="3" fill="rgba(244,240,230,.3)"/>
+        </g>
+        <g style="animation:cityBlink 7s 2s ease-in-out infinite">
+          <rect x="140" y="175" width="3" height="3" fill="rgba(244,240,230,.3)"/>
+          <rect x="340" y="135" width="4" height="3" fill="rgba(201,168,76,.4)"/>
+          <rect x="615" y="175" width="3" height="3" fill="rgba(201,168,76,.5)"/>
+          <rect x="975" y="135" width="4" height="3" fill="rgba(244,240,230,.3)"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Main illustration: Haruki at desk in window light -->
+    <div class="cover__illustration" data-parallax="-0.05">
+      <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="winLight" cx="50%" cy="0%" r="80%">
+            <stop offset="0%" stop-color="rgba(201,168,76,.18)"/>
+            <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+          </radialGradient>
+          <linearGradient id="figGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2e2840"/>
+            <stop offset="100%" stop-color="#09080e"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Window light shaft -->
+        <polygon points="200,0 400,0 480,500 120,500" fill="url(#winLight)" style="animation:lightShaft 3s ease-in-out infinite"/>
+
+        <!-- Desk surface -->
+        <ellipse cx="300" cy="420" rx="200" ry="20" fill="rgba(46,40,64,.6)"/>
+        <rect x="100" y="418" width="400" height="8" rx="2" fill="#2e2840"/>
+
+        <!-- Books on desk -->
+        <rect x="140" y="395" width="12" height="28" rx="1" fill="#3a3050"/>
+        <rect x="153" y="390" width="10" height="33" rx="1" fill="#4a3a60"/>
+        <rect x="164" y="398" width="8" height="25" rx="1" fill="#2e2840"/>
+
+        <!-- Notebook open -->
+        <ellipse cx="250" cy="415" rx="50" ry="5" fill="rgba(244,240,230,.08)"/>
+        <rect x="200" y="400" width="50" height="18" rx="2" fill="rgba(244,240,230,.12)"/>
+        <rect x="250" y="400" width="50" height="18" rx="2" fill="rgba(244,240,230,.08)"/>
+        <!-- Notebook lines -->
+        <line x1="208" y1="405" x2="295" y2="405" stroke="rgba(201,168,76,.15)" stroke-width=".5"/>
+        <line x1="208" y1="408" x2="295" y2="408" stroke="rgba(201,168,76,.1)" stroke-width=".5"/>
+        <line x1="208" y1="411" x2="295" y2="411" stroke="rgba(201,168,76,.1)" stroke-width=".5"/>
+
+        <!-- Writing hand -->
+        <ellipse cx="258" cy="406" rx="8" ry="5" fill="rgba(46,40,64,.8)"/>
+
+        <!-- Lamp -->
+        <rect x="420" y="370" width="4" height="50" fill="#1e1c2e"/>
+        <ellipse cx="422" cy="370" rx="25" ry="8" fill="#2e2840"/>
+        <!-- Lamp glow -->
+        <radialGradient id="lampGlow" cx="50%" cy="80%" r="60%">
+          <stop offset="0%" stop-color="rgba(201,168,76,.3)"/>
+          <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+        </radialGradient>
+        <ellipse cx="422" cy="395" rx="70" ry="40" fill="url(#lampGlow)" style="animation:breathe 2.5s ease-in-out infinite"/>
+
+        <!-- Haruki silhouette (seated) -->
+        <!-- Body -->
+        <rect x="265" y="320" width="70" height="100" rx="8" fill="url(#figGrad)"/>
+        <!-- Head -->
+        <ellipse cx="300" cy="305" rx="25" ry="28" fill="#2e2840"/>
+        <!-- Hair -->
+        <ellipse cx="300" cy="288" rx="25" ry="15" fill="#1a1520"/>
+        <ellipse cx="285" cy="295" rx="12" ry="18" fill="#1a1520"/>
+        <!-- Shoulders -->
+        <path d="M255 335 Q300 350 345 335" fill="#2e2840"/>
+
+        <!-- Dust motes floating in window light -->
+        <circle cx="280" cy="180" r="1.5" fill="rgba(201,168,76,.6)" style="animation:floatUp 4s ease-in infinite"/>
+        <circle cx="310" cy="220" r="1" fill="rgba(244,240,230,.4)" style="animation:floatUp 5s 1s ease-in infinite"/>
+        <circle cx="340" cy="160" r="1.2" fill="rgba(201,168,76,.4)" style="animation:floatUp 4.5s 2s ease-in infinite"/>
+        <circle cx="260" cy="250" r=".8" fill="rgba(244,240,230,.5)" style="animation:floatUp 3.5s .5s ease-in infinite"/>
+        <circle cx="330" cy="280" r="1" fill="rgba(201,168,76,.5)" style="animation:floatUp 6s 1.5s ease-in infinite"/>
+
+        <!-- Glint on notebook -->
+        <line x1="215" y1="400" x2="215" y2="415" stroke="rgba(201,168,76,.4)" stroke-width=".5" style="animation:breathe 2s ease-in-out infinite"/>
+      </svg>
+    </div>
+
+    <!-- Vignette overlays -->
+    <div class="cover__vignette"></div>
+    <div class="cover__gradient"></div>
+
+    <!-- Cover text content -->
+    <div class="cover__content">
+      <p class="cover__eyebrow">An Original Anime Novel</p>
+      <h1 class="cover__title">
+        <span class="line1">The Invisible</span>
+        <span class="line2">Student</span>
+        <span class="line3">A Story of Becoming</span>
+      </h1>
+      <p class="cover__subtitle">Volume I · Volume II · Haruki Aizawa · Ages 16 to 34</p>
+      <div class="cover__actions">
+        <a href="toc.html" class="btn btn--filled">Read the Story</a>
+        <a href="vol1/ch1.html" class="btn">Begin Chapter One</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="cover__scroll">
+      <span>Scroll</span>
+      <div class="cover__scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       ABOUT / PREVIEW
+  ══════════════════════════ -->
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-label">About the Novel</span>
+        <h2 class="about-title">A boy no one <em>noticed</em>.<br>A man no one <em>forgot</em>.</h2>
+        <p class="about-body">
+          Haruki Aizawa sits at Seat 38, last row, corner by the window. Teachers' eyes slide past him. Classmates form groups without him — not from cruelty, but from something more devastating: indifference.
+        </p>
+        <p class="about-body">
+          But after school, two jeepneys away, he sits at a church piano and plays — and here, he is entirely different. Seen. Needed. Known.
+        </p>
+        <p class="about-body">
+          This is the story of what happens when a boy decides to stop choosing smallness. Spanning high school through adulthood — faith, discipline, love, family, Saudi Arabia, and one piano that never stopped playing.
+        </p>
+        <div class="about-stats stagger-children">
+          <div class="stat">
+            <span class="stat__num">2</span>
+            <span class="stat__label">Volumes</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">20</span>
+            <span class="stat__label">Chapters</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">16+</span>
+            <span class="stat__label">Years Spanned</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">4</span>
+            <span class="stat__label">Characters</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cover quote + themes -->
+      <div class="reveal" style="animation-delay:.15s">
+        <div class="scripture" style="margin:0 0 2rem; background:var(--night2); border-color:rgba(201,168,76,.1);">
+          "The plans of the diligent lead to profit as surely as haste leads to poverty."
+          <cite>Proverbs 21:5</cite>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <span class="section-label">Themes</span>
+          <div class="skills-grid">
+            <span class="skill-tag gold">Faith</span>
+            <span class="skill-tag purple">Piano & Music</span>
+            <span class="skill-tag cyan">Discipline</span>
+            <span class="skill-tag rose" style="color:var(--rose);border-color:rgba(184,104,120,.3)">Love</span>
+            <span class="skill-tag green">Family</span>
+            <span class="skill-tag orange">Becoming</span>
+            <span class="skill-tag gold">OFW Reality</span>
+            <span class="skill-tag cyan">TESDA · IT</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="section-label">Inspired by</span>
+          <p style="font-family:var(--mono);font-size:.8rem;color:rgba(244,240,230,.3);line-height:1.9;">
+            Classroom of the Elite · Your Lie in April<br>
+            Horimiya · A Silent Voice
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       VOLUME CARDS
+  ══════════════════════════ -->
+  <section class="volumes-section">
+    <p class="volumes-label">Select a Volume</p>
+    <div class="volumes-grid stagger-children">
+      <a href="toc.html#vol1" class="vol-card">
+        <div class="vol-card__num">I</div>
+        <div class="vol-card__badge"><span class="vol-badge v1">Volume I</span></div>
+        <h3 class="vol-card__title">The Invisible Student</h3>
+        <p class="vol-card__tagline">Ages 16–18. High school. The decision to stop choosing smallness. A piano. A girl. A performance that changes everything.</p>
+        <p class="vol-card__meta">10 Chapters · Ages 16–18</p>
+        <div class="vol-card__chapters">
+          <span class="vol-card__ch">Ch. 1 — The Invisible Student</span>
+          <span class="vol-card__ch">Ch. 2 — The Decision to Change</span>
+          <span class="vol-card__ch">Ch. 3 — Academic Rise</span>
+          <span class="vol-card__ch">Ch. 4 — The Multi-Talented Mind</span>
+          <span class="vol-card__ch">Ch. 5 — Social Shift</span>
+          <span class="vol-card__ch">Ch. 6 — The Girl</span>
+          <span class="vol-card__ch">Ch. 7 — The Talent Show ✦</span>
+          <span class="vol-card__ch">Ch. 8 — After the Performance</span>
+          <span class="vol-card__ch">Ch. 9 — Connection Deepens</span>
+          <span class="vol-card__ch">Ch. 10 — Graduation Performance</span>
+        </div>
+      </a>
+
+      <a href="toc.html#vol2" class="vol-card">
+        <div class="vol-card__num">II</div>
+        <div class="vol-card__badge"><span class="vol-badge v2">Volume II</span></div>
+        <h3 class="vol-card__title">After the Curtain</h3>
+        <p class="vol-card__tagline">Ages 18–34. University. TESDA. Saudi Arabia. A proposal in scrubs. A wedding. A daughter named Hana. The piano remains.</p>
+        <p class="vol-card__meta">10 Chapters · Ages 18–34+</p>
+        <div class="vol-card__chapters">
+          <span class="vol-card__ch">Ch. 1 — The Rewiring (Phase 2)</span>
+          <span class="vol-card__ch">Ch. 2 — The Dual-Track Education</span>
+          <span class="vol-card__ch">Ch. 3 — The TESDA Grind</span>
+          <span class="vol-card__ch">Ch. 4 — Saudi Arabia</span>
+          <span class="vol-card__ch">Ch. 5 — The Reunion & Yuna RN</span>
+          <span class="vol-card__ch">Ch. 6 — The Proposal</span>
+          <span class="vol-card__ch">Ch. 7 — Marriage & The New Life</span>
+          <span class="vol-card__ch">Ch. 8 — The First Child</span>
+          <span class="vol-card__ch">Ch. 9 — The Sovereign Legacy</span>
+          <span class="vol-card__ch">Ch. 10 — Epilogue: The Piano Remains ✦</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
+       CHARACTERS
+  ══════════════════════════ -->
+  <section class="characters-section">
+    <div class="container--wide">
+      <div style="text-align:center;margin-bottom:1rem;">
+        <span class="section-label" style="display:inline-block">The Characters</span>
+        <h2 style="font-family:var(--display);font-size:2rem;font-style:italic;color:var(--paper);margin-top:.5rem;">Who They Are</h2>
+      </div>
+      <div class="gold-divider"></div>
+      <div class="characters-grid stagger-children">
+        <div class="char-card">
+          <div class="char-card__icon" style="background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.2);">🎹</div>
+          <p class="char-card__name">Haruki Aizawa</p>
+          <p class="char-card__role">Protagonist</p>
+          <p class="char-card__desc">Seat 38. Church pianist. The invisible boy who becomes a visible man — not through recognition, but through discipline and faith.</p>
+        </div>
+        <div class="char-card">
+          <div class="char-card__icon" style="background:rgba(184,104,120,.08);border-color:rgba(184,104,120,.2);">🌸</div>
+          <p class="char-card__name">Yuna Takahashi</p>
+          <p class="char-card__role">Protagonist · RN</p>
+          <p class="char-card__desc">Front row. Third seat. She saw Haruki at the piano before school did — and stayed because of who he already was.</p>
+        </div>
+        <div class="char-card">
+          <div class="char-card__icon" style="background:rgba(122,90,154,.08);border-color:rgba(122,90,154,.2);">✝️</div>
+          <p class="char-card__name">Pastor Reyes</p>
+          <p class="char-card__role">Mentor · Officiant</p>
+          <p class="char-card__desc">The man who saw Haruki's whole self before anyone else. He speaks into Haruki's life across two volumes and officiates the wedding.</p>
+        </div>
+        <div class="char-card">
+          <div class="char-card__icon" style="background:rgba(74,154,106,.08);border-color:rgba(74,154,106,.2);">🌺</div>
+          <p class="char-card__name">Hana Aizawa</p>
+          <p class="char-card__role">Daughter · Vol. II</p>
+          <p class="char-card__desc">Born three weeks early on a Thursday. She finds a letter from Saudi Arabia and asks the right question: "So God was watching even when school wasn't?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote section -->
+  <div class="cover-quote reveal">
+    <p class="cover-quote__text">
+      "The boy from Seat 38 played piano in an empty church when no one at school was listening.<br>
+      <em>God was listening.</em><br>
+      Yuna was listening.<br>
+      It turns out that was enough."
+    </p>
+    <p class="cover-quote__attr">— Vol. II, Ch. 10: The Piano Remains</p>
+  </div>
+
+  <!-- Final CTA -->
+  <section style="background:var(--night2);padding:6rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,.08);">
+    <span class="section-label" style="display:inline-block;margin-bottom:1.5rem;">Begin Reading</span>
+    <h2 style="font-family:var(--display);font-size:clamp(2rem,5vw,3.5rem);font-style:italic;color:var(--paper);margin-bottom:2rem;animation:glowPulse 3s ease-in-out infinite;">
+      The Story is Waiting
+    </h2>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="vol1/ch1.html" class="btn btn--filled">Start from Chapter One</a>
+      <a href="toc.html" class="btn">View Full Contents</a>
+    </div>
+  </section>
+
+  <button class="back-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

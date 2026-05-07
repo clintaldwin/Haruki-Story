@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ch. 7: The Talent Show — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+  <style>
+    /* Special styles for climax chapter */
+    .chapter-header { min-height: 75vh; }
+    .performance-title {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--gold);
+      text-align: center;
+      margin: 2.5rem 0 .5rem;
+      opacity: .8;
+    }
+    .song-entry {
+      border-left: 2px solid rgba(201,168,76,.2);
+      padding: .8rem 1.2rem;
+      margin: .6rem 0;
+      font-style: italic;
+      color: rgba(46,40,64,.7);
+      font-size: .95rem;
+    }
+  </style>
+</head>
+<body class="reading-mode" data-chapter="v1c7">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="ch1.html" class="active">Vol. I</a></li>
+      <li><a href="../vol2/ch1.html">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="ch1.html">Volume I</a><a href="../vol2/ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume I</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Invisible Student</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — The Decision to Change</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — Academic Rise</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — The Multi-Talented Mind</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Social Shift</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Girl</a></li>
+        <li><a class="sidebar-toc__link active" href="ch7.html">Ch. 7 — The Talent Show ✦</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — After the Performance</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Connection Deepens</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — Graduation Performance</a></li>
+        <span class="sidebar-toc__vol">Volume II</span>
+        <li><a class="sidebar-toc__link" href="../vol2/ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch5.html">Ch. 5 — Reunion</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="../vol2/ch10.html">Ch. 10 — The Piano Remains</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="notes"></div>
+          <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <radialGradient id="spotlight" cx="50%" cy="20%" r="60%">
+                <stop offset="0%" stop-color="rgba(201,168,76,.5)"/>
+                <stop offset="40%" stop-color="rgba(201,168,76,.15)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </radialGradient>
+              <radialGradient id="yunaGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(184,104,120,.3)"/>
+                <stop offset="100%" stop-color="rgba(184,104,120,0)"/>
+              </radialGradient>
+              <linearGradient id="bg7" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#080712"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <filter id="g7"><feGaussianBlur stdDeviation="6" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="700" fill="url(#bg7)"/>
+
+            <!-- Stage floor -->
+            <rect x="200" y="420" width="800" height="280" fill="rgba(12,10,22,.95)" data-anim-order="0"/>
+            <!-- Stage lip -->
+            <rect x="200" y="420" width="800" height="12" rx="2" fill="rgba(30,28,48,.8)" data-anim-order="0"/>
+
+            <!-- Stage curtains -->
+            <rect x="200" y="0" width="120" height="700" fill="rgba(20,18,35,.95)" data-anim-order="0"/>
+            <rect x="880" y="0" width="120" height="700" fill="rgba(20,18,35,.95)" data-anim-order="0"/>
+            <!-- Curtain folds -->
+            <g stroke="rgba(30,28,46,.8)" stroke-width="2" fill="none" data-anim-order="0">
+              <path d="M220,0 Q240,150 220,300 Q240,450 220,600"/>
+              <path d="M250,0 Q270,150 250,300 Q270,450 250,600"/>
+              <path d="M950,0 Q930,150 950,300 Q930,450 950,600"/>
+              <path d="M980,0 Q960,150 980,300 Q960,450 980,600"/>
+            </g>
+
+            <!-- Grand piano on stage -->
+            <g data-anim-order="3">
+              <!-- Piano body -->
+              <ellipse cx="600" cy="480" rx="120" ry="60" fill="rgba(10,8,18,1)"/>
+              <path d="M480,480 Q500,380 600,360 Q700,380 720,480 Z" fill="rgba(10,8,18,1)"/>
+              <!-- Piano lid -->
+              <path d="M500,380 Q600,330 700,380 L680,420 Q600,360 520,420 Z"
+                    fill="rgba(18,16,30,.9)" style="animation:breathe 5s ease-in-out infinite"/>
+              <!-- Keys -->
+              <rect x="510" y="450" width="180" height="30" rx="2" fill="rgba(20,18,35,.8)"/>
+              <g fill="rgba(244,240,230,.75)">
+                <rect x="515" y="452" width="12" height="24" rx="1"/>
+                <rect x="529" y="452" width="12" height="24" rx="1" style="animation:pianoKey 2.5s .2s ease-in-out infinite"/>
+                <rect x="543" y="452" width="12" height="24" rx="1"/>
+                <rect x="557" y="452" width="12" height="24" rx="1" style="animation:pianoKey 2.5s .5s ease-in-out infinite"/>
+                <rect x="571" y="452" width="12" height="24" rx="1"/>
+                <rect x="585" y="452" width="12" height="24" rx="1" style="animation:pianoKey 2.5s .8s ease-in-out infinite"/>
+                <rect x="599" y="452" width="12" height="24" rx="1"/>
+                <rect x="613" y="452" width="12" height="24" rx="1" style="animation:pianoKey 2.5s .3s ease-in-out infinite"/>
+                <rect x="627" y="452" width="12" height="24" rx="1"/>
+                <rect x="641" y="452" width="12" height="24" rx="1" style="animation:pianoKey 2.5s .6s ease-in-out infinite"/>
+                <rect x="655" y="452" width="12" height="24" rx="1"/>
+                <rect x="669" y="452" width="12" height="24" rx="1" style="animation:pianoKey 2.5s .9s ease-in-out infinite"/>
+              </g>
+              <g fill="rgba(8,7,14,1)">
+                <rect x="523" y="452" width="8" height="16" rx="1"/>
+                <rect x="549" y="452" width="8" height="16" rx="1"/>
+                <rect x="575" y="452" width="8" height="16" rx="1"/>
+                <rect x="601" y="452" width="8" height="16" rx="1"/>
+                <rect x="627" y="452" width="8" height="16" rx="1"/>
+                <rect x="653" y="452" width="8" height="16" rx="1"/>
+              </g>
+              <!-- Piano legs -->
+              <rect x="520" y="535" width="14" height="50" fill="rgba(10,8,18,1)"/>
+              <rect x="666" y="535" width="14" height="50" fill="rgba(10,8,18,1)"/>
+            </g>
+
+            <!-- Spotlight cone -->
+            <polygon points="600,0 450,420 750,420" fill="url(#spotlight)"
+                     style="animation:lightShaft 4s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Haruki at piano -->
+            <ellipse cx="590" cy="430" rx="22" ry="25" fill="rgba(25,22,40,1)" data-anim-order="4"/>
+            <ellipse cx="590" cy="415" rx="22" ry="13" fill="rgba(10,8,18,1)" data-anim-order="4"/>
+            <rect x="568" y="455" width="44" height="60" rx="6" fill="rgba(25,22,40,.95)" data-anim-order="4"/>
+            <!-- Hands on keys -->
+            <ellipse cx="575" cy="460" rx="12" ry="6" fill="rgba(25,22,40,.8)" data-anim-order="5"/>
+            <ellipse cx="610" cy="460" rx="12" ry="6" fill="rgba(25,22,40,.8)" data-anim-order="5"/>
+
+            <!-- Audience — dark silhouettes below stage -->
+            <g fill="rgba(15,13,26,.9)" data-anim-order="1">
+              <ellipse cx="260" cy="390" rx="15" ry="18"/>
+              <ellipse cx="300" cy="385" rx="14" ry="17"/>
+              <ellipse cx="340" cy="393" rx="16" ry="18"/>
+              <ellipse cx="380" cy="388" rx="14" ry="17"/>
+              <ellipse cx="420" cy="395" rx="15" ry="18"/>
+              <ellipse cx="460" cy="390" rx="14" ry="17"/>
+              <ellipse cx="500" cy="386" rx="15" ry="18"/>
+              <ellipse cx="540" cy="394" rx="16" ry="19"/>
+              <ellipse cx="660" cy="388" rx="15" ry="17"/>
+              <ellipse cx="700" cy="395" rx="14" ry="18"/>
+              <ellipse cx="740" cy="387" rx="15" ry="17"/>
+              <ellipse cx="780" cy="393" rx="16" ry="18"/>
+              <ellipse cx="820" cy="388" rx="14" ry="17"/>
+              <ellipse cx="860" cy="396" rx="15" ry="19"/>
+              <ellipse cx="900" cy="390" rx="14" ry="17"/>
+              <ellipse cx="940" cy="384" rx="15" ry="18"/>
+            </g>
+
+            <!-- YUNA highlighted in audience — rose glow -->
+            <ellipse cx="580" cy="388" rx="20" ry="22"
+                     fill="rgba(184,104,120,.15)" filter="url(#g7)" data-anim-order="5"
+                     style="animation:breathe 4s ease-in-out infinite"/>
+            <ellipse cx="580" cy="388" rx="15" ry="18" fill="rgba(22,18,35,.95)" data-anim-order="4"/>
+            <ellipse cx="580" cy="375" rx="15" ry="9" fill="rgba(10,8,18,1)" data-anim-order="4"/>
+
+            <!-- Sight line: Haruki → Yuna (very faint) -->
+            <line x1="590" y1="440" x2="580" y2="395"
+                  stroke="rgba(201,168,76,.08)" stroke-width="2"
+                  style="animation:breathe 4s ease-in-out infinite" data-anim-order="6"/>
+
+            <!-- Floating music notes from piano -->
+            <text x="650" y="300" font-size="22" fill="rgba(201,168,76,.35)"
+                  style="animation:noteDrift 3.5s ease-in infinite">♩</text>
+            <text x="610" y="270" font-size="18" fill="rgba(201,168,76,.25)"
+                  style="animation:noteDrift 4.5s 1s ease-in infinite">♪</text>
+            <text x="680" y="320" font-size="16" fill="rgba(201,168,76,.3)"
+                  style="animation:noteDrift 4s .5s ease-in infinite">♫</text>
+            <text x="555" y="290" font-size="14" fill="rgba(201,168,76,.2)"
+                  style="animation:noteDrift 5s 2s ease-in infinite">♬</text>
+
+            <!-- Gold shimmer on stage floor -->
+            <rect x="200" y="420" width="800" height="4" fill="rgba(201,168,76,.08)"
+                  style="animation:breathe 3s ease-in-out infinite" data-anim-order="3"/>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v1">Volume I</span></span>
+          <span class="chapter-number">Chapter Seven — Turning Point</span>
+          <h1 class="chapter-title">The Talent Show</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 17 · The School Auditorium</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+          <span class="yr">THE SIGNUP · THREE WEEKS BEFORE</span>
+
+          <p>
+            The signup sheet for the school talent show goes up on a Monday morning. By Tuesday afternoon it is full — dance groups, vocal solos, a magic act, three comedy skits, a spoken word piece from the literature club. The lineup is ambitious and enthusiastic in the way that school talent shows are.
+          </p>
+
+          <p>
+            On Wednesday morning, a new entry appears at the bottom: <em>Aizawa, Haruki — Solo Piano.</em>
+          </p>
+
+          <p>
+            Marco sees it first. He does not say anything to Haruki about it — he decides, with the particular wisdom of someone who actually knows Haruki, that this moment belongs to Haruki alone. When others in the class notice and ask Marco if he knew, he says only: <span class="tg">"Sigurado akong magiging maganda."</span> <em>I'm sure it will be beautiful.</em>
+          </p>
+
+          <p>
+            Yuna sees the signup sheet during the lunch break. She reads his name. She does not look surprised. She already knows what his playing sounds like.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE NIGHT OF</span>
+
+          <p>
+            The auditorium fills. It is not a mandatory event but attendance is high — the school has been building toward this for weeks, and the energy in the room has the particular quality of a space that expects to be entertained.
+          </p>
+
+          <p>
+            Seven acts go before him. The dance groups are excellent. The spoken word piece from the literature club is surprisingly moving. The comedy skit from 3-A runs a minute too long but recovers. The crowd is warm and generous.
+          </p>
+
+          <p>
+            Then: <em>Solo Piano. Aizawa Haruki, 2-C.</em>
+          </p>
+
+          <p>
+            He walks out from the wings. He walks the way he walks everywhere now — unhurriedly, fully occupying the space his body is allowed, not performing confidence but not suppressing it either. He sits at the grand piano. He adjusts the bench. He places his hands on his thighs.
+          </p>
+
+          <p>
+            He waits in the silence.
+          </p>
+
+          <p>
+            This is the thing no one expected: the waiting. The complete, settled composure of someone who is not nervous in the way performers are nervous — who is not building toward something but arriving at it. He has led hundreds of worship sessions. He understands that the silence before music is not empty. It is the breath the room takes before it becomes itself.
+          </p>
+
+          <p>
+            He lets the room take its breath.
+          </p>
+
+          <p>
+            Then he plays.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p class="performance-title">I. River Flows in You</p>
+
+          <div class="song-entry">Opening — barely audible, the right hand alone, pulling the room into quiet before filling it.</div>
+
+          <p>
+            He opens at the lowest possible dynamic — <em>pianissimo</em>, barely touching the keys, the way you begin a prayer in a room where the prayer is already in the walls. The melody is immediately recognizable to some people, foreign to others, but this does not matter because what he is playing is not a song for people who know it. It is an invitation. It says: <em>be here.</em>
+          </p>
+
+          <p>
+            The auditorium, which has been warm and slightly restless, goes quiet.
+          </p>
+
+          <p>
+            Not completely — a few coughs, a murmured comment from the back. But the general noise of an audience settles, because something in the room has changed frequency, and human beings are responsive to frequency changes even when they can't articulate what they're responding to.
+          </p>
+
+          <p class="performance-title">II. A Million Dreams</p>
+
+          <div class="song-entry">His own arrangement — the key modulated, the left hand doing something unexpected with the bass line that transforms the original's energy into something more internal, more personal.</div>
+
+          <p>
+            He transitions without a break — a key change that is slightly unconventional and entirely correct, the kind of choice that a musician makes when they are playing from understanding rather than from memory. The room follows him. People who were shifting in their seats have stilled. Teachers in the wing are watching with an expression that teachers get when they are encountering something they did not budget for.
+          </p>
+
+          <p class="performance-title">III. I Like You So Much, You'll Know It</p>
+
+          <div class="song-entry">Arranged for solo piano. The bass line moves like a heartbeat. The right hand says what cannot be said in the presence of the person it's for.</div>
+
+          <p>
+            This is the one that matters. This is the one that he has arranged for three weeks, that he has played a hundred times at 6 AM with his parents asleep and the city quiet, that he has built to be both completely unambiguous and entirely deniable — because music is the one language in which you can tell the truth without having to defend it.
+          </p>
+
+          <p>
+            He does not play toward the audience. He plays — but anyone watching both him and the girl in the middle section of the hall would notice the slight angle of his body, the particular tilt of his attention, the moments where his eyes lift not to the ceiling but to a specific point in the middle distance.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            In the middle section of the hall, Yuna Takahashi has her hands folded in her lap.
+          </p>
+
+          <p>
+            She has heard him play at church. She has sat in the third row and watched him lead worship with his eyes closed and his body given over to what he was doing. She knows the difference between his focused playing — when he is playing for God, for a congregation, for the work — and this. This is different. She knows what this is.
+          </p>
+
+          <p>
+            She looks at her hands in her lap. The music fills the space between them and she does not look up because she is not ready to answer out loud what the music is saying. She is not a person who answers before she knows the answer. She gives things time.
+          </p>
+
+          <p>
+            But she is listening. Completely. She is the most present listener in the room.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He plays the final notes. He lifts his hands from the keys. He waits.
+          </p>
+
+          <p>
+            Three seconds of silence.
+          </p>
+
+          <p>
+            Then it breaks — a wave of applause that starts in the front rows and moves backward and builds louder than any response the show has received. Teachers in the wings are clapping. Mrs. Andres, who is not a demonstrative person, is standing. Marco is on his feet and grinning so wide it looks like it might cause structural damage to his face.
+          </p>
+
+          <p>
+            Haruki stands. He bows — once, simply, without performance. He walks back to the wings.
+          </p>
+
+          <div class="twist">
+            <strong>Plot Twist #6 — Pastor Reyes is in the Audience</strong>
+          </div>
+
+          <p>
+            He finds him backstage. He had come for a separate event — his own child is a student here, has a minor role in the second act — and had stayed when he heard the piano begin. He watches Haruki come off stage and says nothing for a moment, looking at him the way he looks at things he considers important.
+          </p>
+
+          <p>
+            Then: <span class="tg">"Ganyan mo gamitin. Sa kahit saan na entablado."</span>
+          </p>
+
+          <p>
+            <em>That's how you use it. On whatever stage you're given.</em>
+          </p>
+
+          <p>
+            Haruki is still in the particular altered state that follows a performance done well — heightened and still simultaneously, the way you feel after a worship set where something real happened. He looks at the pastor.
+          </p>
+
+          <p>
+            <span class="tg">"Kahit ang school stage?"</span> he asks. <em>Even a school stage?</em>
+          </p>
+
+          <p>
+            <span class="tg">"Lalo na ang school stage,"</span> the pastor says. <em>Especially a school stage.</em>
+          </p>
+
+          <div class="thought">
+            All stages are sacred when the heart behind them is. I have been treating my piano as a church instrument and everything else as outside its domain. But the pastor is right: the gift does not belong to the sanctuary. It belongs to God, which means it belongs everywhere God is, which is everywhere I am, which is everywhere.
+          </div>
+
+          <p>
+            The applause continues from the auditorium. The emcee is announcing the next act. The school goes on being a school.
+          </p>
+
+          <p>
+            Haruki goes back to his seat in the audience. Marco claps him once on the shoulder and says nothing because nothing needs to be said. He sits down next to his section of 2-C.
+          </p>
+
+          <p>
+            Two rows forward, slightly to the left, Yuna Takahashi is looking at the stage. She does not turn around. But she is very still in the specific way of someone who is making a decision about something they have already, quietly, made a decision about.
+          </p>
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch6.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The Girl</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch8.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">After the Performance</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
