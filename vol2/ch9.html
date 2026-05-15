@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 9: The Sovereign Legacy — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+  <style>
+    .legacy-panel {
+      background: var(--paper3);
+      border: 1px solid rgba(201,168,76,.12);
+      padding: 1.6rem 1.8rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .legacy-panel::before {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .35em;
+      display: block;
+      margin-bottom: .7rem;
+      text-transform: uppercase;
+    }
+    .legacy-panel.real-estate { border-left: 3px solid var(--gold); }
+    .legacy-panel.real-estate::before { content: 'Real Estate'; color: var(--gold); opacity: .6; }
+    .legacy-panel.restaurant { border-left: 3px solid var(--orange); }
+    .legacy-panel.restaurant::before { content: 'Restaurant'; color: var(--orange); opacity: .6; }
+    .legacy-panel.ecommerce { border-left: 3px solid var(--cyan); }
+    .legacy-panel.ecommerce::before { content: 'E-Commerce'; color: var(--cyan); opacity: .6; }
+    .legacy-panel.farm { border-left: 3px solid var(--green); }
+    .legacy-panel.farm::before { content: 'Business Farm'; color: var(--green); opacity: .6; }
+  </style>
+</head>
+<body class="reading-mode" data-chapter="v2c9">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion &amp; Yuna RN</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link active" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — The Piano Remains</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="dust"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <radialGradient id="sunriseGrad" cx="50%" cy="90%" r="80%">
+                <stop offset="0%" stop-color="rgba(200,112,64,.35)"/>
+                <stop offset="40%" stop-color="rgba(201,168,76,.12)"/>
+                <stop offset="100%" stop-color="rgba(9,8,14,0)"/>
+              </radialGradient>
+              <radialGradient id="farmGlow" cx="50%" cy="70%" r="60%">
+                <stop offset="0%" stop-color="rgba(74,154,106,.15)"/>
+                <stop offset="100%" stop-color="rgba(74,154,106,0)"/>
+              </radialGradient>
+              <linearGradient id="bg_v2c9" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#08091e"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <filter id="gv2c9"><feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg_v2c9)"/>
+
+            <!-- THREE-PANEL COMPOSITION: Left=Restaurant, Center=Farm Sunrise, Right=Home/Piano -->
+
+            <!-- LEFT PANEL — Restaurant interior -->
+            <rect x="0" y="0" width="360" height="600" fill="rgba(12,10,22,.4)" data-anim-order="0"/>
+            <!-- Divider line -->
+            <rect x="358" y="0" width="2" height="600" fill="rgba(200,112,64,.1)" data-anim-order="0"/>
+            <!-- Restaurant warm lighting -->
+            <ellipse cx="180" cy="300" rx="200" ry="200"
+                     fill="rgba(200,112,64,.1)" style="animation:breathe 4s ease-in-out infinite" data-anim-order="1"/>
+            <!-- Tables -->
+            <g data-anim-order="2">
+              <ellipse cx="100" cy="400" rx="45" ry="15" fill="rgba(30,25,48,.8)"/>
+              <ellipse cx="250" cy="420" rx="45" ry="15" fill="rgba(30,25,48,.8)"/>
+              <ellipse cx="100" cy="300" rx="45" ry="15" fill="rgba(30,25,48,.8)"/>
+              <ellipse cx="260" cy="320" rx="45" ry="15" fill="rgba(30,25,48,.8)"/>
+            </g>
+            <!-- Table legs -->
+            <g fill="rgba(22,20,38,.7)" data-anim-order="2">
+              <rect x="95" y="415" width="10" height="40" rx="2"/>
+              <rect x="245" y="435" width="10" height="40" rx="2"/>
+              <rect x="95" y="315" width="10" height="40" rx="2"/>
+              <rect x="255" y="335" width="10" height="40" rx="2"/>
+            </g>
+            <!-- Dining guests silhouettes -->
+            <g fill="rgba(25,22,40,.7)" data-anim-order="3">
+              <ellipse cx="85" cy="385" rx="14" ry="16"/>
+              <ellipse cx="118" cy="385" rx="13" ry="15"/>
+              <ellipse cx="240" cy="405" rx="14" ry="16"/>
+              <ellipse cx="272" cy="405" rx="12" ry="14"/>
+            </g>
+            <!-- Restaurant sign suggestion -->
+            <rect x="30" y="50" width="200" height="50" rx="3" fill="rgba(18,16,35,.9)"
+                  stroke="rgba(200,112,64,.15)" stroke-width="1" data-anim-order="2"/>
+            <text x="130" y="72" text-anchor="middle" font-family="serif" font-size="13" font-style="italic"
+                  fill="rgba(200,112,64,.5)">Aizawa Kitchen</text>
+            <text x="130" y="90" text-anchor="middle" font-family="monospace" font-size="8"
+                  fill="rgba(200,112,64,.25)" letter-spacing="2">EST. 2040</text>
+            <!-- Parents running kitchen -->
+            <ellipse cx="170" cy="220" rx="18" ry="20" fill="rgba(32,27,50,.9)" data-anim-order="3"/>
+            <ellipse cx="130" cy="230" rx="18" ry="20" fill="rgba(32,27,50,.85)" data-anim-order="3"/>
+            <!-- Warm light on them -->
+            <ellipse cx="150" cy="250" rx="60" ry="35"
+                     fill="rgba(200,112,64,.08)" style="animation:breathe 3s ease-in-out infinite" data-anim-order="3"/>
+
+            <!-- CENTER PANEL — Farm sunrise -->
+            <rect x="360" y="0" width="480" height="600" fill="rgba(8,10,20,.3)" data-anim-order="0"/>
+            <rect x="838" y="0" width="2" height="600" fill="rgba(74,154,106,.1)" data-anim-order="0"/>
+
+            <!-- Sunrise glow -->
+            <ellipse cx="600" cy="600" rx="400" ry="280" fill="url(#sunriseGrad)"
+                     style="animation:breathe 6s ease-in-out infinite" data-anim-order="1"/>
+            <ellipse cx="600" cy="500" rx="350" ry="200" fill="url(#farmGlow)"
+                     style="animation:breathe 5s .5s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Mountains distant -->
+            <polygon points="360,300 480,180 560,260 640,150 760,220 840,300"
+                     fill="rgba(14,18,35,.6)" data-anim-order="1"/>
+
+            <!-- Farm fields (horizontal bands) -->
+            <g data-anim-order="2">
+              <rect x="360" y="420" width="480" height="30" fill="rgba(74,154,106,.08)"/>
+              <rect x="360" y="460" width="480" height="30" fill="rgba(74,154,106,.06)"/>
+              <rect x="360" y="500" width="480" height="40" fill="rgba(74,154,106,.05)"/>
+            </g>
+
+            <!-- Solar panels array -->
+            <g data-anim-order="3" transform="translate(380,350)">
+              <g fill="rgba(20,40,80,.7)" stroke="rgba(74,184,200,.15)" stroke-width=".5">
+                <rect x="0" y="0" width="35" height="22" rx="1"/>
+                <rect x="40" y="0" width="35" height="22" rx="1"/>
+                <rect x="80" y="0" width="35" height="22" rx="1"/>
+                <rect x="120" y="0" width="35" height="22" rx="1"/>
+                <rect x="160" y="0" width="35" height="22" rx="1"/>
+                <rect x="200" y="0" width="35" height="22" rx="1"/>
+                <rect x="0" y="28" width="35" height="22" rx="1"/>
+                <rect x="40" y="28" width="35" height="22" rx="1"/>
+                <rect x="80" y="28" width="35" height="22" rx="1"/>
+                <rect x="120" y="28" width="35" height="22" rx="1"/>
+                <rect x="160" y="28" width="35" height="22" rx="1"/>
+                <rect x="200" y="28" width="35" height="22" rx="1"/>
+              </g>
+              <!-- Solar panel sun glint -->
+              <rect x="0" y="0" width="240" height="55" fill="rgba(74,184,200,.03)"
+                    style="animation:breathe 3s ease-in-out infinite"/>
+            </g>
+
+            <!-- Farm animals suggestion (gentle silhouettes) -->
+            <g fill="rgba(25,22,40,.6)" data-anim-order="3">
+              <!-- Chickens/poultry -->
+              <ellipse cx="500" cy="500" rx="12" ry="8"/>
+              <circle cx="500" cy="492" r="5"/>
+              <ellipse cx="540" cy="505" rx="12" ry="8"/>
+              <circle cx="540" cy="497" r="5"/>
+              <ellipse cx="580" cy="498" rx="12" ry="8"/>
+              <circle cx="580" cy="490" r="5"/>
+              <!-- A hog in the distance -->
+              <ellipse cx="700" cy="510" rx="22" ry="14"/>
+              <circle cx="685" cy="506" r="9"/>
+            </g>
+
+            <!-- Father-in-law perimeter walk -->
+            <ellipse cx="760" cy="440" rx="18" ry="20" fill="rgba(28,24,44,.8)" data-anim-order="3"/>
+            <ellipse cx="760" cy="426" rx="18" ry="11" fill="rgba(12,10,22,.9)" data-anim-order="3"/>
+            <rect x="742" y="460" width="36" height="60" rx="5" fill="rgba(28,24,44,.75)" data-anim-order="3"/>
+
+            <!-- Haruki in prayer at farm edge -->
+            <ellipse cx="450" cy="420" rx="20" ry="22"
+                     fill="rgba(28,24,44,.95)" filter="url(#gv2c9)" data-anim-order="4"
+                     style="animation:scalePop .6s 1.2s ease both"/>
+            <ellipse cx="450" cy="406" rx="20" ry="12" fill="rgba(10,8,20,1)" data-anim-order="4"/>
+            <rect x="430" y="442" width="40" height="65" rx="5" fill="rgba(28,24,44,.9)" data-anim-order="4"/>
+            <!-- Bowed head slight -->
+            <!-- Gold prayer glow -->
+            <ellipse cx="450" cy="450" rx="60" ry="40"
+                     fill="rgba(201,168,76,.05)" style="animation:breathe 5s ease-in-out infinite" data-anim-order="5"/>
+
+            <!-- RIGHT PANEL — Home / Piano -->
+            <rect x="840" y="0" width="360" height="600" fill="rgba(10,8,22,.4)" data-anim-order="0"/>
+            <!-- Living room warm light -->
+            <ellipse cx="1020" cy="300" rx="220" ry="200"
+                     fill="rgba(201,168,76,.08)" style="animation:breathe 4s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Piano against wall (home) -->
+            <rect x="860" y="240" width="150" height="100" rx="3" fill="rgba(10,8,20,1)"
+                  stroke="rgba(201,168,76,.2)" stroke-width="1" data-anim-order="3"
+                  style="animation:glowPulse 5s ease-in-out infinite"/>
+            <!-- Keys -->
+            <g fill="rgba(244,240,230,.7)" data-anim-order="4">
+              <rect x="866" y="265" width="8" height="20" rx="1" style="animation:pianoKey 3s .2s ease-in-out infinite"/>
+              <rect x="876" y="265" width="8" height="20" rx="1"/>
+              <rect x="886" y="265" width="8" height="20" rx="1" style="animation:pianoKey 3s .6s ease-in-out infinite"/>
+              <rect x="896" y="265" width="8" height="20" rx="1"/>
+              <rect x="906" y="265" width="8" height="20" rx="1" style="animation:pianoKey 3s 1s ease-in-out infinite"/>
+              <rect x="916" y="265" width="8" height="20" rx="1"/>
+              <rect x="926" y="265" width="8" height="20" rx="1" style="animation:pianoKey 3s .4s ease-in-out infinite"/>
+              <rect x="936" y="265" width="8" height="20" rx="1"/>
+              <rect x="946" y="265" width="8" height="20" rx="1" style="animation:pianoKey 3s .8s ease-in-out infinite"/>
+              <rect x="956" y="265" width="8" height="20" rx="1"/>
+              <rect x="966" y="265" width="8" height="20" rx="1"/>
+              <rect x="976" y="265" width="8" height="20" rx="1" style="animation:pianoKey 3s .5s ease-in-out infinite"/>
+              <rect x="986" y="265" width="8" height="20" rx="1"/>
+            </g>
+            <!-- Piano silhouette playing -->
+            <ellipse cx="935" cy="228" rx="18" ry="20" fill="rgba(28,24,44,.95)" data-anim-order="4"/>
+            <ellipse cx="935" cy="216" rx="18" ry="11" fill="rgba(10,8,20,1)" data-anim-order="4"/>
+            <rect x="917" y="248" width="36" height="55" rx="5" fill="rgba(28,24,44,.9)" data-anim-order="4"/>
+
+            <!-- Bootcamp students silhouettes (Saturday morning) -->
+            <g fill="rgba(22,18,36,.7)" data-anim-order="3">
+              <ellipse cx="1050" cy="360" rx="13" ry="15"/>
+              <ellipse cx="1090" cy="358" rx="12" ry="14"/>
+              <ellipse cx="1130" cy="362" rx="13" ry="15"/>
+              <ellipse cx="1170" cy="357" rx="12" ry="14"/>
+              <ellipse cx="1050" cy="400" rx="13" ry="15"/>
+              <ellipse cx="1090" cy="398" rx="12" ry="14"/>
+            </g>
+            <!-- Laptop glow for teaching -->
+            <rect x="1030" y="310" width="120" height="80" rx="3"
+                  fill="rgba(74,184,200,.06)" style="animation:breathe 3s ease-in-out infinite" data-anim-order="4"/>
+
+            <!-- Notes floating from piano -->
+            <text x="1010" y="200" font-size="16" fill="rgba(201,168,76,.2)"
+                  style="animation:noteDrift 5s ease-in infinite">♪</text>
+            <text x="980" y="180" font-size="12" fill="rgba(201,168,76,.15)"
+                  style="animation:noteDrift 6s 1.5s ease-in infinite">♩</text>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II</span></span>
+          <span class="chapter-number">Chapter Nine — Phase 5</span>
+          <h1 class="chapter-title">The Sovereign Legacy</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 34–40+ · 2040s · The Blueprint Executed</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">2040s · THE BLUEPRINT, EXECUTED</span>
+
+          <p>
+            This is what the 5 AMs were for.
+          </p>
+
+          <p>
+            Not the 5 AMs themselves — those were for the discipline, for the dopamine shift, for the body that learned to want the morning before the morning wanted it. But the downstream of all those mornings, accumulated across two decades, looks like this:
+          </p>
+
+          <div class="legacy-panel real-estate">
+            Two rental properties in Metro Manila. Both occupied. Both generating passive monthly income that arrives with the particular reliability of things that were set up correctly the first time. The real estate scouting began from a Riyadh apartment in Year 2. The first property closed in Year 4 of Saudi Arabia. The second followed eighteen months after his return. The money works while he sleeps. This is the point.
+          </div>
+
+          <div class="legacy-panel restaurant">
+            <strong>Aizawa Kitchen.</strong> Located on a busy commercial street, three blocks from his childhood church, in a neighborhood that has never been wealthy but has always been fed. His parents manage it. He capitalized it, designed the systems, standardized the recipes using his Cookery NC II — formally writing down what his mother has known for forty years, giving her life's knowledge the dignity of a menu.
+
+            It is not a fine dining establishment. It is honest food done excellently. The kind of place that is always slightly crowded not because it is fashionable but because people trust it. His mother's arroz caldo is on the menu. Her mechado. The sinigang she made for his father's birthday every September for thirty-five years. It is now someone else's comfort food too.
+          </div>
+
+          <div class="legacy-panel ecommerce">
+            Tech accessories, packaged for mid-range consumers, sourced and sold through an online store that runs on automation he built himself. And digital courses — four of them now, covering Python fundamentals through automation and systems thinking, sold on a platform he set up in the year after his return from Saudi Arabia. The courses run without him. They have sold to students in eleven countries. He answers two or three support emails a week and considers this a reasonable price for passive income.
+          </div>
+
+          <div class="legacy-panel farm">
+            Provincial. Two hours north by car. Solar-powered — he installed the array himself, the EIM NC II and the PV NC II finally deployed together, doing together what neither could do alone. Poultry, hogs, and lately a small herd of cattle that his father-in-law proposed and Haruki funded. Yuna's extended family manages day-to-day operations. He visits monthly and fixes what needs fixing, because fixing things yourself is one of the specific pleasures of knowing how.
+
+            <br><br>
+            On these visits, he stands at the edge of the farm at sunrise. He prays — not a performed prayer, not a performed version of gratitude for an imagined audience. Just acknowledgment. This is what the 5 AMs were for. This is what Saudi Arabia was for. This is what all of it was for.
+          </div>
+
+          <div class="skills-grid">
+            <span class="skill-tag gold">Real Estate</span>
+            <span class="skill-tag orange">Aizawa Kitchen</span>
+            <span class="skill-tag cyan">E-Commerce</span>
+            <span class="skill-tag cyan">Digital Courses</span>
+            <span class="skill-tag green">Business Farm</span>
+            <span class="skill-tag purple">Piano Ministry</span>
+          </div>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">YUNA · BY CHOICE</span>
+
+          <p>
+            She works three shifts a week. She chose the hospital, the ward, the schedule — not because it was the only option but because it was the right one. She is better at nursing now than she was when she had no choice. This is the thing about choice: it changes what the work feels like from the inside. She arrives rested. She arrives having decided to be there. The patients can feel this, in the way patients always feel the difference between a nurse who is surviving their shift and one who is present in it.
+          </p>
+
+          <p>
+            She is still doing it for Kenji. She always will be. But now she is also doing it because she is good at it and she knows she is good at it and she has the specific freedom of a person whose worth is not contingent on a paycheck. The paycheck is a consequence, not a condition.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <div class="twist">
+            <strong>Plot Twist #12 — Hana Finds the Letter</strong>
+          </div>
+
+          <span class="yr">HANA IS 12 · A WEEKDAY AFTERNOON</span>
+
+          <p>
+            She is looking for a pen. This is the origin of everything — she is twelve years old and needs a pen for her homework and goes to his desk drawer, which is the kind of desk drawer that contains everything that has ever been important enough to keep but not important enough to file, and she finds it there.
+          </p>
+
+          <p>
+            An old envelope. Slightly worn at the folds. The paper inside thicker than ordinary paper, the handwriting careful and unhurried, the kind that was written with time and intention.
+          </p>
+
+          <p>
+            She reads it. She does not fully understand it yet — she is twelve, and the full weight of what Saudi Arabia means, of what a boy playing piano for an empty church means, of what <em>nakikita ka pa rin</em> means in the context of a life, is not available to her yet. But she understands that it matters. She can tell mattered-things from unmattered-things; she has always been able to.
+          </p>
+
+          <p>
+            She brings it to him. He is at the kitchen table with coffee.
+          </p>
+
+          <p>
+            <span class="tg">"Papa. Sino si Pastor Reyes?"</span>
+          </p>
+
+          <p>
+            He looks at the letter. He looks at her. And then he tells her the whole story — from Seat 38 to the Wednesday prayer meetings to the Rubik's cube and the chess tournament and the talent show and the library Thursdays and the graduation courtyard and Saudi Arabia and the bad nights when the city was foreign and the letter was the thing he read. He tells it from beginning to end, the way he has never told it to anyone all the way through, and Hana sits across from him with her elbows on the table and her chin on her hands and does not interrupt once.
+          </p>
+
+          <p>
+            When he finishes, she is quiet for a moment.
+          </p>
+
+          <p>
+            Then: <span class="tg">"So God was watching even when school wasn't?"</span>
+          </p>
+
+          <p>
+            <span class="tg">"Lagi,"</span> he says. <em>Always.</em>
+          </p>
+
+          <p>
+            She looks at the letter for a moment longer. Then she holds it back across the table to him.
+          </p>
+
+          <p>
+            <span class="tg">"Keep it. It's yours."</span>
+          </p>
+
+          <p>
+            He takes it. He folds it carefully — the same folds it has been folded along for twelve years — and puts it back in the drawer where it will be until Hana needs a pen again, or until he needs to read it on a bad night, whichever comes first.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE SATURDAY BOOTCAMP</span>
+
+          <p>
+            Eight AM. A barangay community hall two streets from the family home. Six to fourteen young people depending on the week — kids who couldn't afford university, who have fast minds and slow internet connections and old laptops their parents saved for six months to buy. He brings coffee. He brings patience. He teaches Python.
+          </p>
+
+          <p>
+            He teaches them to think in systems before he teaches them syntax. He teaches them to see problems as structures before he teaches them to solve them. He teaches them the same thing the Proverbs verse taught him: the plans of the diligent lead to profit. He does not say this directly. He demonstrates it, which is more honest.
+          </p>
+
+          <p>
+            One student — Bea, sixteen, who types faster than anyone he has ever taught — asks him one Saturday morning how he learned everything. He is quiet for a moment.
+          </p>
+
+          <p>
+            <span class="tg">"Gumising ako ng 5 AM at hindi ako tumigil,"</span> he says. <em>I woke up at 5 AM and I didn't stop.</em> <span class="tg">"At nagdasal ako bago magsimula."</span> <em>And I prayed before I started.</em>
+          </p>
+
+          <p>
+            Bea writes this in her notebook. Not in the Python section. In the front, where she keeps the things that belong to the architecture of a life rather than the architecture of code.
+          </p>
+
+          <div class="thought">
+            Financial freedom is not the goal. It is the condition. The goal is: your family does not know poverty. Your children inherit tools, not debt. You have something to give. The 5 AMs were not for the savings rate or the rental income or the farm's monthly yield. They were for this: being the kind of person who has something to give and gives it, without depletion, because the giving is built into the system from the beginning.
+          </div>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch8.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The First Child</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch10.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Final Chapter →</span>
+          <span class="chapter-nav__title">The Piano Remains</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
