@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/animations.css">
   <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/mobile.css">
+  <meta name="theme-color" content="#09080e">
   <style>
     /* ── Cover-specific styles ── */
     body { overflow-x: hidden; }
@@ -128,11 +130,11 @@
     }
     .cover__title .line3 {
       display: block;
-      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-size: clamp(1rem, 4vw, 2rem);
       color: rgba(244,240,230,.5);
       font-style: normal;
       font-weight: 300;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       opacity: 0;
       animation: fadeUp .7s 1s ease both;
       margin-top: .8rem;
@@ -140,7 +142,7 @@
 
     .cover__subtitle {
       font-family: var(--serif);
-      font-size: 1.1rem;
+      font-size: clamp(.85rem, 3vw, 1.1rem);
       font-style: italic;
       color: rgba(244,240,230,.45);
       opacity: 0;
@@ -466,6 +468,33 @@
     @media (max-width: 480px) {
       .characters-grid { grid-template-columns: 1fr; }
       .about-stats { grid-template-columns: 1fr; }
+    }
+
+    /* ── Mobile cover overrides ── */
+    @media (max-width: 768px) {
+      .cover { min-height: 100svh; }
+      .cover__content { padding: 1.5rem 1.2rem; }
+      .cover__eyebrow { font-size: 7.5px; letter-spacing: .3em; margin-bottom: 1rem; }
+      .cover__title { font-size: clamp(2.5rem, 11vw, 4rem); }
+      .cover__actions { flex-direction: column; align-items: center; gap: .8rem; }
+      .cover__actions .btn { width: 100%; max-width: 260px; text-align: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .volumes-grid { grid-template-columns: 1fr; }
+      .vol-card__chapters { display: none; }
+      .characters-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .about-section { padding: 4rem 1.2rem; }
+      .volumes-section { padding: 0 1.2rem 4rem; }
+      .characters-section { padding: 4rem 1.2rem; }
+      .cover-quote { padding: 3.5rem 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      .cover__title { font-size: clamp(2.2rem, 13vw, 3.5rem); }
+      .characters-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .stat { padding: .9rem; }
+      .stat__num { font-size: 1.4rem; }
+      .vol-card { padding: 1.5rem 1.2rem; }
+      .cover-quote__text { font-size: clamp(1rem, 4.5vw, 1.4rem); }
     }
   </style>
 </head>
