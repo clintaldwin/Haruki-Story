@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 4: Saudi Arabia — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+  <style>
+    .savings-chart {
+      background: var(--paper3);
+      border: 1px solid rgba(201,168,76,.15);
+      border-left: 3px solid var(--gold);
+      padding: 1.8rem 1.8rem 1.4rem;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+    .savings-chart::before {
+      content: 'SAVINGS GROWTH — RIYADH';
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .35em;
+      color: var(--gold);
+      opacity: .55;
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: .6rem;
+      height: 100px;
+    }
+    .chart-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      flex: 1;
+    }
+    .chart-bar {
+      width: 100%;
+      background: linear-gradient(to top, var(--gold-dim), var(--gold));
+      border-radius: 2px 2px 0 0;
+      transition: height .5s ease;
+      animation: sunRise .8s ease both;
+    }
+    .chart-bar-label {
+      font-family: var(--mono);
+      font-size: 7.5px;
+      letter-spacing: .1em;
+      color: var(--ink2);
+      opacity: .5;
+      text-align: center;
+    }
+    .chart-bar-val {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--gold);
+      opacity: .7;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="reading-mode" data-chapter="v2c4">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link active" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion & Yuna RN</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — The Piano Remains</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="dust"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <linearGradient id="bg_v2c4" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#06081a"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <radialGradient id="riyadhGlow" cx="50%" cy="70%" r="60%">
+                <stop offset="0%" stop-color="rgba(200,112,64,.15)"/>
+                <stop offset="60%" stop-color="rgba(201,168,76,.05)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </radialGradient>
+              <filter id="gv2c4"><feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg_v2c4)"/>
+
+            <!-- Night sky — desert stars, brighter -->
+            <g fill="white" data-anim-order="0">
+              <circle cx="60" cy="30" r="1.2" style="animation:starTwinkle 2.8s ease-in-out infinite"/>
+              <circle cx="150" cy="55" r=".9" style="animation:starTwinkle 3.2s .4s ease-in-out infinite"/>
+              <circle cx="280" cy="20" r="1" style="animation:starTwinkle 2.5s .8s ease-in-out infinite"/>
+              <circle cx="420" cy="45" r="1.3" style="animation:starTwinkle 3.5s .2s ease-in-out infinite"/>
+              <circle cx="560" cy="25" r=".8" style="animation:starTwinkle 2.7s 1s ease-in-out infinite"/>
+              <circle cx="680" cy="60" r="1.1" style="animation:starTwinkle 3.1s .6s ease-in-out infinite"/>
+              <circle cx="820" cy="35" r=".9" style="animation:starTwinkle 2.9s 1.3s ease-in-out infinite"/>
+              <circle cx="950" cy="50" r="1.2" style="animation:starTwinkle 3.4s .3s ease-in-out infinite"/>
+              <circle cx="1100" cy="28" r=".8" style="animation:starTwinkle 2.6s .9s ease-in-out infinite"/>
+              <circle cx="1160" cy="65" r="1" style="animation:starTwinkle 3.3s .7s ease-in-out infinite"/>
+              <circle cx="100" cy="100" r=".7" style="animation:starTwinkle 3.7s 1.2s ease-in-out infinite"/>
+              <circle cx="380" cy="85" r="1" style="animation:starTwinkle 2.8s .5s ease-in-out infinite"/>
+              <circle cx="700" cy="90" r=".8" style="animation:starTwinkle 3.2s 1.5s ease-in-out infinite"/>
+              <circle cx="1000" cy="95" r="1.1" style="animation:starTwinkle 2.5s .1s ease-in-out infinite"/>
+            </g>
+
+            <!-- Riyadh skyline silhouette -->
+            <g fill="rgba(12,10,24,.95)" data-anim-order="1">
+              <!-- Kingdom Centre Tower (iconic) -->
+              <rect x="540" y="100" width="50" height="320" rx="2"/>
+              <rect x="548" y="90" width="34" height="30" rx="1"/>
+              <!-- Sky bridge at top of KCC -->
+              <rect x="530" y="200" width="80" height="12" rx="2" fill="rgba(16,14,28,.95)"/>
+              <!-- Al Faisaliah Tower (cone top) -->
+              <polygon points="200,120 230,420 170,420"/>
+              <polygon points="185,140 215,140 200,115"/>
+              <!-- Various towers -->
+              <rect x="300" y="180" width="60" height="240"/>
+              <rect x="310" y="160" width="40" height="30"/>
+              <rect x="660" y="200" width="55" height="220"/>
+              <rect x="668" y="185" width="38" height="25"/>
+              <rect x="750" y="230" width="80" height="190"/>
+              <rect x="760" y="215" width="60" height="25"/>
+              <rect x="880" y="190" width="45" height="230"/>
+              <rect x="940" y="220" width="70" height="200"/>
+              <rect x="950" y="205" width="50" height="22"/>
+              <rect x="1050" y="250" width="60" height="170"/>
+              <rect x="1130" y="280" width="70" height="140"/>
+              <!-- Foreground buildings -->
+              <rect x="0" y="350" width="130" height="250"/>
+              <rect x="140" y="380" width="80" height="220"/>
+              <rect x="1080" y="370" width="120" height="230"/>
+            </g>
+
+            <!-- City glow on horizon -->
+            <ellipse cx="600" cy="420" rx="600" ry="100" fill="url(#riyadhGlow)"
+                     style="animation:breathe 5s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Building windows — blinking lights -->
+            <g fill="rgba(201,168,76,.4)" data-anim-order="3">
+              <rect x="550" y="140" width="5" height="4" style="animation:cityBlink 4s ease-in-out infinite"/>
+              <rect x="558" y="155" width="5" height="4" style="animation:cityBlink 5s 1s ease-in-out infinite"/>
+              <rect x="550" y="170" width="5" height="4" style="animation:cityBlink 3.5s 2s ease-in-out infinite"/>
+              <rect x="558" y="185" width="5" height="4" style="animation:cityBlink 4.5s .5s ease-in-out infinite"/>
+              <rect x="308" y="200" width="4" height="4" style="animation:cityBlink 4s 1.5s ease-in-out infinite"/>
+              <rect x="320" y="215" width="4" height="4" style="animation:cityBlink 5s .3s ease-in-out infinite"/>
+              <rect x="668" y="218" width="4" height="4" style="animation:cityBlink 3.8s .8s ease-in-out infinite"/>
+              <rect x="760" y="235" width="4" height="4" style="animation:cityBlink 4.2s 1.8s ease-in-out infinite"/>
+              <rect x="775" y="250" width="4" height="4" style="animation:cityBlink 4.8s .6s ease-in-out infinite"/>
+            </g>
+            <g fill="rgba(244,240,230,.25)" data-anim-order="3">
+              <rect x="888" y="210" width="4" height="4" style="animation:cityBlink 5s 2s ease-in-out infinite"/>
+              <rect x="952" y="228" width="4" height="4" style="animation:cityBlink 4.3s 1.2s ease-in-out infinite"/>
+              <rect x="965" y="242" width="4" height="4" style="animation:cityBlink 3.7s .4s ease-in-out infinite"/>
+            </g>
+
+            <!-- Apartment room — Haruki's workspace -->
+            <rect x="300" y="350" width="600" height="250" fill="rgba(10,12,28,.85)" data-anim-order="2"/>
+            <!-- Room border -->
+            <rect x="300" y="350" width="600" height="250" fill="none"
+                  stroke="rgba(74,184,200,.06)" stroke-width="1"/>
+
+            <!-- Dual monitors -->
+            <g data-anim-order="4">
+              <!-- Left monitor -->
+              <rect x="340" y="380" width="200" height="130" rx="3" fill="rgba(8,15,35,.95)"
+                    style="animation:breathe 4s ease-in-out infinite"/>
+              <!-- Code on left screen -->
+              <g fill="rgba(74,184,200,.5)" font-size="9" font-family="monospace">
+                <text x="350" y="400">$ ssh cloud-infra-01</text>
+                <text x="350" y="415" fill="rgba(74,154,106,.5)">Connected: Riyadh-DC-03</text>
+                <text x="350" y="430">$ kubectl get pods</text>
+                <text x="350" y="445" fill="rgba(201,168,76,.4)">Running: 47/47</text>
+                <text x="350" y="460">$ deploy --env prod</text>
+                <text x="350" y="475" fill="rgba(74,154,106,.5)">✓ Deployment successful</text>
+                <text x="350" y="490">█</text>
+              </g>
+
+              <!-- Right monitor -->
+              <rect x="560" y="380" width="200" height="130" rx="3" fill="rgba(8,20,15,.95)"
+                    style="animation:breathe 4s .8s ease-in-out infinite"/>
+              <!-- Savings tracker on right screen -->
+              <text x="572" y="400" font-family="monospace" font-size="9" fill="rgba(201,168,76,.6)">SAVINGS TRACKER</text>
+              <text x="572" y="418" font-family="monospace" font-size="9" fill="rgba(74,154,106,.5)">Yr 1: ████░░░░</text>
+              <text x="572" y="433" font-family="monospace" font-size="9" fill="rgba(74,154,106,.6)">Yr 2: ██████░░</text>
+              <text x="572" y="448" font-family="monospace" font-size="9" fill="rgba(74,154,106,.7)">Yr 3: ████████</text>
+              <text x="572" y="463" font-family="monospace" font-size="9" fill="rgba(201,168,76,.5)">Yr 4: ██████████</text>
+              <text x="572" y="480" font-family="monospace" font-size="9" fill="rgba(244,240,230,.25)">Rate: 72%</text>
+              <text x="572" y="495" font-family="monospace" font-size="9" fill="rgba(74,154,106,.4)">Status: ON TRACK</text>
+            </g>
+
+            <!-- Handwritten letter on desk -->
+            <g data-anim-order="5">
+              <rect x="790" y="440" width="90" height="110" rx="2"
+                    fill="rgba(244,240,230,.07)" stroke="rgba(201,168,76,.15)" stroke-width="1"
+                    style="animation:glowPulse 5s ease-in-out infinite"/>
+              <!-- Letter lines -->
+              <g stroke="rgba(201,168,76,.08)" stroke-width=".5">
+                <line x1="798" y1="455" x2="872" y2="455"/>
+                <line x1="798" y1="463" x2="872" y2="463"/>
+                <line x1="798" y1="471" x2="865" y2="471"/>
+                <line x1="798" y1="479" x2="872" y2="479"/>
+                <line x1="798" y1="487" x2="860" y2="487"/>
+                <line x1="798" y1="495" x2="872" y2="495"/>
+                <line x1="798" y1="503" x2="855" y2="503"/>
+              </g>
+              <!-- "Pastor Reyes" signature suggestion -->
+              <text x="800" y="540" font-family="serif" font-size="8" font-style="italic"
+                    fill="rgba(201,168,76,.3)">— Pastor Reyes</text>
+            </g>
+
+            <!-- Currency symbols floating -->
+            <text x="260" y="450" font-family="monospace" font-size="14"
+                  fill="rgba(201,168,76,.2)"
+                  style="animation:currencyFloat 5s ease-in infinite">﷼</text>
+            <text x="940" y="420" font-family="monospace" font-size="12"
+                  fill="rgba(201,168,76,.15)"
+                  style="animation:currencyFloat 6s 2s ease-in infinite">﷼</text>
+            <text x="250" y="500" font-family="monospace" font-size="10"
+                  fill="rgba(201,168,76,.1)"
+                  style="animation:currencyFloat 4.5s 1s ease-in infinite">₱</text>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II</span></span>
+          <span class="chapter-number">Chapter Four — Phase 4</span>
+          <h1 class="chapter-title">Saudi Arabia — Capital Extraction</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 24–28 · Riyadh · 2030–2034</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">2030 · THE OFFER</span>
+
+          <p>
+            The offer comes through his uncle — who works in logistics in Riyadh and has been watching Haruki's trajectory with the particular attention of a relative who has always suspected something — and it arrives in the form of a phone call on a Tuesday afternoon between his last university exam and the graduation ceremony two weeks away.
+          </p>
+
+          <p>
+            Systems and Cloud Infrastructure Engineer. A mid-sized tech company servicing the Gulf's construction and logistics sector. Tax-free. Competitive salary in riyals. Housing allowance. Three-year contract, renewable.
+          </p>
+
+          <p>
+            He prepares for the interview for three weeks. Not because he is unqualified but because preparation is the difference between deserving something and getting it, and he has never confused the two. He studies the company's infrastructure stack, their client list, the specific problems they are likely trying to solve. He goes in knowing more about their systems than they expected.
+          </p>
+
+          <p>
+            He gets the role.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE AIRPORT · THE DEPARTURE</span>
+
+          <p>
+            She is there. This is the first fact.
+          </p>
+
+          <p>
+            She has worked a half-shift and come directly from the hospital — she is in scrubs, her hair pinned, her shoes the comfortable ones she wears for twelve-hour shifts on her feet. She looks like what she is: a person who has spent the morning keeping other people alive and is now here because here is where she needs to be.
+          </p>
+
+          <p>
+            His parents are there. His mother holds him for a long time. His father's handshake is the firm kind, held one beat past its natural end — the handshake of a father releasing a son he is proud of and does not know how else to say it.
+          </p>
+
+          <p>
+            Then Yuna. She gives his parents their moment. She waits, standing slightly apart, with the composure she has developed across four years of nursing — the composure of someone who knows that the most important thing she can do in a high-emotion situation is remain steady.
+          </p>
+
+          <p>
+            At the gate, he holds her for a long time. Neither of them says anything immediately. He can smell the hospital on her scrubs — antiseptic and something warmer underneath — and she is warm and real and present, and the gate is ahead, and the four years of distance is ahead, and none of this is easy.
+          </p>
+
+          <p>
+            <span class="tg">"Haruki — babalik ka, di ba?"</span>
+          </p>
+
+          <p>
+            <em>Haruki — you're coming back, right?</em>
+          </p>
+
+          <p>
+            He pulls back enough to see her. She is looking at him with the particular look she uses for things she takes seriously — direct, fully there, no performance.
+          </p>
+
+          <p>
+            <span class="tg">"Babalik ako,"</span> he says. <span class="tg">"At hindi lang basta babalik. Babalik akong may dala."</span>
+          </p>
+
+          <p>
+            <em>I'll come back. And not just come back. I'll come back carrying something.</em>
+          </p>
+
+          <p>
+            She holds his gaze for a moment. Then nods once — the serious nod, the one that means she believes him not because she wants to but because the evidence supports it.
+          </p>
+
+          <p>
+            He goes through the gate.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">RIYADH · THE YEARS</span>
+
+          <p>
+            The work is real and demanding in the way of work that matters. He is younger than most of his team and more competent than several of them — not because of arrogance but because of the dual-track education, because he understands physical systems in a way that software-only engineers do not, because he has spent four years building the habit of full engagement and brought it with him across the Arabian Sea.
+          </p>
+
+          <p>
+            His NC II certifications surface quietly and usefully. When a server room has a wiring problem, he can diagnose it physically. When the solar array on their company compound needs assessment, he is the one who goes up. When the kitchen at the staff housing needs a rewire, he does it on a Saturday morning and charges nothing. These things build a specific kind of reputation — the kind that comes from being useful in ways that were not in the job description.
+          </p>
+
+          <div class="blueprint">
+            RIYADH FINANCIAL DISCIPLINE
+
+            Rule 1: First remittance sent Month 1. Non-negotiable.
+            Rule 2: 70%+ savings rate. Always.
+            Rule 3: Real estate scouting begins Year 2 (research only).
+            Rule 4: First property down payment initiated Year 3.
+            Rule 5: Return home with phase complete, not before.
+
+            PERMITTED EXPENSES:
+            — Quality food (fuel is not a luxury)
+            — Books, courses (yield compounds)
+            — Church contributions (this one is not negotiable either)
+            — One gift per month for Yuna. Always thoughtful, never expensive.
+          </div>
+
+          <div class="savings-chart">
+            <div class="chart-bars">
+              <div class="chart-bar-wrap">
+                <div class="chart-bar-val">25%</div>
+                <div class="chart-bar" style="height:25px;animation-delay:.1s"></div>
+                <div class="chart-bar-label">Yr 1<br>Foundation</div>
+              </div>
+              <div class="chart-bar-wrap">
+                <div class="chart-bar-val">48%</div>
+                <div class="chart-bar" style="height:48px;animation-delay:.25s"></div>
+                <div class="chart-bar-label">Yr 2<br>Scouting</div>
+              </div>
+              <div class="chart-bar-wrap">
+                <div class="chart-bar-val">70%</div>
+                <div class="chart-bar" style="height:70px;animation-delay:.4s"></div>
+                <div class="chart-bar-label">Yr 3<br>Down Pmt</div>
+              </div>
+              <div class="chart-bar-wrap">
+                <div class="chart-bar-val">100%</div>
+                <div class="chart-bar" style="height:100px;animation-delay:.55s;background:linear-gradient(to top,var(--gold-dim),var(--gold2))"></div>
+                <div class="chart-bar-label">Yr 4<br>Complete</div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            He finds a Filipino Christian community in Riyadh by his third week. They meet on Sunday afternoons in an apartment in the Al Olaya district — forty-odd people from the Philippines, a mix of nurses, engineers, domestic workers, teachers. They worship quietly, carefully, in the particular way of people who are doing something they love in a place that requires them to be discreet about it.
+          </p>
+
+          <p>
+            He plays keyboard for their Sunday gatherings. He does not have the upright piano. He has a sixty-one-key portable keyboard he bought in his second month, which he plays at the lowest possible volume in his apartment when he needs the language and at the full warm volume of corporate worship when the community gathers. He leads the worship set the same way he always has — fully, from the place that is not performance.
+          </p>
+
+          <p>
+            Some things are non-negotiable regardless of geography.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He misses her. This is honest and present, not managed or rationalized. He misses the library Thursday silence. He misses her voice at its full register rather than the compressed version that arrives through a phone speaker at eleven PM his time, two in the morning hers. He misses her in the specific way of someone who has never tried to minimize what she means to him and does not start now.
+          </p>
+
+          <p>
+            He carries it the way he carries everything: fully, without letting it stop him.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <div class="twist">
+            <strong>Plot Twist #9 — The Letter</strong>
+          </div>
+
+          <p>
+            In the middle of his second year, a letter arrives. Actual paper. Handwritten. His name on the envelope in the careful cursive of someone who has been writing by hand since before ballpoints were common.
+          </p>
+
+          <p>
+            It is from Pastor Reyes.
+          </p>
+
+          <p>
+            He opens it carefully, the way you open things you suspect you will want to keep. The paper is slightly thick, the kind that comes from a pad bought for correspondence rather than notes. The handwriting is unhurried.
+          </p>
+
+          <p>
+            <em>Haruki,</em>
+          </p>
+
+          <p>
+            <em>Ang isang bata na tumutugtog ng piano para sa Panginoon nang walang nanonood ay siyang magiging lalaking magtatayo ng entablado para sa kanyang pamilya.</em>
+          </p>
+
+          <p>
+            <em>Patuloy ka. Nakikita ka pa rin.</em>
+          </p>
+
+          <p>
+            <em>— Ptr. Reyes</em>
+          </p>
+
+          <p style="font-style:italic;color:var(--muted);font-size:.95rem;margin-top:-.5rem;">
+            The boy who played piano for the Lord when no one was watching will become the man who builds the stage for his family. Keep going. You are still seen.
+          </p>
+
+          <p>
+            He folds the letter. He puts it in his wallet — the old brown wallet his father gave him before he left, the kind with the stitching starting to loosen at the top left corner.
+          </p>
+
+          <p>
+            He reads it on bad nights. Not every bad night — not as a ritual or a crutch — but on the specific nights when the distance is heaviest and the savings tracker shows good numbers that feel abstract and Riyadh is beautiful in its alien way and the piano in his apartment is sixty-one keys instead of eighty-eight and he is twenty-five years old and far from every person whose name he knows.
+          </p>
+
+          <p>
+            <em>Nakikita ka pa rin.</em> You are still seen.
+          </p>
+
+          <p>
+            He folds the letter back. He puts it back. He sleeps.
+          </p>
+
+          <p>
+            In the morning: 5 AM. The body remembers. The compass points the same direction it always has.
+          </p>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch3.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The TESDA Grind</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch5.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">The Reunion &amp; Yuna RN</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
