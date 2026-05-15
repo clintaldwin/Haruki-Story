@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 8: The First Child — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+</head>
+<body class="reading-mode" data-chapter="v2c8">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion &amp; Yuna RN</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link active" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — The Piano Remains</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="petals"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <radialGradient id="nurseryGlow" cx="50%" cy="50%" r="55%">
+                <stop offset="0%" stop-color="rgba(201,168,76,.15)"/>
+                <stop offset="60%" stop-color="rgba(184,104,120,.06)"/>
+                <stop offset="100%" stop-color="rgba(184,104,120,0)"/>
+              </radialGradient>
+              <linearGradient id="bg_v2c8" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0a0b1e"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <filter id="gv2c8"><feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg_v2c8)"/>
+
+            <!-- Hospital corridor panel (left) -->
+            <rect x="0" y="0" width="500" height="600" fill="rgba(10,12,24,.6)" data-anim-order="0"/>
+            <!-- Corridor lights -->
+            <g fill="rgba(200,200,220,.08)" data-anim-order="1">
+              <rect x="50" y="0" width="20" height="600"/>
+              <rect x="150" y="0" width="20" height="600"/>
+              <rect x="250" y="0" width="20" height="600"/>
+              <rect x="350" y="0" width="20" height="600"/>
+            </g>
+            <!-- Floor line -->
+            <rect x="0" y="480" width="500" height="2" fill="rgba(200,200,220,.05)" data-anim-order="1"/>
+            <!-- Hospital sign -->
+            <rect x="80" y="80" width="200" height="40" rx="3" fill="rgba(18,16,35,.9)" data-anim-order="2"/>
+            <text x="180" y="106" text-anchor="middle" font-family="monospace" font-size="10"
+                  fill="rgba(74,184,200,.4)" letter-spacing="2">MATERNITY WARD</text>
+
+            <!-- Haruki running figure -->
+            <ellipse cx="280" cy="390" rx="22" ry="24"
+                     fill="rgba(28,24,44,.95)" filter="url(#gv2c8)" data-anim-order="3"
+                     style="animation:scalePop .5s 1s ease both"/>
+            <ellipse cx="280" cy="376" rx="22" ry="13" fill="rgba(10,8,20,1)" data-anim-order="3"/>
+            <rect x="258" y="414" width="44" height="65" rx="5" fill="rgba(28,24,44,.9)" data-anim-order="3"/>
+            <!-- Running pose — leaning forward -->
+            <rect x="240" y="430" width="40" height="10" rx="5" fill="rgba(28,24,44,.75)" transform="rotate(-15,260,435)" data-anim-order="4"/>
+            <rect x="280" y="445" width="40" height="10" rx="5" fill="rgba(28,24,44,.7)" transform="rotate(10,300,450)" data-anim-order="4"/>
+
+            <!-- Motion lines from running -->
+            <g stroke="rgba(201,168,76,.08)" stroke-width="1.5" fill="none" data-anim-order="4">
+              <line x1="200" y1="385" x2="255" y2="385"/>
+              <line x1="195" y1="400" x2="250" y2="400"/>
+              <line x1="200" y1="415" x2="255" y2="415"/>
+            </g>
+
+            <!-- Divider -->
+            <rect x="500" y="0" width="2" height="600" fill="rgba(201,168,76,.06)"/>
+
+            <!-- Nursery panel (right) — warmer, softer -->
+            <rect x="502" y="0" width="698" height="600" fill="rgba(12,10,22,.5)" data-anim-order="0"/>
+            <ellipse cx="850" cy="350" rx="400" ry="250" fill="url(#nurseryGlow)"
+                     style="animation:breathe 5s ease-in-out infinite" data-anim-order="1"/>
+
+            <!-- Nursery crib -->
+            <g data-anim-order="3">
+              <!-- Crib frame -->
+              <rect x="680" y="320" width="280" height="200" rx="8" fill="rgba(20,18,36,.9)"
+                    stroke="rgba(201,168,76,.15)" stroke-width="1.5"/>
+              <!-- Crib bars -->
+              <g stroke="rgba(30,28,50,.8)" stroke-width="4" fill="none">
+                <line x1="720" y1="320" x2="720" y2="520"/>
+                <line x1="760" y1="320" x2="760" y2="520"/>
+                <line x1="800" y1="320" x2="800" y2="520"/>
+                <line x1="840" y1="320" x2="840" y2="520"/>
+                <line x1="880" y1="320" x2="880" y2="520"/>
+                <line x1="920" y1="320" x2="920" y2="520"/>
+              </g>
+              <!-- Baby in crib — small and warm -->
+              <ellipse cx="820" cy="440" rx="35" ry="25"
+                       fill="rgba(244,240,230,.06)" style="animation:breathe 2s ease-in-out infinite" data-anim-order="5"/>
+              <!-- Baby suggestion — tiny head -->
+              <ellipse cx="820" cy="430" rx="15" ry="16"
+                       fill="rgba(40,35,60,.8)" filter="url(#gv2c8)" data-anim-order="5"
+                       style="animation:breathe 2s ease-in-out infinite"/>
+              <!-- Warm glow on baby -->
+              <ellipse cx="820" cy="440" rx="60" ry="40"
+                       fill="rgba(201,168,76,.06)" style="animation:breathe 3s ease-in-out infinite" data-anim-order="5"/>
+            </g>
+
+            <!-- Haruki and Yuna silhouettes at crib — exhausted, present -->
+            <!-- Yuna (left of crib) -->
+            <ellipse cx="650" cy="370" rx="20" ry="22" fill="rgba(38,30,55,.9)" data-anim-order="4"/>
+            <ellipse cx="650" cy="357" rx="20" ry="12" fill="rgba(15,10,26,1)" data-anim-order="4"/>
+            <rect x="630" y="392" width="40" height="70" rx="5" fill="rgba(38,30,55,.85)" data-anim-order="4"/>
+            <!-- Yuna's hand on crib rail -->
+            <rect x="660" y="415" width="55" height="10" rx="5" fill="rgba(38,30,55,.6)" data-anim-order="5"/>
+
+            <!-- Haruki (right of crib) -->
+            <ellipse cx="990" cy="372" rx="22" ry="24" fill="rgba(28,24,44,.95)" data-anim-order="4"/>
+            <ellipse cx="990" cy="358" rx="22" ry="13" fill="rgba(10,8,20,1)" data-anim-order="4"/>
+            <rect x="968" y="396" width="44" height="70" rx="5" fill="rgba(28,24,44,.9)" data-anim-order="4"/>
+            <!-- Haruki's hand on crib rail -->
+            <rect x="920" y="415" width="52" height="10" rx="5" fill="rgba(28,24,44,.6)" data-anim-order="5"/>
+
+            <!-- D major key signature floating — the lullaby -->
+            <text x="800" y="280" font-size="20" fill="rgba(201,168,76,.2)"
+                  font-family="serif" style="animation:noteDrift 6s ease-in infinite">♩</text>
+            <text x="840" y="260" font-size="16" fill="rgba(201,168,76,.15)"
+                  font-family="serif" style="animation:noteDrift 7s 2s ease-in infinite">♪</text>
+            <text x="770" y="295" font-size="14" fill="rgba(201,168,76,.12)"
+                  font-family="serif" style="animation:noteDrift 5.5s 1s ease-in infinite">♫</text>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II</span></span>
+          <span class="chapter-number">Chapter Eight</span>
+          <h1 class="chapter-title">The First Child</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 32 · 2038 · A Thursday</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">THURSDAY · 2:00 PM</span>
+
+          <div class="twist">
+            <strong>Plot Twist #11 — Hana Arrives Early</strong>
+          </div>
+
+          <p>
+            She arrives three weeks before her due date, on a Thursday, which is a library day — though they have not called it that for years now, the Thursday quality has persisted as a background frequency in their marriage, Thursdays meaning something specific in the language of their shared history.
+          </p>
+
+          <p>
+            Yuna is at work. A half-shift she insisted on doing because she is thirty-two and a nurse and knows her own body and the due date is three weeks away and she will be fine. At 1:47 PM she calls him from a supply closet in the maternity ward — which has a specific irony she will later find funny — and says, with clinical calm: <span class="tg">"Haruki. Manggagaling ka na."</span> <em>You need to come now.</em>
+          </p>
+
+          <p>
+            He leaves his laptop open in the middle of a line of code. He runs.
+          </p>
+
+          <p>
+            The delivery is fast in the way of things that have been coming for nine months — they always surprise you when they arrive, even when you knew they were coming. She is born small and loud and her first sound in the world is the specific outrage of a person who had not been consulted about the timing.
+          </p>
+
+          <p>
+            They name her Hana. <em>Bulaklak.</em> Flower. Yuna's choice, offered quietly in the first hour after delivery, and he says yes the way he says yes to things she chooses — directly, completely, with the understanding that she chose well.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THREE MONTHS BEFORE HANA · THE CALL</span>
+
+          <p>
+            He made the call three months before Hana arrived. He sat at his desk at 10 PM and he called his mother's number and she picked up on the second ring because his mother always picks up on the second ring.
+          </p>
+
+          <p>
+            <span class="tg">"Inay."</span>
+          </p>
+
+          <p>
+            <span class="tg">"Oo, anak."</span> <em>Yes, son.</em>
+          </p>
+
+          <p>
+            <span class="tg">"Hindi na kayo kailangang magtrabaho."</span>
+          </p>
+
+          <p>
+            <em>You don't have to work anymore.</em>
+          </p>
+
+          <p>
+            Long silence.
+          </p>
+
+          <p>
+            <span class="tg">"Haruki..."</span>
+          </p>
+
+          <p>
+            <span class="tg">"Matagal na akong naghihintay na masabi 'yon."</span>
+          </p>
+
+          <p>
+            <em>I've been waiting a long time to say that.</em>
+          </p>
+
+          <p>
+            His mother cries. He does not. He looks out the window at the city and feels something complete and large and without a name in any language he knows. There are things that don't have names. The feeling of having accomplished the specific thing you decided to accomplish when you were sixteen years old and reading Proverbs alone at 11 PM. The feeling of the parable of the talents arriving at its resolution. The feeling of the buried thing finally deployed.
+          </p>
+
+          <p>
+            His mother cries for a while and then stops and says: <span class="tg">"Kumain ka na?"</span> <em>Have you eaten?</em>
+          </p>
+
+          <p>
+            He has. He tells her. She makes the small sound of maternal approval. They talk for twenty more minutes about nothing important, which is the most important kind of conversation.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <span class="yr">THE LULLABY</span>
+
+          <p>
+            He composes it the month after Hana arrives. Manuscript paper, at 2 AM, in the key of D major because D major always felt like morning — open, clear, the key of beginning rather than ending. He does not overthink it. He plays it once through, revises the bridge, plays it again, and then it is done.
+          </p>
+
+          <p>
+            He plays it every night at the lowest possible volume — for the walls, not for an audience. Hana is too small to understand music yet, though this is perhaps not entirely true; she stills when he plays it, with the particular attention of something very new encountering something very old.
+          </p>
+
+          <p>
+            Yuna, in the hallway one night, hears it and does not go in. She leans against the wall outside the nursery and listens to her husband play a song he wrote for their daughter at 2 AM in the key of D major, and she understands, in the specific way she has always understood things she considers important — precisely, completely, without sentiment — that this is what it was all for.
+          </p>
+
+          <div class="thought">
+            Some offerings are not for human audiences. Some things are played into the air of a room where the only listener is too young to know they are listening, or a God who hears regardless, or the future self of the child who will someday ask: did you love me before you knew who I would be? And the answer will be here, in the key of D major, in a lullaby written in the second month of her life.
+          </div>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch7.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">Marriage &amp; The New Life</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch9.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">The Sovereign Legacy</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
