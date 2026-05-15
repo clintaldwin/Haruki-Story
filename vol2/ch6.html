@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 6: The Proposal — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+</head>
+<body class="reading-mode" data-chapter="v2c6">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion &amp; Yuna RN</a></li>
+        <li><a class="sidebar-toc__link active" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link" href="ch10.html">Ch. 10 — The Piano Remains</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="petals"></div>
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <radialGradient id="propGlow" cx="50%" cy="60%" r="55%">
+                <stop offset="0%" stop-color="rgba(201,168,76,.2)"/>
+                <stop offset="60%" stop-color="rgba(184,104,120,.07)"/>
+                <stop offset="100%" stop-color="rgba(184,104,120,0)"/>
+              </radialGradient>
+              <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(201,168,76,.6)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </radialGradient>
+              <linearGradient id="bg_v2c6" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0c0a1e"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <filter id="gv2c6"><feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="600" fill="url(#bg_v2c6)"/>
+
+            <!-- Living room — early morning, 6:48 AM -->
+            <!-- Window — pre-dawn rose gold light -->
+            <rect x="800" y="60" width="280" height="350" rx="4"
+                  fill="rgba(30,18,10,.5)" stroke="rgba(201,168,76,.12)" stroke-width="2" data-anim-order="0"/>
+            <line x1="940" y1="60" x2="940" y2="410" stroke="rgba(201,168,76,.08)" stroke-width="1"/>
+            <line x1="800" y1="235" x2="1080" y2="235" stroke="rgba(201,168,76,.08)" stroke-width="1"/>
+            <!-- Sunrise through window -->
+            <rect x="805" y="65" width="130" height="340" rx="2"
+                  fill="rgba(200,80,40,.06)" style="animation:breathe 5s ease-in-out infinite"/>
+            <rect x="945" y="65" width="130" height="340" rx="2"
+                  fill="rgba(200,100,40,.05)" style="animation:breathe 5s .8s ease-in-out infinite"/>
+
+            <!-- Room ambient glow -->
+            <ellipse cx="600" cy="400" rx="600" ry="200" fill="url(#propGlow)"
+                     style="animation:breathe 5s ease-in-out infinite" data-anim-order="0"/>
+
+            <!-- Floor -->
+            <rect x="0" y="450" width="1200" height="150" fill="rgba(12,10,24,.7)" data-anim-order="0"/>
+
+            <!-- Rose petals on floor (slightly imperfect path) -->
+            <g data-anim-order="2">
+              <!-- Path of petals from door toward center -->
+              <ellipse cx="150" cy="480" rx="8" ry="4" fill="rgba(184,104,120,.25)" transform="rotate(-15,150,480)"/>
+              <ellipse cx="220" cy="490" rx="6" ry="3" fill="rgba(184,104,120,.2)" transform="rotate(20,220,490)"/>
+              <ellipse cx="290" cy="475" rx="7" ry="3.5" fill="rgba(184,104,120,.3)" transform="rotate(-5,290,475)"/>
+              <ellipse cx="370" cy="485" rx="8" ry="4" fill="rgba(184,104,120,.22)" transform="rotate(30,370,485)"/>
+              <ellipse cx="440" cy="470" rx="6" ry="3" fill="rgba(184,104,120,.18)" transform="rotate(-20,440,470)"/>
+              <ellipse cx="510" cy="480" rx="7" ry="3.5" fill="rgba(184,104,120,.25)" transform="rotate(10,510,480)"/>
+              <!-- Some "missed" the path — imperfect -->
+              <ellipse cx="250" cy="510" rx="5" ry="2.5" fill="rgba(184,104,120,.15)" transform="rotate(25,250,510)"/>
+              <ellipse cx="400" cy="460" rx="6" ry="3" fill="rgba(184,104,120,.18)" transform="rotate(-30,400,460)"/>
+            </g>
+
+            <!-- Piano against wall -->
+            <rect x="80" y="280" width="200" height="170" rx="4" fill="rgba(10,8,20,1)"
+                  stroke="rgba(201,168,76,.15)" stroke-width="1" data-anim-order="1"/>
+            <!-- Piano keys -->
+            <g fill="rgba(244,240,230,.7)" data-anim-order="3">
+              <rect x="88" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s .2s ease-in-out infinite"/>
+              <rect x="99" y="320" width="9" height="24" rx="1"/>
+              <rect x="110" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s .6s ease-in-out infinite"/>
+              <rect x="121" y="320" width="9" height="24" rx="1"/>
+              <rect x="132" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s 1s ease-in-out infinite"/>
+              <rect x="143" y="320" width="9" height="24" rx="1"/>
+              <rect x="154" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s .4s ease-in-out infinite"/>
+              <rect x="165" y="320" width="9" height="24" rx="1"/>
+              <rect x="176" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s .8s ease-in-out infinite"/>
+              <rect x="187" y="320" width="9" height="24" rx="1"/>
+              <rect x="198" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s .3s ease-in-out infinite"/>
+              <rect x="209" y="320" width="9" height="24" rx="1"/>
+              <rect x="220" y="320" width="9" height="24" rx="1" style="animation:pianoKey 3s .7s ease-in-out infinite"/>
+            </g>
+            <!-- Black keys -->
+            <g fill="rgba(8,6,16,1)" data-anim-order="3">
+              <rect x="95" y="320" width="6" height="15" rx="1"/>
+              <rect x="117" y="320" width="6" height="15" rx="1"/>
+              <rect x="150" y="320" width="6" height="15" rx="1"/>
+              <rect x="172" y="320" width="6" height="15" rx="1"/>
+              <rect x="194" y="320" width="6" height="15" rx="1"/>
+              <rect x="216" y="320" width="6" height="15" rx="1"/>
+            </g>
+
+            <!-- Coffee mug on small table -->
+            <ellipse cx="420" cy="438" rx="18" ry="6" fill="rgba(30,25,48,.9)" data-anim-order="2"/>
+            <rect x="402" y="410" width="36" height="30" rx="4" fill="rgba(30,25,48,.9)" data-anim-order="2"/>
+            <!-- Steam from coffee -->
+            <path d="M412,408 Q415,398 412,388" stroke="rgba(200,112,64,.2)" stroke-width="1.5"
+                  fill="none" style="animation:floatUp 3s ease-in infinite" data-anim-order="3"/>
+            <path d="M420,406 Q423,396 420,386" stroke="rgba(200,112,64,.15)" stroke-width="1.5"
+                  fill="none" style="animation:floatUp 3.5s .8s ease-in infinite" data-anim-order="3"/>
+
+            <!-- HARUKI — kneeling, ring box open -->
+            <ellipse cx="590" cy="410" rx="22" ry="24" fill="rgba(28,24,44,.98)" data-anim-order="4"/>
+            <ellipse cx="590" cy="396" rx="22" ry="13" fill="rgba(10,8,20,1)" data-anim-order="4"/>
+            <rect x="568" y="434" width="44" height="50" rx="6" fill="rgba(28,24,44,.95)" data-anim-order="4"/>
+            <!-- One knee down -->
+            <ellipse cx="590" cy="490" rx="22" ry="12" fill="rgba(28,24,44,.8)" data-anim-order="4"/>
+
+            <!-- Ring box in outstretched hand -->
+            <rect x="610" y="425" width="55" height="12" rx="6" fill="rgba(28,24,44,.75)" data-anim-order="5"/>
+            <!-- Ring box -->
+            <rect x="655" y="415" width="30" height="22" rx="3" fill="rgba(20,18,35,.95)"
+                  stroke="rgba(201,168,76,.3)" stroke-width="1" data-anim-order="5"
+                  style="animation:glowPulse 3s ease-in-out infinite"/>
+            <!-- Ring inside box -->
+            <circle cx="670" cy="425" r="6" fill="none" stroke="rgba(201,168,76,.7)" stroke-width="2"
+                    filter="url(#gv2c6)" data-anim-order="6"
+                    style="animation:ringPulse 2.5s ease-in-out infinite"/>
+            <!-- Diamond glint -->
+            <circle cx="670" cy="423" r="2" fill="rgba(244,240,230,.8)"
+                    style="animation:breathe 1.5s ease-in-out infinite" data-anim-order="6"/>
+
+            <!-- YUNA — in doorway, scrubs, holding shoes -->
+            <!-- Rose glow around her -->
+            <ellipse cx="920" cy="380" rx="60" ry="70"
+                     fill="rgba(184,104,120,.12)" filter="url(#gv2c6)" data-anim-order="5"
+                     style="animation:breathe 5s ease-in-out infinite"/>
+            <ellipse cx="920" cy="370" rx="22" ry="24" fill="rgba(40,30,58,.95)" data-anim-order="4"/>
+            <ellipse cx="920" cy="356" rx="22" ry="13" fill="rgba(18,12,28,1)" data-anim-order="4"/>
+            <rect x="898" y="394" width="44" height="75" rx="5" fill="rgba(40,30,58,.9)" data-anim-order="4"/>
+            <!-- Shoes dropped — falling/at feet -->
+            <ellipse cx="940" cy="470" rx="15" ry="7" fill="rgba(25,20,40,.7)"
+                     transform="rotate(-20,940,470)" data-anim-order="6"/>
+            <ellipse cx="960" cy="465" rx="14" ry="6" fill="rgba(25,20,40,.65)"
+                     transform="rotate(10,960,465)" data-anim-order="6"/>
+
+            <!-- Rose petals floating near Yuna -->
+            <ellipse cx="870" cy="350" rx="6" ry="3" fill="rgba(184,104,120,.3)"
+                     style="animation:petalFall 5s ease-in infinite"/>
+            <ellipse cx="960" cy="320" rx="5" ry="2.5" fill="rgba(184,104,120,.25)"
+                     style="animation:petalFall 6s 1s ease-in infinite"/>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II</span></span>
+          <span class="chapter-number">Chapter Six ✦</span>
+          <h1 class="chapter-title">The Proposal</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">Age 29 · 6:48 AM · 2035</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">6:48 AM · MONDAY</span>
+
+          <p>
+            He has been awake since five. This is not unusual. The 5 AM has been structural for nine years now and has not once negotiated with him, not even this morning, when he is doing something that requires more than the ordinary quality of presence that the early hour demands.
+          </p>
+
+          <p>
+            He scattered the rose petals at six-fifteen. He will note later that some of them missed the path — they curve too far left near the kitchen entrance and there is a gap near the piano that he didn't account for. This bothers him slightly and then stops bothering him because the imperfection is correct. It is the kind of thing that proves it was real rather than staged.
+          </p>
+
+          <p>
+            He made coffee at six-thirty. Her kind — not his. The smell fills the apartment in the particular warm way of small apartments in the early morning.
+          </p>
+
+          <p>
+            At six forty he sat at the piano and began to play their graduation song. The one from Classroom 2-C's graduation program, the one they performed together on a night that closed Volume I and opened everything else. He plays it at the lowest possible volume — not because he wants it quiet, but because some things are most honest when they're not projected, when you have to be close to hear them.
+          </p>
+
+          <p>
+            He hears the key in the lock at six forty-eight.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            She hears the piano before she fully opens the door. This is how she will always remember it: not seeing the petals first, not the coffee, not him — the piano. The song. Which she has known for seven years and has specific emotional coordinates that cannot be separated from the version of herself that first heard it.
+          </p>
+
+          <p>
+            She stands in the open doorway. She is in scrubs, holding her shoes — she took them off in the hallway the way she always does after a night shift, out of consideration for neighbors and out of the specific desire to be out of them as soon as possible. Her hair is in a twelve-hour pin. She is twenty-nine years old and has been awake since yesterday morning.
+          </p>
+
+          <p>
+            She sees the petals. She sees the coffee. She sees him — who has stopped playing and is crossing the room now, and who is looking at her with the particular expression that is not performance and has never been performance, which is how she knows everything that is about to happen.
+          </p>
+
+          <p>
+            He stops in front of her. He looks at her — in scrubs, holding her shoes, twelve-hour shift in her posture, fully herself — and he kneels.
+          </p>
+
+          <p>
+            He opens the box.
+          </p>
+
+          <p>
+            The ring: simple, specific. Not the most expensive thing he could have bought. The most <em>her</em> thing he could find — a setting that does not demand to be the first thing you notice, that reveals itself in the right light. He had it for three months. He carried it to Saudi Arabia to choose it and then carried the memory of it home.
+          </p>
+
+          <p>
+            He says: <span class="tg">"I want to keep showing up for you. I said that once, in a courtyard, after a graduation. I meant it for the rest of it too."</span>
+          </p>
+
+          <p>
+            She drops her shoes.
+          </p>
+
+          <p>
+            She has been looking at him the whole time he's been speaking — not waiting for him to finish, but listening the way she listens, with her full attention and her internal process already running. The processing has been running for nine years. She has been arriving at this answer since a Sunday morning when she sat in the third row of a church and watched a boy play piano for God and thought: <em>that is something worth staying for.</em>
+          </p>
+
+          <p>
+            <span class="tg">"Oo,"</span> she says.
+          </p>
+
+          <p>
+            <em>Yes.</em>
+          </p>
+
+          <p>
+            Before the question is fully formed. Before the silence after the sentence has completely settled. She says it the way she says everything important: directly, without hedging, from the conclusion she has already arrived at.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He puts the ring on her finger. He stands. She is still holding where her shoes were — empty hands now, looking at the ring the way she looks at information she considers important: precisely, turning it in her mind to understand its shape.
+          </p>
+
+          <p>
+            Then she looks up at him.
+          </p>
+
+          <p>
+            <span class="tg">"Yung kape — para sa akin?"</span> <em>The coffee — is that for me?</em>
+          </p>
+
+          <p>
+            <span class="tg">"Sa'yo."</span>
+          </p>
+
+          <p>
+            <span class="tg">"Malamig na siguro."</span> <em>It's probably cold by now.</em>
+          </p>
+
+          <p>
+            <span class="tg">"Ilang minuto lang."</span> <em>Only a few minutes.</em>
+          </p>
+
+          <p>
+            She goes to the coffee. She picks it up. She holds it with both hands the way she holds things she is grateful for. She is wearing scrubs and has been awake for twenty-six hours and she is engaged and the coffee is slightly warm and it is 6:52 AM and she looks, at this particular moment, like the entirety of what she is: a person who has built something real and is standing in it.
+          </p>
+
+          <div class="thought">
+            She said oo before I finished asking. She said it the way she says everything she is certain about — directly, already arrived, no hedging. Nine years she has been arriving at yes. I didn't know that then. I know it now. Some answers are not made in the moment. They are made over time, across all the moments that accumulated into enough weight to become certain. She has been saying yes for nine years. Tonight was just the first time she said it out loud to me.
+          </div>
+
+          <p>
+            He goes back to the piano. He plays the graduation song again, all the way through this time, at full volume. She stands at the kitchen counter drinking coffee and listening. The apartment fills with it. The city outside is doing its early morning thing — indifferent, full, going about its business — and inside, in the particular warmth of a small apartment with slightly imperfect rose petals and a ring on a nurse's hand, the story moves toward everything it was always moving toward.
+          </p>
+
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch5.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The Reunion &amp; Yuna RN</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="ch7.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">Next Chapter →</span>
+          <span class="chapter-nav__title">Marriage &amp; The New Life</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
