@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. II Ch. 10: The Piano Remains — The Invisible Student</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/animations.css">
+  <link rel="stylesheet" href="../assets/reader.css">
+  <link rel="stylesheet" href="../assets/nav.css">
+  <style>
+    .epilogue-verse {
+      text-align: center;
+      font-family: var(--display);
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: var(--ink2);
+      line-height: 1.75;
+      margin: 3rem 0;
+      padding: 2.5rem 1rem;
+      border-top: 1px solid rgba(201,168,76,.15);
+      border-bottom: 1px solid rgba(201,168,76,.15);
+      background: rgba(201,168,76,.03);
+    }
+    .epilogue-verse em {
+      color: var(--gold);
+      font-style: normal;
+    }
+    .final-line {
+      text-align: center;
+      font-family: var(--display);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-style: italic;
+      color: var(--ink);
+      margin: 4rem 0 2rem;
+      line-height: 1.6;
+    }
+    .final-line em { color: var(--gold-dim); font-style: normal; }
+    .end-mark {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .5em;
+      color: var(--gold);
+      opacity: .35;
+      margin: 3rem 0 1rem;
+    }
+    .chapter-header { min-height: 80vh; }
+  </style>
+</head>
+<body class="reading-mode" data-chapter="v2c10">
+  <div class="reading-bar"></div>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__logo">The <span>Invisible</span> Student</a>
+    <ul class="site-nav__links">
+      <li><a href="../toc.html">Contents</a></li>
+      <li><a href="../vol1/ch1.html">Vol. I</a></li>
+      <li><a href="ch1.html" class="active">Vol. II</a></li>
+    </ul>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav">
+    <a href="../index.html">Cover</a><a href="../toc.html">Contents</a>
+    <a href="../vol1/ch1.html">Volume I</a><a href="ch1.html">Volume II</a>
+  </div>
+
+  <div class="page-layout">
+    <aside class="sidebar-toc">
+      <div class="sidebar-toc__title">Volume II</div>
+      <ul class="sidebar-toc__list">
+        <li><a class="sidebar-toc__link" href="ch1.html">Ch. 1 — The Rewiring</a></li>
+        <li><a class="sidebar-toc__link" href="ch2.html">Ch. 2 — Dual-Track Education</a></li>
+        <li><a class="sidebar-toc__link" href="ch3.html">Ch. 3 — The TESDA Grind</a></li>
+        <li><a class="sidebar-toc__link" href="ch4.html">Ch. 4 — Saudi Arabia</a></li>
+        <li><a class="sidebar-toc__link" href="ch5.html">Ch. 5 — Reunion &amp; Yuna RN</a></li>
+        <li><a class="sidebar-toc__link" href="ch6.html">Ch. 6 — The Proposal</a></li>
+        <li><a class="sidebar-toc__link" href="ch7.html">Ch. 7 — Marriage</a></li>
+        <li><a class="sidebar-toc__link" href="ch8.html">Ch. 8 — The First Child</a></li>
+        <li><a class="sidebar-toc__link" href="ch9.html">Ch. 9 — Sovereign Legacy</a></li>
+        <li><a class="sidebar-toc__link active" href="ch10.html">Ch. 10 — The Piano Remains ✦</a></li>
+        <span class="sidebar-toc__vol">Volume I</span>
+        <li><a class="sidebar-toc__link" href="../vol1/ch1.html">Ch. 1 — The Invisible Student</a></li>
+        <li><a class="sidebar-toc__link" href="../vol1/ch10.html">Ch. 10 — Graduation</a></li>
+      </ul>
+    </aside>
+
+    <main class="chapter-main">
+      <header class="chapter-header">
+        <div class="chapter-header__art">
+          <div id="chapter-particles" data-type="notes"></div>
+          <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" class="svg-animate">
+            <defs>
+              <radialGradient id="livingRoomGlow" cx="35%" cy="55%" r="60%">
+                <stop offset="0%" stop-color="rgba(201,168,76,.2)"/>
+                <stop offset="50%" stop-color="rgba(200,112,64,.08)"/>
+                <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+              </radialGradient>
+              <radialGradient id="cityNight" cx="50%" cy="0%" r="80%">
+                <stop offset="0%" stop-color="rgba(74,90,154,.08)"/>
+                <stop offset="100%" stop-color="rgba(9,8,14,0)"/>
+              </radialGradient>
+              <linearGradient id="bg_v2c10" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#08091c"/><stop offset="100%" stop-color="#09080e"/>
+              </linearGradient>
+              <filter id="gv2c10"><feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="1200" height="700" fill="url(#bg_v2c10)"/>
+
+            <!-- City window — night outside, full width at back -->
+            <rect x="600" y="20" width="580" height="450" rx="4"
+                  fill="rgba(10,12,26,.6)" stroke="rgba(201,168,76,.06)" stroke-width="1.5" data-anim-order="0"/>
+            <line x1="890" y1="20" x2="890" y2="470" stroke="rgba(201,168,76,.04)" stroke-width="1"/>
+            <line x1="600" y1="245" x2="1180" y2="245" stroke="rgba(201,168,76,.04)" stroke-width="1"/>
+
+            <!-- City lights through window -->
+            <g fill="rgba(201,168,76,.3)" data-anim-order="1">
+              <rect x="620" y="50" width="4" height="3" style="animation:cityBlink 4s ease-in-out infinite"/>
+              <rect x="650" y="80" width="3" height="3" style="animation:cityBlink 5s .5s ease-in-out infinite"/>
+              <rect x="700" y="45" width="4" height="3" style="animation:cityBlink 3.5s 1s ease-in-out infinite"/>
+              <rect x="740" y="100" width="3" height="3" style="animation:cityBlink 4.5s .3s ease-in-out infinite"/>
+              <rect x="800" y="60" width="4" height="3" style="animation:cityBlink 4s 1.8s ease-in-out infinite"/>
+              <rect x="840" y="90" width="3" height="3" style="animation:cityBlink 5s .7s ease-in-out infinite"/>
+              <rect x="920" y="50" width="4" height="3" style="animation:cityBlink 3.8s 1.2s ease-in-out infinite"/>
+              <rect x="960" y="75" width="3" height="3" style="animation:cityBlink 4.3s .2s ease-in-out infinite"/>
+              <rect x="1010" y="55" width="4" height="3" style="animation:cityBlink 5s 2s ease-in-out infinite"/>
+              <rect x="1060" y="95" width="3" height="3" style="animation:cityBlink 3.6s .8s ease-in-out infinite"/>
+              <rect x="1110" y="65" width="4" height="3" style="animation:cityBlink 4.8s 1.5s ease-in-out infinite"/>
+              <rect x="1150" y="90" width="3" height="3" style="animation:cityBlink 4.1s .4s ease-in-out infinite"/>
+            </g>
+            <g fill="rgba(244,240,230,.2)" data-anim-order="1">
+              <rect x="635" y="120" width="3" height="3" style="animation:cityBlink 4.5s 1.3s ease-in-out infinite"/>
+              <rect x="720" y="140" width="4" height="3" style="animation:cityBlink 3.9s .6s ease-in-out infinite"/>
+              <rect x="870" y="130" width="3" height="3" style="animation:cityBlink 5s 1.7s ease-in-out infinite"/>
+              <rect x="1000" y="145" width="4" height="3" style="animation:cityBlink 4.2s .9s ease-in-out infinite"/>
+              <rect x="1130" y="125" width="3" height="3" style="animation:cityBlink 3.7s 2.1s ease-in-out infinite"/>
+            </g>
+
+            <!-- City night glow spilling in -->
+            <ellipse cx="890" cy="100" rx="400" ry="150" fill="url(#cityNight)"
+                     data-anim-order="1"/>
+
+            <!-- LIVING ROOM warm light -->
+            <ellipse cx="350" cy="450" rx="450" ry="300" fill="url(#livingRoomGlow)"
+                     style="animation:breathe 5s ease-in-out infinite" data-anim-order="0"/>
+
+            <!-- Floor -->
+            <rect x="0" y="530" width="1200" height="170" fill="rgba(12,10,24,.6)" data-anim-order="0"/>
+            <!-- Floor reflection -->
+            <g stroke="rgba(255,255,255,.02)" stroke-width="1" data-anim-order="0">
+              <line x1="0" y1="580" x2="1200" y2="580"/>
+              <line x1="0" y1="630" x2="1200" y2="630"/>
+            </g>
+
+            <!-- PIANO (upright, against left wall) — THE THROUGH-LINE -->
+            <rect x="30" y="260" width="200" height="280" rx="4" fill="rgba(8,6,18,1)"
+                  stroke="rgba(201,168,76,.25)" stroke-width="1.5" data-anim-order="2"
+                  style="animation:glowPulse 5s ease-in-out infinite"/>
+            <!-- Piano lid -->
+            <rect x="30" y="260" width="200" height="22" rx="2" fill="rgba(15,12,26,.9)" data-anim-order="2"/>
+            <!-- Piano keys area -->
+            <rect x="38" y="340" width="184" height="55" rx="2" fill="rgba(12,10,22,.9)" data-anim-order="3"/>
+            <!-- White keys -->
+            <g fill="rgba(244,240,230,.78)" data-anim-order="4">
+              <rect x="42" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s .15s ease-in-out infinite"/>
+              <rect x="55" y="344" width="11" height="38" rx="1"/>
+              <rect x="68" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s .5s ease-in-out infinite"/>
+              <rect x="81" y="344" width="11" height="38" rx="1"/>
+              <rect x="94" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s .85s ease-in-out infinite"/>
+              <rect x="107" y="344" width="11" height="38" rx="1"/>
+              <rect x="120" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s .35s ease-in-out infinite"/>
+              <rect x="133" y="344" width="11" height="38" rx="1"/>
+              <rect x="146" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s .7s ease-in-out infinite"/>
+              <rect x="159" y="344" width="11" height="38" rx="1"/>
+              <rect x="172" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s 1.05s ease-in-out infinite"/>
+              <rect x="185" y="344" width="11" height="38" rx="1"/>
+              <rect x="198" y="344" width="11" height="38" rx="1" style="animation:pianoKey 3s .6s ease-in-out infinite"/>
+            </g>
+            <!-- Black keys -->
+            <g fill="rgba(6,4,14,1)" data-anim-order="4">
+              <rect x="50" y="344" width="8" height="24" rx="1"/>
+              <rect x="76" y="344" width="8" height="24" rx="1"/>
+              <rect x="115" y="344" width="8" height="24" rx="1"/>
+              <rect x="141" y="344" width="8" height="24" rx="1"/>
+              <rect x="167" y="344" width="8" height="24" rx="1"/>
+              <rect x="193" y="344" width="8" height="24" rx="1"/>
+            </g>
+            <!-- Music shelf on piano -->
+            <rect x="35" y="290" width="190" height="52" rx="1" fill="rgba(14,12,26,.8)" data-anim-order="3"/>
+            <!-- Sheet music on stand -->
+            <rect x="50" y="294" width="80" height="45" rx="1" fill="rgba(244,240,230,.06)" data-anim-order="4"/>
+            <!-- Music lines on sheet -->
+            <g stroke="rgba(201,168,76,.07)" stroke-width=".5" data-anim-order="5">
+              <line x1="55" y1="302" x2="125" y2="302"/>
+              <line x1="55" y1="307" x2="125" y2="307"/>
+              <line x1="55" y1="312" x2="125" y2="312"/>
+              <line x1="55" y1="317" x2="125" y2="317"/>
+              <line x1="55" y1="322" x2="125" y2="322"/>
+            </g>
+
+            <!-- HARUKI playing piano (facing slightly toward room) -->
+            <ellipse cx="175" cy="322" rx="22" ry="24"
+                     fill="rgba(26,22,42,.98)" filter="url(#gv2c10)" data-anim-order="4"
+                     style="animation:scalePop .6s 1s ease both"/>
+            <ellipse cx="175" cy="308" rx="22" ry="13" fill="rgba(8,6,18,1)" data-anim-order="4"/>
+            <rect x="153" y="346" width="44" height="60" rx="5" fill="rgba(26,22,42,.95)" data-anim-order="4"/>
+            <!-- Hands on keys -->
+            <ellipse cx="158" cy="352" rx="16" ry="7" fill="rgba(26,22,42,.7)" data-anim-order="5"/>
+            <ellipse cx="195" cy="352" rx="16" ry="7" fill="rgba(26,22,42,.7)" data-anim-order="5"/>
+            <!-- Gold glow on Haruki from piano -->
+            <ellipse cx="175" cy="390" rx="100" ry="50"
+                     fill="rgba(201,168,76,.07)" style="animation:breathe 4s ease-in-out infinite" data-anim-order="5"/>
+
+            <!-- YUNA on sofa, novel open -->
+            <g data-anim-order="3">
+              <!-- Sofa -->
+              <rect x="380" y="430" width="320" height="120" rx="12" fill="rgba(22,18,38,.8)"/>
+              <rect x="380" y="430" width="320" height="30" rx="12 12 0 0" fill="rgba(28,24,46,.8)"/>
+              <rect x="380" y="430" width="40" height="120" rx="8" fill="rgba(28,24,46,.8)"/>
+              <rect x="660" y="430" width="40" height="120" rx="8" fill="rgba(28,24,46,.8)"/>
+            </g>
+            <!-- Yuna on sofa -->
+            <ellipse cx="510" cy="422" rx="22" ry="24"
+                     fill="rgba(38,30,55,.95)" filter="url(#gv2c10)" data-anim-order="4"
+                     style="animation:scalePop .6s 1.3s ease both"/>
+            <ellipse cx="510" cy="408" rx="22" ry="13" fill="rgba(16,12,26,1)" data-anim-order="4"/>
+            <rect x="488" y="446" width="44" height="80" rx="5" fill="rgba(38,30,55,.9)" data-anim-order="4"/>
+            <!-- Novel in Yuna's hands — HER CHOICE TONIGHT -->
+            <rect x="500" y="455" width="60" height="80" rx="2"
+                  fill="rgba(184,104,120,.15)" stroke="rgba(184,104,120,.15)" stroke-width="1" data-anim-order="5"/>
+            <!-- Book pages -->
+            <g stroke="rgba(184,104,120,.06)" stroke-width=".5" data-anim-order="5">
+              <line x1="507" y1="465" x2="553" y2="465"/>
+              <line x1="507" y1="472" x2="553" y2="472"/>
+              <line x1="507" y1="479" x2="553" y2="479"/>
+              <line x1="507" y1="486" x2="553" y2="486"/>
+            </g>
+            <!-- Rose glow on Yuna -->
+            <ellipse cx="510" cy="450" rx="60" ry="50"
+                     fill="rgba(184,104,120,.05)" style="animation:breathe 5s ease-in-out infinite" data-anim-order="4"/>
+
+            <!-- HANA on floor, sketch pad -->
+            <ellipse cx="760" cy="500" rx="20" ry="22"
+                     fill="rgba(35,28,52,.9)" filter="url(#gv2c10)" data-anim-order="4"
+                     style="animation:scalePop .6s 1.5s ease both"/>
+            <ellipse cx="760" cy="486" rx="20" ry="12" fill="rgba(14,10,24,1)" data-anim-order="4"/>
+            <rect x="740" y="522" width="40" height="55" rx="5" fill="rgba(35,28,52,.85)" data-anim-order="4"/>
+            <!-- Hana cross-legged on floor -->
+            <ellipse cx="760" cy="565" rx="30" ry="14" fill="rgba(35,28,52,.7)" data-anim-order="4"/>
+            <!-- Headphones around her neck -->
+            <path d="M748,520 Q745,512 752,508 Q756,505 760,505 Q764,505 768,508 Q775,512 772,520"
+                  stroke="rgba(74,184,200,.25)" stroke-width="2" fill="none" data-anim-order="5"/>
+            <!-- Sketch pad on floor -->
+            <rect x="730" y="570" width="100" height="70" rx="3"
+                  fill="rgba(244,240,230,.06)" stroke="rgba(244,240,230,.05)" stroke-width="1" data-anim-order="5"/>
+
+            <!-- Music notes floating from piano across room -->
+            <text x="260" y="260" font-size="20" fill="rgba(201,168,76,.3)"
+                  style="animation:noteDrift 4s ease-in infinite">♩</text>
+            <text x="320" y="240" font-size="16" fill="rgba(201,168,76,.22)"
+                  style="animation:noteDrift 5s 1.5s ease-in infinite">♪</text>
+            <text x="380" y="280" font-size="14" fill="rgba(201,168,76,.18)"
+                  style="animation:noteDrift 4.5s .8s ease-in infinite">♫</text>
+            <text x="440" y="250" font-size="18" fill="rgba(201,168,76,.15)"
+                  style="animation:noteDrift 6s 2s ease-in infinite">♬</text>
+            <text x="550" y="300" font-size="12" fill="rgba(201,168,76,.12)"
+                  style="animation:noteDrift 5.5s .4s ease-in infinite">♪</text>
+
+            <!-- Lamp beside sofa -->
+            <rect x="695" y="380" width="6" height="80" fill="rgba(20,18,36,.9)" data-anim-order="2"/>
+            <ellipse cx="698" cy="380" rx="22" ry="8" fill="rgba(22,20,38,.9)" data-anim-order="2"/>
+            <ellipse cx="698" cy="440" rx="80" ry="50"
+                     fill="rgba(200,112,64,.07)" style="animation:breathe 3.5s ease-in-out infinite" data-anim-order="3"/>
+
+            <!-- The whole room golden light -->
+            <ellipse cx="400" cy="500" rx="500" ry="200"
+                     fill="rgba(201,168,76,.03)" style="animation:breathe 6s ease-in-out infinite" data-anim-order="1"/>
+          </svg>
+        </div>
+        <div class="chapter-header__overlay"></div>
+        <div class="chapter-header__content">
+          <span class="chapter-vol"><span class="vol-badge v2">Volume II — Epilogue</span></span>
+          <span class="chapter-number">Chapter Ten ✦</span>
+          <h1 class="chapter-title">The Piano Remains</h1>
+          <div class="chapter-meta">
+            <span class="chapter-age">An Ordinary Evening · No Occasion</span>
+            <span class="reading-time"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose-wrap">
+        <div class="prose">
+
+          <span class="yr">AN ORDINARY EVENING</span>
+
+          <p>
+            There is no occasion. No anniversary, no graduation, no homecoming. The city is doing what the city always does — alive and indifferent outside the window, the particular alive-indifference of a metropolis that has been going about its business through everything his life has contained and will continue after it. The plants on the windowsill need water. The lamp beside the sofa makes a warm yellow circle.
+          </p>
+
+          <p>
+            This is freedom: an ordinary evening that is allowed to be ordinary.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            Haruki sits at the upright piano. It is the same one — the one that survived four apartments, one marriage, one Saudi Arabia, two children's worth of small hands pressing its keys, and more Sunday mornings than he has counted. It is not in perfect condition. The middle D has a slight buzz when played fortissimo, and the bench has been repadded twice. It is entirely itself.
+          </p>
+
+          <p>
+            He plays with no intention except playing. This is the most honest version of what he does.
+          </p>
+
+          <p>
+            Yuna is on the sofa with a novel. Not a textbook — not tonight. A novel she chose for herself, for pleasure, because the schedule allows it and because she is a person who reads when she can and does not apologize for it. This is what financial freedom looks like from the inside: reading a novel on a Tuesday evening without accounting for the time.
+          </p>
+
+          <p>
+            Hana is on the floor near the piano, sketch pad open, headphones around her neck — not on her ears, around her neck — theoretically drawing, actually listening in the particular way of teenagers who will not admit to being moved by their parents.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He plays their graduation song. The one from the auditorium, from the courtyard, from every significant room they have inhabited together.
+          </p>
+
+          <p>
+            Hana looks up immediately. <span class="tg">"'Yan yung kanta ninyo, di ba?"</span> <em>That's yours, right? Yours and Mama's?</em>
+          </p>
+
+          <p>
+            He confirms it without stopping. He plays it the whole way through. Yuna, on the sofa, has set the novel face-down on her lap and is looking at the back of his head the way she looks at things she has decided are worth her full attention.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He plays the church worship song he wrote at seventeen. The one the congregation still sings — it has been in their worship repertoire for over twenty years, passed from music director to music director, sung by people who do not know its composer is the man who shows up to service early and helps arrange the chairs.
+          </p>
+
+          <p>
+            He plays the lullaby — the one in the key of D major, the one he wrote at 2 AM two months after Hana was born. She is twelve now and has heard it her whole life, knows it the way she knows the sound of the house settling at night and the particular creak of the third stair. She does not say anything when he plays it. But she puts down the pencil.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            Then he plays something new. Something still forming, not finished — the first eight bars of something that does not yet have a name or a purpose or even a key, really, because it keeps moving between D and F-sharp and has not decided which home it belongs to.
+          </p>
+
+          <p>
+            This is how it always starts.
+          </p>
+
+          <p>
+            Yuna says, without looking up from the novel she has picked back up: <span class="tg">"That last one. Play it again."</span>
+          </p>
+
+          <p>
+            He plays it again. This time with slightly more certainty — the eight bars, and then two more that weren't there a moment ago, because music does this: it grows when you trust it.
+          </p>
+
+          <p>
+            She sets the book down. She turns to face him. She listens with the full, complete, unhurried attention she gives to things she considers important — the way she listened when he played in the church at seventeen and she sat in the third row and did not look away.
+          </p>
+
+          <p>
+            The music fills the room. The city outside continues its indifferent aliveness.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            <span class="tg">"Papa."</span>
+          </p>
+
+          <p>
+            He stops. Hana is looking up from the sketch pad, her pencil in her hand.
+          </p>
+
+          <p>
+            <span class="tg">"Turo mo sa'kin 'yon. Lahat ng kanta mo."</span>
+          </p>
+
+          <p>
+            <em>Teach me that. All your songs.</em>
+          </p>
+
+          <p>
+            He looks at his daughter. She is twelve and she has his eyes — the particular focused quality of them — and her mother's directness, the way she says exactly what she means without ceremony. She is holding her pencil and looking at him with the specific expression of someone who has made a decision and is now simply announcing it.
+          </p>
+
+          <p>
+            <span class="tg">"Bukas,"</span> he says. <em>Tomorrow.</em> <span class="tg">"At lahat ng araw pagkatapos nun."</span> <em>And every day after that.</em>
+          </p>
+
+          <p>
+            She nods. She goes back to her sketch pad. He turns back to the piano.
+          </p>
+
+          <div class="br">· · ·</div>
+
+          <p>
+            He plays. The new thing — the unfinished one, the one without a name yet — extends itself by another four bars. It has decided it is in D major. This was not a surprise. D major always felt like morning.
+          </p>
+
+          <p>
+            The city outside is still going about its business, and will continue to do so regardless of what happens in this room, and this is fine. Cities are not required to pay attention to the things that matter inside them. That is not what cities are for.
+          </p>
+
+          <p>
+            The three of them are here: the man at the piano, the woman on the sofa with her novel, the girl on the floor with her sketch pad not fully pretending to draw. The lamp makes its warm yellow circle. The plants on the windowsill need water. The middle D has a slight buzz when played fortissimo.
+          </p>
+
+          <p>
+            This is what the 5 AMs were for. This specific, ordinary, unhurried evening. This room. These people.
+          </p>
+
+          <div class="epilogue-verse">
+            The boy from Seat 38 played piano in an empty church<br>
+            when no one at school was listening.<br><br>
+            <em>God was listening.</em><br>
+            Yuna was listening.<br><br>
+            It turned out that was enough.<br>
+            It turns out it was <em>always enough.</em>
+          </div>
+
+          <p>
+            He plays until the new song has a shape he can return to. Then he plays it one more time for Hana — slowly, at teaching pace, so she can follow the left hand.
+          </p>
+
+          <p>
+            She moves closer to the piano bench. She watches his hands. She is already trying to memorize the first four bars.
+          </p>
+
+          <p>
+            Yuna watches them both. She does not say anything. She does not need to.
+          </p>
+
+          <div class="final-line">
+            The piano never stopped.<br>
+            <em>Neither did he.</em>
+          </div>
+
+          <div class="end-mark">— END —</div>
+
+          <div class="br">· · ·</div>
+
+          <p style="text-align:center;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.9rem;">
+            <em>Haruki Aizawa · Yuna Takahashi, RN · Hana Aizawa · Pastor Reyes</em><br>
+            Vol. I: Age 16–18 &nbsp;·&nbsp; Vol. II: Age 18–40+<br>
+            Theme: Become. Serve. Build. Love. Return.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Return to start -->
+      <div style="background:var(--night2);padding:5rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,.08);">
+        <span style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:.4em;color:rgba(201,168,76,.4);margin-bottom:1.5rem;">THE STORY IS COMPLETE</span>
+        <h2 style="font-family:var(--display);font-size:clamp(1.6rem,3.5vw,2.5rem);font-style:italic;color:var(--paper);margin-bottom:.8rem;">Thank you for reading.</h2>
+        <p style="font-family:var(--serif);font-style:italic;color:rgba(244,240,230,.35);margin-bottom:2.5rem;font-size:1rem;">
+          "Some people see you before the world does.<br>Keep those people."
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="../index.html" class="btn btn--filled">Return to Cover</a>
+          <a href="../toc.html" class="btn">Full Table of Contents</a>
+          <a href="../vol1/ch1.html" class="btn">Read from Chapter One</a>
+        </div>
+      </div>
+
+      <nav class="chapter-nav">
+        <a href="ch9.html" class="chapter-nav__item chapter-nav__item--prev">
+          <span class="chapter-nav__dir">← Previous</span>
+          <span class="chapter-nav__title">The Sovereign Legacy</span>
+        </a>
+        <a href="../toc.html" class="chapter-nav__item chapter-nav__item--toc">
+          <span class="chapter-nav__dir">↑ Contents</span>
+        </a>
+        <a href="../index.html" class="chapter-nav__item chapter-nav__item--next">
+          <span class="chapter-nav__dir">↩ Return</span>
+          <span class="chapter-nav__title">Cover Page</span>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <button class="back-top">↑</button>
+  <script src="../js/main.js"></script>
+  <script src="../js/reader.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
